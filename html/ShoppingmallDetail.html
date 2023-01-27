@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/ShoppingDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Shop_Detail_wrap">
+        <div class="Shop_Detail_right">
+            <div class="detail_goods_firstbox">
+                <div class="detail_goods_name">
+                    <p>상품명</p>
+                </div>
+                <div class="detail_goods_price">
+                    <p>12,800원</p>
+                </div>
+            </div>
+            <div class="detail_goods_secondbox">
+                <div class="detail_goods_delivery">
+                    <div class="delivery_font"><p>배송비</p></div>
+                    <div class="delivery_price"><p>무료배송</p></div>
+                </div>
+                <div class="goods_count_box">
+                    <div class="count_font"><p>수량</p></div>
+                    <div class="goods_count_btn">
+                        <input type="button" value="-">
+                        <input type="text" value="1" readonly>
+                        <input type="button" value="+">
+                    </div>                  
+                </div>
+                <div class="detail_total_price">
+                    <div class="total_font"><p>총 상품금액</p></div>
+                    <div class="total_price"><p>12,800원</p></div>
+                </div>
+                <div class="detail_payment">
+                    <div class="goods_basket">
+                        <button>장바구니</button>
+                    </div>
+                    <div class="goods_payment_now">
+                        <button>바로구매</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Shop_Detail_left">
+            <div class="goods_img_box">
+                <div class="product_img"><img></div>
+            </div>
+            <div class="goods_info_box">
+                <div class="info_list">
+                    <ul class="info_list_ul">
+                        <li class="info_list_li"><a href="#info_1" class="list_aBox"><p>상세 정보</p></a></li>
+                        <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송/교환/반품 안내</p></a></li>
+                        <li class="info_list_li"><a href="#info_3" class="list_aBox"><p>상품 후기(0)</p></a></li>
+                    </ul>
+                </div>
+                <div id="info_1"></div>
+                <div id="info_2"></div>
+                <div id="info_3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
