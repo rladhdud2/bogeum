@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/html/css/reset.css">
+    <link rel="stylesheet" href="/html/css/ShoppingmallBasket.css">
+    <script src="https://kit.fontawesome.com/462a97624e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Shop_Basket_wrap">
+        <div class="all_check_box">
+            <input type="checkbox" name="items" value="selectAll"><p>전체 선택</p>
+        </div>
+        <div class="basket_list_box">
+            <ul class="basket_list_ul">
+                <li class="basket_list_li">
+                    <div class="pic_check_box">
+                        <input type="checkbox" name="items" value="selectAll">
+                    </div>
+                    <a href="#" class="basketAbox">
+                        <div class="basket_list_info">
+                            <div class="basket_picture">
+                                <div class="Basket_item_img"></div>
+                            </div>
+                            <div class="basket_item_name">
+                                <div class="Basket_item_subnames">
+                                    <p>상품명</p>
+                                </div>
+                                <div class="Basket_item_subprice">
+                                    <p>상품가격</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="basket_list_info2">
+                        <div class="basket_amount">
+                            <div class="goods_count_btn">
+                                <input type="button" value="-">
+                                <input type="text" value="1" readonly>
+                                <input type="button" value="+">
+                            </div>  
+                        </div>
+                        <div class="basket_price">
+                            <p>12,800원</p>
+                        </div>
+                        <div class="basket_delivery">
+                            <p>무료배송</p>
+                        </div>
+                        <div class="basket_delete">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </div>
+                    </div>           
+                </li> 
+            </ul>
+        </div>
+        <div class="basket_pay_box">
+            <div class="payment_price_box">
+                <p>총 결제금액 : </p>
+            </div>
+            <div class="pay_now">
+                <button>결제하기</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
