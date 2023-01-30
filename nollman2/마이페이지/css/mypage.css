@@ -1,0 +1,295 @@
+* {
+    font-family: 'Jua', sans-serif;
+}
+
+header { 
+    width : 100%;
+    height: 150px;  
+    
+  }
+      #login {
+          width : 100%;
+          text-align: right;
+          background-color: rgb(226, 226, 226);
+          height: 30px;
+          line-height: 30px;
+      }
+      #header2 {
+          height: 120px;
+          display: flex;
+          justify-content: center;
+          align-items:center;        
+      }
+  
+          #logo {            
+              width : 250px;
+              height : 100px; 
+          }
+          #logo img {
+              height: 100%;
+              width : 100%;
+          }
+          .nav {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+          
+          }
+          .nav li {
+              width : 250px;
+              height: 100px;
+              line-height: 100px;            
+              text-align: center;
+              font-size: 35px;                                   
+          }
+          
+
+
+     
+.container {
+    width : 1200px;
+    height: 1000px;    
+    margin: auto;
+    margin-top: 80px;    
+    display: flex;
+}
+    .mypagenav {
+        position: fixed;
+        width: 17%;
+        height: 800px;        
+    }
+    .mypagenavmenu {
+        margin-bottom: 30px;
+        
+    }
+    .mypagenav li {
+        margin-bottom: 10px;       
+        color: gray;
+    }
+    .mypagenav li a {
+        color: gray;
+    }
+
+        .mypagenavtitle {
+            font-size: 22px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mypagecontentbox {
+    width : 80%;
+    height: 100%;   
+    margin-left: 200px;
+}
+.mypagecontent {
+    margin-bottom: 80px;
+    
+} 
+    .mypagecontenttitle {
+        font-size: 30px;
+        border-bottom: 2px black solid;
+        margin-bottom: 20px;
+        line-height: 40px;
+        height: 40px;       
+    }
+
+    .myorder1 {
+        width : 100%;
+        height: 210px;
+        border: 1px black solid;       
+    }
+    #orderprocess ul {
+        width : 900px;
+        height: 100px;
+        margin: auto;       
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px black solid;
+        padding-bottom: 20px;
+    }
+    #orderprocess ul li {
+        margin: auto;        
+        text-align: center;
+
+    }    
+    .ordercount {
+        font-size: 70px;
+        font-weight: 100;
+    }
+
+    .refundmenu {
+        display: flex;
+        justify-content: space-around;
+    }
+    .refundcontent {
+        margin-top: 18px;
+        font-size: 22px;
+        width : 300px;
+        display: flex;
+        justify-content: center;    
+        border-right: 1px gray solid;           
+    }
+    .refundcontent:nth-child(3) {
+        border-right: none;
+    }
+    
+
+    .myorder2nav {
+        display: flex;       
+        justify-content: space-around;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid gray;
+        height: 30px;  
+        text-align: center;           
+        align-items: center;   
+    }
+    
+    .myorder2content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;        
+        text-align: center;
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+    }
+        .orderdate {
+            width : 100px;             
+        }
+        .myorderitem {
+            display: flex;
+            width : 300px;  
+            align-items: center;            
+            justify-content: center;
+                     
+        }
+            .itemimg {
+                width : 150px;
+                height: 80px;
+                background-color: red;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .itemimg img {
+                width : 100%;
+                height: 100%;
+            }
+            .itemname {
+                width : 150px;                
+                margin-left: 10px;  
+
+            }
+        .orderprice {
+            width : 150px;     
+                  
+        }  
+        .deliveryprice {
+            width : 100px;
+        }
+        .confirm {
+            width : 100px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+footer {
+width : 100%;
+height: 350px;
+margin-top: 200px;
+line-height: 20px;
+}
+#footer1 {
+width : 1200px;
+height: 220px;
+margin: auto;       
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.footer1item {
+width: 30%;
+height: 100%;        
+margin-right: 10px;
+border-right: 2px solid rgb(206, 206, 206);                
+}
+.footer1item:nth-child(3) {
+    border :none;
+}
+
+
+.footericon {
+    width : 50px;
+    height: 50px;
+    margin: auto;
+}
+.footericon img {
+    width : 100%;
+    height: 100%;
+}
+.footer1itemtitle {
+font-size: 25px;
+margin : auto;
+text-align: center;
+margin-bottom: 20px;
+}
+.footer1itemcontent1 {
+text-align: center;
+font-size: 20px;
+margin-bottom: 10px;
+color: rgb(89, 206, 167);
+}
+.footer1itemcontent2 {
+text-align: center;
+}
+
+
+#footer2 {
+width : 100%;
+height: 200px;
+background-color: rgb(235, 235, 235);    
+
+}
+#footerbox {
+display: flex;
+width : 1200px;
+height: 100%;
+margin : auto;
+line-height: 20px;
+}
+#footerlogo {
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#footerlogo img {
+    width : 100%;
+    height: 100%;
+}
+#footer2content {            
+    height: 150px;
+    margin-top : 20px;
+    line-height: 30px;
+}
