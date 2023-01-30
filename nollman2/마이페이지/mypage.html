@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/mypage.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>    
+        <div id="login"><a href="#">로그인</a>&nbsp | &nbsp<a href="#">회원가입</a> &nbsp&nbsp&nbsp&nbsp</div>
+        <div id="header2">
+          <div id="logo"><a href="#"><img src="img/logo.png"></a></div> 
+          <div id="headernav">
+            <ul class="nav">
+                <li><a href="#">보호소</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">쇼핑몰</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+    <div class="container">
+        <div class="mypagenav">
+            <div class="mypagenavmenu">
+                <div class="mypagenavtitle">마이페이지</div>
+                <div>
+                    <ul>
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mypagenavmenu">
+                <div class="mypagenavtitle">주문내역</div>
+                <div>
+                    <ul>
+                        <li><a href="#">주문/배송 조회</a></li>
+                        <li><a href="#">취소/교환/반품 신청</a></li>
+                        <li><a href="#">관심상품</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mypagenavmenu">
+                <div class="mypagenavtitle">나의 정보</div>
+                <div>
+                    <ul>
+                        <li><a href="#">회원 정보 수정</a></li>
+                        <li><a href="#">회원 탈퇴</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="mypagecontentbox">
+            <div class="mypagecontent">
+                <div class="mypagecontenttitle">주문/배송 조회</div>
+                <div class="myorder1">
+
+
+                    <div id="recentorder">                        
+                        <div id="orderprocess">
+                            <ul>
+                                <li>
+                                    <div class="ordercount"><a href="">0</a></div>
+                                    <div>입금대기</div>
+                                </li>        
+                                <li>></li>                        
+                                <li>
+                                    <div class="ordercount"><a href="">0</a></div>
+                                    <div>결제완료</div>
+                                </li>   
+                                <li>></li>                              
+                                <li>
+                                    <div class="ordercount"><a href="">0</a></div>
+                                    <div>상품준비중</div>
+                                </li>  
+                                <li>></li>                               
+                                <li>
+                                    <div class="ordercount"><a href="">0</a></div>
+                                    <div>배송중</div>
+                                </li>       
+                                <li>></li>                          
+                                <li>
+                                    <div class="ordercount"><a href="">0</a></div>
+                                    <div>수령완료</div>
+                                </li>
+                            </ul>
+
+                            <div class="refundmenu">
+                                <div class="refundcontent">
+                                    <div>주문취소&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div>0</div>
+                                </div>
+                                <div class="refundcontent">
+                                    <div>교환신청&nbsp;&nbsp;&nbsp;</div>
+                                    <div>0</div>
+                                </div>
+                                <div class="refundcontent">
+                                    <div>반품신청&nbsp;&nbsp;&nbsp;</div>
+                                    <div>0</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mypagecontent">
+                <div class="mypagecontenttitle">주문내역</div>
+
+                <div class="myorder2">
+                    <div class="myorder2nav">
+                        <div class="orderdate">주문일자</div>
+                        <div class="myorderitem">주문상품</div>
+                        <div class="orderprice">상품금액(수량)</div>
+                        <div class="deliveryprice">배송비</div>
+                        <div class="confirm">확인/취소</div>
+                    </div>
+
+                    <div class="myorder2content">
+                        <div class="orderdate">2022.01.30</div>
+                        <div class="myorderitem">  
+                            <div class="itemimg"><img src="img/catcoution.jpg"></div>          
+                            <div class="itemname">고양이 쿠션</div>                           
+                        </div>                        
+                        <div class="orderprice">12,800원<br><br>(1개)</div>
+                        <div class="deliveryprice">무료</div>
+                        <div class="confirm"><button>확인/취소</button></div>
+                    </div>
+                    <div class="myorder2content">
+                        <div class="orderdate">2022.01.30</div>
+                        <div class="myorderitem">  
+                            <div class="itemimg"><img src="img/catfood.jpg"></div>          
+                            <div class="itemname">고양이 사료</div>                           
+                        </div>                        
+                        <div class="orderprice">12,800원<br><br>(1개)</div>
+                        <div class="deliveryprice">무료</div>
+                        <div class="confirm"><button>확인/취소</button></div>
+                    </div>
+                    <div class="myorder2content">
+                        <div class="orderdate">2022.01.30</div>
+                        <div class="myorderitem">  
+                            <div class="itemimg"><img src="img/scratcher.jpg"></div>          
+                            <div class="itemname">스크래쳐</div>                           
+                        </div>                        
+                        <div class="orderprice">12,800원<br><br>(1개)</div>
+                        <div class="deliveryprice">무료</div>
+                        <div class="confirm"><button>확인/취소</button></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>  
+
+
+
+
+
+
+
+      <footer>
+        <div id="footer1">
+            <div class="footer1item">
+                <div class="footericon"><img src="img/footericon/footericon1.png"></div>
+                <div class="footer1itemtitle">운영시간 안내</div>
+                <div class="footer1itemcontent1">연중무휴</div>
+                <div class="footer1itemcontent2">평일9:00-18:00(주말,공휴일 휴무)<br>
+                    입양상담(사전예약제)평일 10:00-16:00<br>
+                    주말,공휴일(10:00-15:00)
+                
+                </div>
+            </div>
+            <div class="footer1item">
+                <div class="footericon"><img src="img/footericon/footericon2.png"></div>
+                <div class="footer1itemtitle">문의전화</div>
+                <div class="footer1itemcontent1">031-123-1234</div>
+                <div class="footer1itemcontent2">점심시간,주말은 전화상담을 받지 않습니다.<br>
+                                                점심시간 12:00-13:00
+                </div>
+            </div>
+            <div class="footer1item">
+                <div class="footericon"><img src="img/footericon/footericon3.png"></div>
+                <div class="footer1itemtitle">찾아오시는 길</div>
+                <div class="footer1itemcontent1"></div>
+                <div class="footer1itemcontent2">경기도 수원시 팔달구 인계동<br>
+                                                수원시 동물보호센터
+                </div>
+            </div>
+        </div>
+        <div id="footer2">
+            <div id="footerbox">
+                <div id="footerlogo"><img src="img/suwonlogo.jpg"></div>
+                <div id="footer2content">
+                    <div><br><a href="#">개인정보처리방침&nbsp;</a>  <a href="#">저작권정책&nbsp;</a>  
+                            <a href="#">이메일주소무단수집거부&nbsp;</a>  <a href="#">찾아오시는길</a></div>
+                    <div>수원시 팔달구 인계동 | 대표번호 031-123-1234</div>
+                    <div>COPYRIGHT(C) SUWONCITY ALLRIGHTS RESERVED.</div>
+                </div>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>
