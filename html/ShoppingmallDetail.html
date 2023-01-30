@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/ShoppingDetail.css">
+    <link rel="stylesheet" href="/html/css/reset.css">
+    <link rel="stylesheet" href="/html/css/ShoppingDetail.css">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -25,18 +25,23 @@
                     <div class="delivery_font"><p>배송비</p></div>
                     <div class="delivery_price"><p>무료배송</p></div>
                 </div>
-                <div class="goods_count_box">
-                    <div class="count_font"><p>수량</p></div>
-                    <div class="goods_count_btn">
-                        <input type="button" value="-">
-                        <input type="text" value="1" readonly>
-                        <input type="button" value="+">
-                    </div>                  
-                </div>
-                <div class="detail_total_price">
-                    <div class="total_font"><p>총 상품금액</p></div>
-                    <div class="total_price"><p>12,800원</p></div>
-                </div>
+                <form name="count" method="get">
+                    <div class="goods_count_box">
+                        <div class="count_font">
+                            <p>수량</p>
+                            <input type="hidden" name="sell_price" value="12800">
+                        </div>
+                        <div class="goods_count_btn">
+                            <input type="button" value="-" name="minus">
+                            <input type="text" name="amount" value="1" readonly>
+                            <input type="button" value="+" name="add">
+                        </div>                  
+                    </div>
+                    <div class="detail_total_price">
+                        <div class="total_font"><p>총 상품금액</p></div>
+                        <div class="total_price"><input type="text" name="sum" id="sum" readonly></div>    
+                    </div>
+                </form>
                 <div class="detail_payment">
                     <div class="goods_basket">
                         <button>장바구니</button>
@@ -65,5 +70,6 @@
             </div>
         </div>
     </div>
+    <script src="js/ShoppingDetail.js"></script>
 </body>
 </html>
