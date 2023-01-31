@@ -1,0 +1,240 @@
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Jua', sans-serif;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav li {
+    width: 250px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Jua', sans-serif;
+}
+
+.banner1 {
+    width: 100%;
+    height: 25rem;
+    text-align: center;
+}
+
+.banner1 img {
+    width: 80%;
+    height: 100%;
+}
+
+.container {
+    width: 75rem;
+    margin: auto;
+}
+
+.contenttitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    font-family: 'Jua', sans-serif;
+}
+
+#content1items ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content1items li {
+    width: 23%;
+    height: 17.5rem;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#itemphoto {
+    width: 100%;
+    height: 70%;
+}
+
+#itemphoto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#content2 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.board {
+    width: 48%;
+    height: 18.75rem;
+    margin-right: 50px;
+}
+
+#content3 {
+    display: flex;
+    margin-top: 30px;
+}
+#content4 {
+    display: flex;
+    margin-top: 30px;
+}
+.contenttitle2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-bottom: 2px black solid;
+    line-height: 60px;
+    font-family: 'Jua', sans-serif;
+}
+
+.content2 {
+    display: flex;
+    border-bottom: 1px solid gray;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content2 .content2title {
+    width: 80%;
+}
+
+.content2 .content2time {
+    width: 20%;
+    text-align: right;
+}
+.content3 {
+    display: flex;
+    border-bottom: 1px solid gray;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content3 .content2title {
+    width: 80%;
+}
+
+.content3 .content2time {
+    width: 20%;
+    text-align: right;
+}
+/*Swiper*/
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner2 {
+    margin-top: 5px;
+}
+/*Sidebar*/
+.menu {
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    background-color: #ffebb6;
+    color: #000;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: -webkit-sticky;
+    position: sticky;
+    align-self: flex-start;
+    top: 0; }
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu a, .menu > label {
+    display: block;
+    height: 25px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #ffebb6;
+}
+.menu ul li:hover, .menu > label:hover {
+    background-color: #000;
+    color: #ffebb6;
+    border-radius: 10px;
+}
+.menu div {
+    position: absolute;
+    left: 50px;
+    line-height: 1.5;
+    font-size: 1em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 20px;
+}
+
+#expand-menu {
+    display: none;
+}
+#expand-menu:checked ~ ul {
+    display: block;
+    height: auto;
+}
+
+.menu ::before {
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+}
+.menu label::before{ content: '\e5d2'; }
+.menu li:nth-child(1) a::before{ content: '\f02e'; }
+.menu li:nth-child(2) a::before{ content: '\e8d6'; }
+.menu li:nth-child(3) a::before{ content: '\e88a'; }
+.menu li:nth-child(4) a::before{ content: '\e8cc'; }
+.menu li:nth-child(5) a::before{ content: '\e87d'; }
+.menu li:nth-child(6) a::before{ content: '\e8b8'; }
+
+@media screen and (max-width:1023px) {
+    .menu {
+        width: 60px;
+    }
+}
+@media screen and (max-width:560px) {
+    .menu #expand-menu:not(:checked) ~ ul {
+        display: none;
+    }
+}
