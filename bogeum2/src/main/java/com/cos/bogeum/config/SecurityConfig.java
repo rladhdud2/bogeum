@@ -21,13 +21,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.csrf().disable()	//csrf 토큰 비활성화(테스트시 걸어두는게 좋음)
 			.authorizeRequests()
-			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**","/shelterDetail")
+
+			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**")
+
 			.permitAll()
 			.anyRequest()	//이게 아닌 다른 모든 요청은
 			.authenticated()	//인증이 필요
 		.and()
 			.formLogin()
-			.loginPage("/shelterDetail")
+
+			.loginPage("/")
+
 			.loginProcessingUrl("/auth/loginProc")
 		//스프링 시큐리티가 해당 주소로 요청오는 로그인을 가로채서 대신 로그인한다
 		//가로쳐서 로그인 할 때 그때 만들어야할 클래스가 있다.
