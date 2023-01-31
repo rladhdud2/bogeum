@@ -14,7 +14,7 @@
 	<div id="loginbox">
 		<div id="loginpart1">
 			<div id="loginimgbox">
-				<img src="/img/logo.png">
+				<a href="/"><img src="/img/logo.png"></a>
 			</div>
 		</div>
 		

@@ -103,6 +103,9 @@
       </div>
       
       <div id="products">
+      	<div class="update_box">
+      		<button onclick="location.href='/save_item'">상품 등록</button>
+      	</div>
         <table>
           <thead>
             <tr>
