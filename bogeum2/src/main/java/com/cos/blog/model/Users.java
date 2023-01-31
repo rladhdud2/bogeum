@@ -20,17 +20,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="users3")
+@Table(name="users2")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity	//user 클래스가 자동으로 db에 테이블이 생성된다.
-
+@SequenceGenerator(
+		name = "USER_SEQ_GENERATOR"
+		, sequenceName = "USER_SEQ"
+		, initialValue = 1
+		, allocationSize = 1
+		)
 
 public class Users {
 	@Id	//Primary Key
-	
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "USER_SEQ_GENERATOR")
 	private int id;	//시퀀스
 	
 	@Column(nullable = false, length = 30, unique = true)
@@ -42,5 +47,11 @@ public class Users {
 	@Column(nullable = false, length = 50)
 	private String email;
 	
-//	
+//	@ColumnDefault("'user'")
+	@Enumerated(EnumType.STRING)	//Enum을 쓰는게 좋다
+	private RoleType roles;
+	//예) admin, user, manager (권한) 셋 중 하나만
+	
+	@CreationTimestamp	//시간이 자동으로 입력
+	private Timestamp createDate;
 }
