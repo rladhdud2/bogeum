@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    
 </head>
 <body>
 <%@ include file="layout/header.jsp"%>
