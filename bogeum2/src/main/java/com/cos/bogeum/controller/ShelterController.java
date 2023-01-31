@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ShelterController {
 	
 	@GetMapping("/shelter") 
-	public String adminPage() {
+	public String shelter() {
 		return "shelter/shelter";
 	}
+	@GetMapping("/shelterDetail") 
+	public String shelterDetail() {
+		return "shelter/shelterDetail";
+	}
+	
 
 }
