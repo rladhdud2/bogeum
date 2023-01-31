@@ -111,9 +111,9 @@
         <!-- Swiper -->
         <div class="swiper mySwiper banner2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/img/banner_2.png"></div>
-                <div class="swiper-slide"><img src="/img/banner_3.png"></div>
-                <div class="swiper-slide"><img src="/img/banner_4.png"></div>
+                <div class="swiper-slide"><img src="/img/BoardBanner_2.png"></div>
+                <div class="swiper-slide"><img src="/img/BoardBanner_3.png"></div>
+                <div class="swiper-slide"><img src="/img/BoardBanner_4.png"></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
