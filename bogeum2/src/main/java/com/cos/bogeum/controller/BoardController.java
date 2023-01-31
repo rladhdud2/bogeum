@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 public class BoardController {
     @GetMapping("/auth/board")
     public String Board(){ return "board/main_board";}
-    @GetMapping("/auth/findBoard")
+    @GetMapping("/auth/findboard")
     public String findBoard(){ return "board/find_board";}
+    @GetMapping("/auth/findboarddetail")
+    public String findBoardDetail(){ return "board/find_board_detail";}
 }
+
