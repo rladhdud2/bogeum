@@ -40,7 +40,7 @@ rel="stylesheet">
     		<div id="login"><a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;</div>
 	        </c:when>
 	        <c:otherwise>
-	        <div id="login"><a href="/auth/loginForm">마이페이지</a>&nbsp; | &nbsp;<a href="auth/joinForm">로그아웃</a> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+	        <div id="login"><a href="/user/mypage">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a> &nbsp;&nbsp;&nbsp;&nbsp;</div>
 	        </c:otherwise>
         </c:choose>
         

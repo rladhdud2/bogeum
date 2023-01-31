@@ -19,5 +19,16 @@ public class UserController {
 	public String updateForm() {
 		return "user/updateForm";
 	}
-
+	@GetMapping("/user/mypage")
+	public String mypage() {
+		return "user/mypage";
+	}
+	@GetMapping("/user/infoupdate")
+	public String infoupdate() {
+		return "user/infoupdate";
+	}
+	@GetMapping("/user/out")
+	public String out() {
+		return "user/out";
+	}
 }
