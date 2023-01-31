@@ -3,6 +3,7 @@
 <%@ include file="../layout/header.jsp"%>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/shelterDetail.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--   <div class="header">
     헤더부분
   </div> -->
@@ -96,3 +97,4 @@
   </script>
 
   <%@ include file="../layout/footer.jsp"%>
+  
