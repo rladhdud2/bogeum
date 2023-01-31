@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <%--Css--%>
-<link rel="stylesheet" href=./css/inquiry_board.css>
+<link rel="stylesheet" href=/css/inquiry_board.css>
 
 <body>
 <div class="board_wrap">
