@@ -12,6 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/462a97624e.js" crossorigin="anonymous"></script>
+
     
     
 <script
@@ -23,6 +26,7 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" 
 rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>    
+
 
 
 
@@ -45,7 +49,7 @@ rel="stylesheet">
           <div id="logo"><a href="/"><img src="/img/logo.png"></a></div> 
           <div id="headernav">
             <ul class="nav">
-                <li><a href="#">보호소</a></li>
+                <li><a href="/shelter">보호소</a></li>
                 <li><a href="#">커뮤니티</a></li>
                 <li><a href="#">쇼핑몰</a></li>
             </ul>
