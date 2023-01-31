@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>    
-        <div id="login"><a href="/auth/loginForm">로그인</a>&nbsp | &nbsp<a href="auth/joinForm">회원가입</a> &nbsp&nbsp&nbsp&nbsp</div>
+        <div id="login"><a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;</div>
         <div id="header2">
           <div id="logo"><a href="/"><img src="/img/logo.png"></a></div> 
           <div id="headernav">
