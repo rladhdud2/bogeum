@@ -1,0 +1,5 @@
+package com.cos.bogeum.model;
+
+public class Board {
+
+}
