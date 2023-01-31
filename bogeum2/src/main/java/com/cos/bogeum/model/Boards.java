@@ -1,4 +1,4 @@
-package com.cos.blog.model;
+package com.cos.bogeum.model;
 
 import java.sql.Timestamp;
 import java.util.List;
