@@ -1,26 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    
+<%@ include file="../layout/header.jsp"%>
+<link rel="stylesheet" href="/css/admin.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <style>
-    
-  </style>
-</head>
-<body>
-  <div class="header">헤더부분</div>
+  <!-- <div class="header">배너부분</div> -->
   <div class="admin-container">
     <ul class="manage-menu">
       <li><a href="#members" id="members-tab">회원관리</a></li>
@@ -315,7 +300,7 @@
   
 
   </div>
-  <div class="footer">푸터부분</div>
+  <%@ include file="../layout/footer.jsp"%>
  
   <script>
 
