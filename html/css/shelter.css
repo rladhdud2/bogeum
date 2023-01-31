@@ -176,11 +176,13 @@ h1 {
   cursor: pointer;
   padding: 10px 15px;
   outline: 0;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
   /* background: #e6e6e6; */
   /* color: #7b7b7b; */
   appearance: none;
+  font-family: 'Jua';
+  font-size: 18px;
 }
 .select select::-ms-expand {
   display: none;
@@ -213,12 +215,21 @@ h1 {
   width: 90%;
   margin-left: 12px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #e6e6e6;
   height: 40px;
   background-color: #ffebb6;
   font-size: large;
   font-weight: 600;
   color: #fff;
+  cursor: pointer;
+}
+input[type="date"] {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Jua';
 }
 
 /* !!!페이징!!!*/
