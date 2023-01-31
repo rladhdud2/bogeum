@@ -21,7 +21,7 @@
       <div id="logo"><a href="#"><img src="/img/logo.png"></a></div> 
       <div id="headernav">
         <ul class="nav">
-            <li><a href="#">보호소</a></li>
+            <li><a href="/shelter">보호소</a></li>
             <li><a href="#">커뮤니티</a></li>
             <li><a href="#">쇼핑몰</a></li>
         </ul>
