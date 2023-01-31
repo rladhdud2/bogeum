@@ -30,8 +30,11 @@
 
     <div class="container">
         <div class="main">
-            <div id="content1">              
-                <div class="contenttitle"> &nbsp보호소</div>  
+            <div id="content1">
+                <div class="content_flex" style="display: flex; justify-content: space-between">
+                    <div class="contenttitle"> &nbsp보호소</div>
+                    <div class="contenttitle"><i class="fa-solid fa-plus"></i></div>
+                </div>
                 <div id="content1items">
                     <ul>
                         <li><a href="#">
