@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main_board.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,9 +112,9 @@
         <!-- Swiper -->
         <div class="swiper mySwiper banner2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/img/BoardBanner_2.png"></div>
-                <div class="swiper-slide"><img src="/img/BoardBanner_3.png"></div>
-                <div class="swiper-slide"><img src="/img/BoardBanner_4.png"></div>
+                <div class="swiper-slide banner3"><img src="/img/BoardBanner_2.png"></div>
+                <div class="swiper-slide banner3"><img src="/img/BoardBanner_3.png"></div>
+                <div class="swiper-slide banner3"><img src="/img/BoardBanner_4.png"></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
