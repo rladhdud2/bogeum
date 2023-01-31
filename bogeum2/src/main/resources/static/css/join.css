@@ -1,0 +1,121 @@
+
+#joinbox {
+    border: 1px black solid;    
+    width : 400px;
+    height: 850px;
+    margin: auto;
+    margin-top: 60px;
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    font-size: 18px;
+   
+}
+input {
+    width : 350px;
+    height: 20px;
+    border : none;
+    border-bottom : 1px gray solid ;
+    outline: none;    
+    font-size: 17px;
+}
+#joinbox div {
+    margin-bottom: 9px;
+    margin-left: 15px;
+    line-height: 20px;
+    font-size: 20px;
+}
+#joinbox div .error {
+    height: 10px;
+    font-size: 14px;    
+}
+
+#joinbox button:hover {
+    cursor: pointer;
+}
+
+#joinbox .title {
+    padding-top: 40px;         
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.id input{
+    width : 260px;    
+}
+.id button { 
+    height: 30px;
+    background-color:black;
+    color : white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size : 15px;
+    margin-left: 10px;
+}
+
+#gender_man {
+    margin-left: 80px;
+}
+
+.tel input {
+    width : 230px;
+    
+}
+.tel button {
+    width : 110px;
+    height: 30px;
+    background-color:black;
+    color : white;
+    font-weight: bold;
+    font-size : 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+
+
+.gender input {
+    width : 20px;
+    height: 15px;
+}
+
+.signUpcheck {
+    margin-top: 30px;
+   
+}
+    #signUptitle {
+        font-size: 25px;        
+    }
+    #signUpcontent {
+        margin-top : 8px;
+        margin-left: 5px;
+    }
+.signUpcheck input {
+    width : 20px;
+    height: 15px;
+}
+
+.signUp {    
+    display: flex;
+    justify-content: center;
+    
+}
+
+.signUp button {
+    width : 200px;   
+    height: 45px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-family: 'Jua', sans-serif;
+    border-radius: 10px;
+
+}
+
+.error {    
+    font-size: 15px;
+    color : red;    
+    margin-left: 0px;
+    padding-top: 0px;
+}
+

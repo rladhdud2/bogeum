@@ -1,0 +1,84 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/join.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">    
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" 
+rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+</head>
+<body>
+<div id="joinbox">
+        <div class="title">회원가입</div>
+        <div class="id">아이디<br>
+            <input type="text"  id="id">
+            <button onclick="idcheck()">중복확인</button>
+            <input type="hidden" id="idcheck">
+            <div id="iderror" class="error"></div>
+        </div>         
+        <div class="password">비밀번호<br>
+            <input type="password" id="pwd" placeholder="비밀번호는 8~25자리로 입력하세요">
+            <div id="pwderror" class="error"></div>
+        </div>
+        <div class="passwordcheck" >비밀번호확인<br>
+            <input type="password" id="repwd">
+            <div id="repwderror" class="error"></div>
+        </div>
+        <div class="name">이름<br>
+            <input type="text" id="name">
+            <div id="nameerror" class="error"></div>
+        </div>
+        <div class="birth">생년월일<br>
+            <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth">
+            <div id="birtherror" class="error"></div>
+        </div>
+
+        <div class="gender">성별           
+            <input id="gender_man" type="radio" name="gender">남성  
+            <input id="gender_woman" type="radio" name="gender">여성
+            <div id="gendererror" class="error"></div>            
+        </div>
+
+        <div class="tel">전화번호<br>
+            <input placeholder="숫자만입력해주세요" id="tel"><button>인증번호받기</button>
+            <div id="telerror" class="error"></div>
+        </div>
+        <div>인증번호입력<br>
+            <input id="number">
+            <div id="numbererror" class="error"></div>
+        </div>
+        <div class="address">주소<br>
+            <input id="address">
+            <div id="addresserror" class="error"></div>
+        </div>
+
+        <div class="signUpcheck">
+            <input type="checkbox" name="agree" id="agreeAll" onclick="selectAll(this)" value="selectall"><spen id="signUptitle">약관 전체 동의하기</spen><br>
+            <div id="signUpcontent">
+                <input type="checkbox" name="agree" id="agree1">이용약관 동의(필수)<br>
+                <input type="checkbox" name="agree" id="agree2">개인정보 취급 방침 동의(필수)<br>
+                <input type="checkbox" name="agree" id="agree3">마케팅정보 수신 동의(선택)<br><br>
+            </div>
+        </div>
+
+        <div class="signUp">
+            <button id="signUpButton" >가입하기</button>
+        </div>      
+    </div> 
+<!--      <script src="/js/join.js"></script> -->
+     <script src="/js/join2.js"></script>
+</body>
+</html>
