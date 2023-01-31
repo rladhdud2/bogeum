@@ -3,8 +3,15 @@
     
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" href="/css/admin.css">
+<%--<link rel="stylesheet" href="/css/reset.css">--%>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<style>
+  a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
   <!-- <div class="header">배너부분</div> -->
   <div class="admin-container">
     <ul class="manage-menu">
