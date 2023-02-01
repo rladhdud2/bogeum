@@ -46,7 +46,7 @@
             <div id="joinbox">
                 <div class="title">회원정보수정</div>
                 <div class="id">아이디<br>
-                    <input type="text"  id="id" disabled value="nmj27">                   
+                    <input type="text"  id="id" disabled value="${principal.user.username}">                   
                     
                 </div>         
                 <div class="password">비밀번호<br>
@@ -62,23 +62,17 @@
                     <div id="nameerror" class="error" ></div>
                 </div>
                 <div class="birth">생년월일<br>
-                    <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth" disabled value="19880508">
+                    <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth" disabled value="${principal.user.birth}">
                     <div id="birtherror" class="error"></div>
-                </div>
-        
-                <div class="gender">성별           
-                    <input id="gender_man" type="radio" name="gender" checked disabled>남성  
-                    <input id="gender_woman" type="radio" name="gender" disabled>여성
-                    <div id="gendererror" class="error"></div>            
-                </div>
+                </div>               
         
                 <div class="tel">전화번호<br>
-                    <input placeholder="숫자만입력해주세요" id="tel">
+                    <input placeholder="숫자만입력해주세요" id="tel" value="${principal.user.tel}">
                     <div id="telerror" class="error"></div>
                 </div>                
                 <div class="address">주소<br>
-                    <input id="address">
-                    <div id="addresserror" class="error"></div>
+                    <input id="address" value="${principal.user.address}">
+                    <div id="addresserror" class="error" ></div>
                 </div>       
                
         
@@ -94,5 +88,6 @@
 
 
 <%@ include file="../layout/footer.jsp" %>
+
 </body>
 </html>
