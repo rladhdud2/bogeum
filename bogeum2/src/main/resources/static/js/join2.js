@@ -4,7 +4,7 @@ let index = {
 			this.signUpCheck();
 
 		});
-
+		
 	},
 
 	save: function() {
@@ -16,8 +16,7 @@ let index = {
 			birth : document.getElementById('birth').value,
 			tel : document.getElementById('tel').value,
 			address : document.getElementById('address').value,
-		};
-		console.log(data);
+		};		
 
 		$.ajax({
 			//회원가입 수행 요청
@@ -177,25 +176,7 @@ let index = {
 	},
 
 	
-	update: function() {
-		let data = {
-			id: $("#id").val(),
-			password: $("#password").val(),
-			email: $("#email").val()
-		};
-		$.ajax({
-			type: "PUT",
-			url: "/user",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function(resp) {
-			alert("회원수정이 완료되었습니다.");
-			location.href = "/";
-		}).fail(function(error) {
-			alert(JSON.stringify(error));
-		});
-	},
+	
 }
 
 index.init();
