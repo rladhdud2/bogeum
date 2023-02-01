@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ShelterController {
 	
-	@GetMapping("/shelter") 
-	public String shelter() {
-		return "shelter/shelter";
-	}
+//	@GetMapping("/shelter")
+//	public String shelter() {
+//		return "shelter/shelterPage";
+//	}
 	@GetMapping("/shelterDetail") 
 	public String shelterDetail() {
 		return "shelter/shelterDetail";
