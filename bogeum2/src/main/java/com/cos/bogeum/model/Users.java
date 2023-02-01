@@ -44,7 +44,17 @@ public class Users {
 	@Column(nullable = false, length = 100)	//해쉬로 변경하여 암호화 length 크기
 	private String password;
 	
+	@Column(nullable = false, length = 30)
+	private String username2;	//이름		
 	
+	@Column(nullable = true, length = 30)
+	private String birth;	//생년월일
+	
+	@Column(nullable = true, length = 30)
+	private String tel;	//전화번호		
+	
+	@Column(nullable = true, length = 30)
+	private String address;	//주소	
 	
 //	@ColumnDefault("'user'")
 	@Enumerated(EnumType.STRING)	//Enum을 쓰는게 좋다
