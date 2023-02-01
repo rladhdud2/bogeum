@@ -24,7 +24,7 @@ function signUpCheck() {
     var idcheck = document.getElementById('idcheck');
 
     if(id.value == "") {
-        document.getElementById('iderror').innerHTML = "이름을입력해주세요"
+        document.getElementById('iderror').innerHTML = "아이디를 입력해주세요"
         id.focus();
         return false;
     }else {

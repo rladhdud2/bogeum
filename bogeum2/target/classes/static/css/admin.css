@@ -128,3 +128,19 @@ tbody tr:hover {
   font-family: "Jua";
   font-size: 16px;
 }
+/*상품등록 버튼*/
+.update_box{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.update_box>button{
+	width: 20%;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	font-size: 25px;
+	background-color: #FF8868;
+	color: white;
+}
