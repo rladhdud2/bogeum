@@ -103,7 +103,7 @@
                             </form>
 
                             <div id="outbutton">
-                                <button type="submit" id="btn-out"  >회원탈퇴</button>
+                                <button type="submit" id="btn-out" >회원탈퇴</button>
                             </div>
                            
                         </div>
@@ -119,7 +119,7 @@
         </div>
 
     </div> 
-
+ <script src="/js/out.js"></script>
 
 <%@ include file="../layout/footer.jsp" %>
 </body>

@@ -71,12 +71,12 @@
                         <c:choose>
                             <c:when test="${principal.user.roles  == 'ADMIN' or inquirys.users.id == principal.user.id}">
                                 <div id="reply_btn">
-                                    <button type="submit" id="btn-reply-save" class="bt3">등록하기</button>
+                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div id="reply_btn" style="display: none;">
-                                    <button type="submit" id="btn-reply-save" class="bt3">등록하기</button>
+                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -112,5 +112,5 @@
 </div>
 </div>
 </body>
-<script type="text/javascript" src="/js/boardForm.js"></script>
+<script type="text/javascript" src="/js/finds.js"></script>
 <%@ include file="../layout/footer.jsp" %>
