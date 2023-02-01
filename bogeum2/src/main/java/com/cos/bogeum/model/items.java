@@ -32,13 +32,13 @@ public class items {
 	private int id;	//기본키
 	
 	@Column(nullable=false, length=100)
+	private String category; //카테고리
+	
+	@Column(nullable=false, length=100)
 	private String name; //상품명
 	
 	@Column(nullable=false, length=100)
 	private int price; //상품금액
-	
-	@Column(nullable=false, length=100)
-	private String category; //카테고리
 	
 	@Column(nullable=false, length=100)
 	private int count; //수량
@@ -46,6 +46,10 @@ public class items {
 	@Lob
 	private String content;	//상품설명
 	
-	//상품이미지 & 장바구니 테이블 참조
+	private String filename; //이미지
+	private String fileOriName;
+	private String fileurl;
+	
+	//장바구니 테이블 참조
 	
 }
