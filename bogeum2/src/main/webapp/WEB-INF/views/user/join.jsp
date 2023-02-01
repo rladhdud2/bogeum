@@ -78,7 +78,7 @@ rel="stylesheet">
             <button id="signUpButton" >가입하기</button>
         </div>      
     </div> 
-<!--      <script src="/js/join.js"></script> -->
+ <!--  <script src="/js/join.js"></script>-->
      <script src="/js/join2.js"></script>
 </body>
 </html>
