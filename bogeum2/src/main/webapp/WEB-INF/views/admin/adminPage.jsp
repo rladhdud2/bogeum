@@ -126,61 +126,20 @@
           </thead>
           <tbody>
             <!-- 테이블 데이터 삽입 -->
+            <c:forEach var="items" items="${ItemList.content}">
             <tr>
-              <td style="width: 5%;">1</td>
-              <td style="width: 15%;">카테고리</td>
-              <td style="width: 25%;">상품</td>
-              <td style="width: 20%;">80,000</td>
+              <input type="hidden" id="id" value="${items.id}">
+              <td style="width: 5%;">${items.id}</td>
+              <td style="width: 15%;">${items.category}</td>
+              <td style="width: 25%;">${items.name}</td>
+              <td style="width: 20%;">${items.price}</td>
               <td style="width: 10%;">4.5</td>
               <td style="width: 25%;">
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
+                <button class="admin-button" onclick="location.href='/update_item/${items.id}'">수정</button>
+                <button class="admin-button" onclick="Delete_item()">삭제</button>
               </td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button"> 수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
+            </c:forEach>
           </tbody>
         </table>
         <div class="page_wrap">
@@ -310,6 +269,7 @@
   
 
   </div>
+  <script type="text/javascript" src="/js/Product.js"></script>
   <%@ include file="../layout/footer.jsp"%>
  
   <script>
