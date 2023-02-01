@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		//userdetails 타입의 user오브젝트를 만들어줘야한다.
 		//user 오브젝트 타입을 맞춰줘야 가로챌 수 있다
 			.defaultSuccessUrl("/");
+
 		//로그인 성공 후에 요청되는 페이지
 		// .failureUrl("로그인 실패 후 요청 페이지")
 	}
