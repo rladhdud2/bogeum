@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.authenticated()	//인증이 필요
 		.and()
 			.formLogin()
-			.loginProcessingUrl("/")
+			.loginProcessingUrl("/auth/loginProc")
 			.loginPage("/auth/loginForm")
 		//스프링 시큐리티가 해당 주소로 요청오는 로그인을 가로채서 대신 로그인한다
 		//가로쳐서 로그인 할 때 그때 만들어야할 클래스가 있다.
@@ -49,9 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
+	
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 	    return super.authenticationManagerBean();
 	}
+	
 }

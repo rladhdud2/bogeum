@@ -42,7 +42,8 @@ public class UserApiController {
 	public ResponseDto<Integer> update(@RequestBody Users user) {
 
 		userService.회원수정(user);
-
+		
+		
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
