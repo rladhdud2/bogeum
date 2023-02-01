@@ -4,6 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="/css/reset.css">
 <%--Jstl--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <!-- Css-->
-<link rel="stylesheet" href="css/boardDetail.css">
+<link rel="stylesheet" href="/css/boardDetail.css">
 </head>
 <body>
 <div class="board_wrap">
@@ -70,12 +71,12 @@
                         <c:choose>
                             <c:when test="${principal.user.roles  == 'ADMIN' or inquirys.users.id == principal.user.id}">
                                 <div id="reply_btn">
-                                    <button type="submit" id="btn-reply-save" class="bt3">등록하기</button>
+                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div id="reply_btn" style="display: none;">
-                                    <button type="submit" id="btn-reply-save" class="bt3">등록하기</button>
+                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -111,5 +112,5 @@
 </div>
 </div>
 </body>
-<script type="text/javascript" src="/js/boardForm.js"></script>
+<script type="text/javascript" src="/js/finds.js"></script>
 <%@ include file="../layout/footer.jsp" %>

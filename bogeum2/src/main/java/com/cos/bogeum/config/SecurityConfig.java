@@ -3,6 +3,7 @@ package com.cos.bogeum.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -34,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		//userdetails 타입의 user오브젝트를 만들어줘야한다.
 		//user 오브젝트 타입을 맞춰줘야 가로챌 수 있다
 			.defaultSuccessUrl("/");
+
 		//로그인 성공 후에 요청되는 페이지
 		// .failureUrl("로그인 실패 후 요청 페이지")
 	}
@@ -48,5 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
-	
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+	    return super.authenticationManagerBean();
+	}
 }
