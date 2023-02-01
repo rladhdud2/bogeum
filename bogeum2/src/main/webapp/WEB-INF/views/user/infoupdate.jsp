@@ -77,7 +77,7 @@
                
         
                 <div class="signUp">
-                    <button id="updatebutton" onclick="update()">수정하기</button>
+                    <button id="updatebutton" >수정하기</button>
                 </div>      
             </div> 
 
@@ -88,6 +88,7 @@
 
 
 <%@ include file="../layout/footer.jsp" %>
+<script src="/js/infoupdate.js"></script>
 
 </body>
 </html>
