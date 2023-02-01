@@ -32,8 +32,8 @@
                 <div class="mypagenavtitle">나의 정보</div>
                 <div>
                     <ul>
-                        <li><a href="#">회원 정보 수정</a></li>
-                        <li><a href="#">회원 탈퇴</a></li>
+                        <li><a href="/user/infoupdate">회원 정보 수정</a></li>
+                        <li><a href="/user/out">회원 탈퇴</a></li>
                     </ul>
                 </div>
 
