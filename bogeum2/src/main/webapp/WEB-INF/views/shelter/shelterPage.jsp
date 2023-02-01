@@ -17,15 +17,15 @@
 <%--              <div class="control__indicator"></div>--%>
 <%--        </label>--%>
         <label class="control control--radio">강아지
-          <input type="radio" name="radio" value="417000" checked="checked"/>
+          <input type="radio" name="animal" value="417000" checked="checked"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">고양이
-          <input type="radio" name="radio" value="422400"/>
+          <input type="radio" name="animal" value="422400"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">기타
-          <input type="radio" name="radio" value="429900"/>
+          <input type="radio" name="animal" value="429900"/>
           <div class="control__indicator"></div>
         </label>
 
@@ -33,15 +33,15 @@
       <div class="control-group">
         <h1>조건</h1>
           <label class="control control--radio">전체
-              <input type="radio" name="radio2" checked="checked" value=""/>
+              <input type="radio" name="neuter" checked="checked" value=""/>
               <div class="control__indicator"></div>
           </label>
         <label class="control control--radio">중성화
-          <input type="radio" name="radio2" value="Y"/>
+          <input type="radio" name="neuter" value="Y"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">비 중성화
-          <input type="radio" name="radio2" value="N"/>
+          <input type="radio" name="neuter" value="N"/>
           <div class="control__indicator"></div>
         </label>
 
@@ -49,7 +49,7 @@
       <div class="control-group">
         <h1>지역</h1>
         <div class="select">
-          <select>
+          <select id="city">
             <option value="6110000">서울특별시</option>
             <option value="6260000">부산광역시</option>
             <option value="6270000">대구광역시</option>
@@ -74,7 +74,7 @@
           <div class="select__arrow"></div>
             <br><br>
             <h1>공고날짜(~)</h1>
-            <input type="date" id="notice-date" style="width: 220px" >
+            <input type="date" id="notice-date" style="width: 220px">
         </div>
       </div>
 <%--      <div class="control-group">--%>
@@ -171,13 +171,17 @@
   </div>
 
 <script>
-    var dateInput = document.getElementById("date-input");
+    /**
+     *
+     * 날짜 포맷 스크립트 YYYYMMDD
+     */
+    var dateInput = document.getElementById("notice-date");
     dateInput.addEventListener("change", function() {
     var date = new Date(dateInput.value);
     var year = date.getFullYear();
     var month = (1 + date.getMonth()).toString().padStart(2, '0');
     var day = date.getDate().toString().padStart(2, '0');
-    var formattedDate = year + month + day;
+    var formattedDate = year + month + day;0
     console.log(formattedDate);
     });
 

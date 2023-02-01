@@ -18,18 +18,15 @@
     queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('9'); /*페이지당 보여줄 갯수*/
     queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호*/
     queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('JSON'); /*응답형태*/
-
-
-    queryParams += '&' + encodeURIComponent('upkind') + '=' + encodeURIComponent(''); /*축종코드 개 : 417000, 고양이 : 422400*/
-    queryParams += '&' + encodeURIComponent('neuterYn') + '=' + encodeURIComponent(''); /*(전체 : null(빈값), 예 : Y, 아니오 : N, 미상 : U*/
+    queryParams += '&' + encodeURIComponent('upkind') + '=' + encodeURIComponent($('input[name=animal]').val()); /*축종코드 개 : 417000, 고양이 : 422400*/
+    queryParams += '&' + encodeURIComponent('neuterYn') + '=' + encodeURIComponent($('input[name=neuter]').val()); /*(전체 : null(빈값), 예 : Y, 아니오 : N, 미상 : U*/
     // queryParams += '&' + encodeURIComponent('kind') + '=' + encodeURIComponent(''); /*품종코드*/
     queryParams += '&' + encodeURIComponent('state') + '=' + encodeURIComponent('notice'); /*상태 notice:보호중 */
-    queryParams += '&' + encodeURIComponent('bgnde') + '=' + encodeURIComponent(''); /*유기날짜 검색 시작일 YYYYMMDD */
+    queryParams += '&' + encodeURIComponent('bgnde') + '=' + encodeURIComponent($('#notice-date').val()); /*유기날짜 검색 시작일 YYYYMMDD */
     // queryParams += '&' + encodeURIComponent('endde') + '=' + encodeURIComponent('20230201'); /*유기날짜 검색 종료일*/
-    queryParams += '&' + encodeURIComponent('upr_cd') + '=' + encodeURIComponent(''); /*시도코드*/
+    queryParams += '&' + encodeURIComponent('upr_cd') + '=' + encodeURIComponent($('#city').val()); /*시도코드*/
     // queryParams += '&' + encodeURIComponent('org_cd') + '=' + encodeURIComponent(''); /*보호소번호*/
 
-    neuterYn
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
