@@ -8,27 +8,6 @@
   <link rel="stylesheet" href="css/shelter.css">
 
 
-
-  <!-- <div class="header">
-    헤더부분
-  </div> -->
-  <!-- <div class="banner">
-    배너부분
-  </div> -->
-<!--   <header style="border-bottom: 1px solid #e9e9e9;">    
-    <div id="login"><a href="#">로그인</a>&nbsp | &nbsp<a href="#">회원가입</a> &nbsp&nbsp&nbsp&nbsp</div>
-    <div id="header2">
-      <div id="logo"><a href="#"><img src="img/logo.png" style="object-fit:fill;"></a></div> 
-      <div id="headernav">
-        <ul class="nav">
-            <li><a href="#">보호소</a></li>
-            <li><a href="#">커뮤니티</a></li>
-            <li><a href="#">쇼핑몰</a></li>
-        </ul>
-      </div>
-    </div>
-  </header> -->
-
   <div class="container">
     <div class="filter_wrap">
       <div class="control-group">
