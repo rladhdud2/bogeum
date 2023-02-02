@@ -58,7 +58,7 @@
                     <div id="repwderror" class="error"></div>
                 </div>
                 <div class="name">이름<br>
-                    <input type="text" id="name" value="노민종" disabled>
+                    <input type="text" id="name" value="${principal.user.username2}" disabled>
                     <div id="nameerror" class="error" ></div>
                 </div>
                 <div class="birth">생년월일<br>
@@ -77,7 +77,7 @@
                
         
                 <div class="signUp">
-                    <button id="updatebutton" onclick="update()">수정하기</button>
+                    <button id="updatebutton" >수정하기</button>
                 </div>      
             </div> 
 
@@ -88,6 +88,7 @@
 
 
 <%@ include file="../layout/footer.jsp" %>
+<script src="/js/infoupdate.js"></script>
 
 </body>
 </html>

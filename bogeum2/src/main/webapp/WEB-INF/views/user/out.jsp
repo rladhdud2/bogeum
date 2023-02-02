@@ -12,7 +12,7 @@
                 <div class="mypagenavtitle">마이페이지</div>
                 <div>
                     <ul>
-                        <li><a href="#">마이페이지</a></li>
+                        <li><a href="/user/mypage">마이페이지</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,8 +32,8 @@
                 <div class="mypagenavtitle">나의 정보</div>
                 <div>
                     <ul>
-                        <li><a href="#">회원 정보 수정</a></li>
-                        <li><a href="#">회원 탈퇴</a></li>
+                        <li><a href="/user/infoupdate">회원 정보 수정</a></li>
+                        <li><a href="/user/out">회원 탈퇴</a></li>
                     </ul>
                 </div>
 
@@ -103,7 +103,7 @@
                             </form>
 
                             <div id="outbutton">
-                                <button type="submit" id="btn-out"  >회원탈퇴</button>
+                                <button type="submit" id="btn-out" >회원탈퇴</button>
                             </div>
                            
                         </div>
@@ -119,7 +119,7 @@
         </div>
 
     </div> 
-
+ <script src="/js/out.js"></script>
 
 <%@ include file="../layout/footer.jsp" %>
 </body>

@@ -21,93 +21,72 @@
       <li><a href="#sales" id="sales-tab">매출표</a></li>
     </ul>
     <div class="tab-content">
-      <div id="members">
-        <table>
-          <thead>
-            <tr>
-              <th>번호</th>
-              <th>아이디</th>
-              <th>이름</th>
-              <th>이메일</th>
-              <th>가입날짜</th>
-              <th>관리</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- 테이블 데이터 삽입 -->
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>kim</td>
-              <td>test@email.com</td>
-              <td>2022-01-01</td>
-              <td>
-                <button class="admin-button">탈퇴</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>kim</td>
-              <td>test@email.com</td>
-              <td>2022-01-01</td>
-              <td>
-                <button class="admin-button">탈퇴</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>kim</td>
-              <td>test@email.com</td>
-              <td>2022-01-01</td>
-              <td>
-                <button class="admin-button">탈퇴</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>kim</td>
-              <td>test@email.com</td>
-              <td>2022-01-01</td>
-              <td>
-                <button class="admin-button">탈퇴</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>kim</td>
-              <td>test@email.com</td>
-              <td>2022-01-01</td>
-              <td>               
-                <button class="admin-button">탈퇴</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">
-          <input type="text" placeholder="Search..." id="searchInput" style="width: 150px;">
-          <div class="page_nation">          
-            <a class="arrow pprev" href="#"></a>
-            <a class="arrow prev" href="#"></a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
-            <a href="#">8</a>
-            <a href="#">9</a>
-            <a href="#">10</a>
-            <a class="arrow next" href="#"></a>
-            <a class="arrow nnext" href="#"></a>
+      <c:if test="${category eq 'user'}">
+        <div id="members">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>전화번호</th>
+                <th>가입날짜</th>
+                <th>관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 테이블 데이터 삽입 -->
+
+              <c:forEach var="user" items="${users.content}">
+                <tr class="line">
+                  <th>${user.id}</th>
+                  <th>${user.username}</th>
+                  <th>${user.username2}</th>
+                  <th>${user.email}</th>
+                  <th>${user.tel}</th>
+                  <th><fmt:formatDate value="${user.createDate}" pattern="YYYY-MM-dd"/></th>
+                  <th><button class="btn btn-kick" onClick="index2.deleteById(${user.id})" id="btn-del">회원 삭제</button></th>
+                </tr>
+              </c:forEach>
+
+<%--              <tr>--%>
+<%--                <td>1</td>--%>
+<%--                <td>test</td>--%>
+<%--                <td>kim</td>--%>
+<%--                <td>test@email.com</td>--%>
+<%--                <td>01012345678</td>--%>
+<%--                <td>2022-01-01</td>--%>
+<%--                <td>--%>
+<%--                  <button class="admin-button">탈퇴</button>--%>
+<%--                </td>--%>
+<%--              </tr>--%>
+
+            </tbody>
+          </table>
+          <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">
+            <input type="text" placeholder="Search..." id="searchInput" style="width: 150px;">
+            <div class="page_nation">
+              <a class="arrow pprev" href="#"></a>
+              <a class="arrow prev" href="#"></a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a class="arrow next" href="#"></a>
+              <a class="arrow nnext" href="#"></a>
+            </div>
+            <div style="width: 150px;"></div>
           </div>
-          <div style="width: 150px;"></div>
+
         </div>
-      </div>
+      </c:if>
       
       <div id="products">
       	<div class="update_box">
@@ -126,61 +105,20 @@
           </thead>
           <tbody>
             <!-- 테이블 데이터 삽입 -->
+            <c:forEach var="items" items="${ItemList.content}">
             <tr>
-              <td style="width: 5%;">1</td>
-              <td style="width: 15%;">카테고리</td>
-              <td style="width: 25%;">상품</td>
-              <td style="width: 20%;">80,000</td>
+              <input type="hidden" id="id" value="${items.id}">
+              <td style="width: 5%;">${items.id}</td>
+              <td style="width: 15%;">${items.category}</td>
+              <td style="width: 25%;">${items.name}</td>
+              <td style="width: 20%;">${items.price}</td>
               <td style="width: 10%;">4.5</td>
               <td style="width: 25%;">
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
+                <button class="admin-button" onclick="location.href='/update_item/${items.id}'">수정</button>
+                <button class="admin-button" onclick="Delete_item()">삭제</button>
               </td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button"> 수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>카테고리</td>
-              <td>상품</td>
-              <td>80,000</td>
-              <td>4.5</td>
-              <td>
-                <button class="admin-button">수정</button>
-                <button class="admin-button">삭제</button>
-              </td>
-            </tr>
+            </c:forEach>
           </tbody>
         </table>
         <div class="page_wrap">
@@ -310,6 +248,7 @@
   
 
   </div>
+  <script type="text/javascript" src="/js/Product.js"></script>
   <%@ include file="../layout/footer.jsp"%>
  
   <script>
