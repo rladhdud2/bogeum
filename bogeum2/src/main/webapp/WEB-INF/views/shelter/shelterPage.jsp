@@ -11,37 +11,37 @@
   <div class="container">
     <div class="filter_wrap">
       <div class="control-group">
-        <h1>조건</h1>
+        <h1>조건1</h1>
 <%--        <label class="control control--radio">전체--%>
 <%--              <input type="radio" name="radio" checked="checked" value=""/>--%>
 <%--              <div class="control__indicator"></div>--%>
 <%--        </label>--%>
         <label class="control control--radio">강아지
-          <input type="radio" name="radio" value="417000" checked="checked"/>
+          <input type="radio" name="animal" value="417000" checked="checked"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">고양이
-          <input type="radio" name="radio" value="422400"/>
+          <input type="radio" name="animal" value="422400"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">기타
-          <input type="radio" name="radio" value="429900"/>
+          <input type="radio" name="animal" value="429900"/>
           <div class="control__indicator"></div>
         </label>
 
       </div>
       <div class="control-group">
-        <h1>조건</h1>
+        <h1>조건2</h1>
           <label class="control control--radio">전체
-              <input type="radio" name="radio2" checked="checked" value=""/>
+              <input type="radio" name="neuter" checked="checked" value=""/>
               <div class="control__indicator"></div>
           </label>
         <label class="control control--radio">중성화
-          <input type="radio" name="radio2" value="Y"/>
+          <input type="radio" name="neuter" value="Y"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">비 중성화
-          <input type="radio" name="radio2" value="N"/>
+          <input type="radio" name="neuter" value="N"/>
           <div class="control__indicator"></div>
         </label>
 
@@ -49,7 +49,8 @@
       <div class="control-group">
         <h1>지역</h1>
         <div class="select">
-          <select>
+          <select id="city">
+            <option value="">전체</option>
             <option value="6110000">서울특별시</option>
             <option value="6260000">부산광역시</option>
             <option value="6270000">대구광역시</option>
@@ -81,7 +82,7 @@
 <%--        <h1>공고날짜(~)</h1>--%>
 <%--        <input type="date" id="notice-date"> --%>
 <%--      </div>--%>
-      <button class="adopt-search">찾기</button>
+      <button class="adopt-search" onclick="shelterSearch()">찾기</button>
     </div>
 
       <!-- <div class="adopt-title">
@@ -171,17 +172,18 @@
   </div>
 
 <script>
-    var dateInput = document.getElementById("date-input");
-    dateInput.addEventListener("change", function() {
-    var date = new Date(dateInput.value);
-    var year = date.getFullYear();
-    var month = (1 + date.getMonth()).toString().padStart(2, '0');
-    var day = date.getDate().toString().padStart(2, '0');
-    var formattedDate = year + month + day;
-    console.log(formattedDate);
-    });
+    // var dateInput = document.getElementById("date-input");
+    // dateInput.addEventListener("change", function() {
+    // var date = new Date(dateInput.value);
+    // var year = date.getFullYear();
+    // var month = (1 + date.getMonth()).toString().padStart(2, '0');
+    // var day = date.getDate().toString().padStart(2, '0');
+    // var formattedDate = year + month + day;
+    // console.log(formattedDate);
+    // });
 
 </script>
+<script type="text/javascript" src="/js/shelter.js"></script>
 <%@ include file="../layout/footer.jsp"%> 
 
 </body>
