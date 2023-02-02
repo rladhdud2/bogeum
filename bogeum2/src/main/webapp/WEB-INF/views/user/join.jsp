@@ -44,25 +44,23 @@ rel="stylesheet">
         <div class="birth">생년월일<br>
             <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth">
             <div id="birtherror" class="error"></div>
-        </div>
-
-        <div class="gender">성별           
-            <input id="gender_man" type="radio" name="gender">남성  
-            <input id="gender_woman" type="radio" name="gender">여성
-            <div id="gendererror" class="error"></div>            
+        </div>        
+        <div class="address">주소<br>
+            <input id="address">
+            <div id="addresserror" class="error"></div>
         </div>
 
         <div class="tel">전화번호<br>
-            <input placeholder="숫자만입력해주세요" id="tel"><button>인증번호받기</button>
+            <input placeholder="숫자만 입력해주세요" id="tel">
             <div id="telerror" class="error"></div>
+        </div>        
+        <div class="email">이메일<br>
+            <input id="email"><button>인증번호받기</button>
+            <div id="emailerror" class="error"></div>
         </div>
         <div>인증번호입력<br>
             <input id="number">
             <div id="numbererror" class="error"></div>
-        </div>
-        <div class="address">주소<br>
-            <input id="address">
-            <div id="addresserror" class="error"></div>
         </div>
 
         <div class="signUpcheck">

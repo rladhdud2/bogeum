@@ -64,18 +64,21 @@
                 <div class="birth">생년월일<br>
                     <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth" disabled value="${principal.user.birth}">
                     <div id="birtherror" class="error"></div>
-                </div>               
+                </div>          
+                 <div class="address">주소<br>
+                    <input id="address" value="${principal.user.address}">
+                    <div id="addresserror" class="error" ></div>
+                </div>            
         
                 <div class="tel">전화번호<br>
                     <input placeholder="숫자만입력해주세요" id="tel" value="${principal.user.tel}">
                     <div id="telerror" class="error"></div>
-                </div>                
-                <div class="address">주소<br>
-                    <input id="address" value="${principal.user.address}">
+                </div>            
+                <div class="email">이메일<br>
+                    <input id="email" value="${principal.user.email}">
                     <div id="addresserror" class="error" ></div>
-                </div>       
-               
-        
+                </div>           
+                       
                 <div class="signUp">
                     <button id="updatebutton" >수정하기</button>
                 </div>      

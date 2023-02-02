@@ -43,6 +43,7 @@ public class UserService {
 		persistance.setPassword(encPassword);
 		persistance.setAddress(user.getAddress());
 		persistance.setTel(user.getTel());
+		persistance.setEmail(user.getEmail());
 	}
 
 	// 회원 탈퇴
