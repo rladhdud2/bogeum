@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/shelterDetail.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/shelterDetail.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--   <div class="header">
     헤더부분
@@ -14,31 +14,31 @@
       <div class = "animal-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "img/cat1.jpg" alt = "캣">
-            <img src = "img/cat1.jpg" alt = "캣">
-            <img src = "img/cat1.jpg" alt = "캣">
-            <img src = "img/cat1.jpg" alt = "캣">
+            <img src = "/img/cat1.jpg" alt = "캣">
+            <img src = "/img/cat1.jpg" alt = "캣">
+            <img src = "/img/cat1.jpg" alt = "캣">
+            <img src = "/img/cat1.jpg" alt = "캣">
           </div>
         </div>
         <div class = "img-select">
           <div class = "img-item">
             <a href = "#" data-id = "1">
-              <img src = "img/cat1.jpg" alt = "캣">
+              <img src = "/img/cat1.jpg" alt = "캣">
             </a>
           </div>
           <div class = "img-item">
             <a href = "#" data-id = "2">
-              <img src = "img/cat1.jpg" alt = "캣">
+              <img src = "/img/cat1.jpg" alt = "캣">
             </a>
           </div>
           <div class = "img-item">
             <a href = "#" data-id = "3">
-              <img src = "img/cat1.jpg" alt = "캣">
+              <img src = "/img/cat1.jpg" alt = "캣">
             </a>
           </div>
           <div class = "img-item">
             <a href = "#" data-id = "4">
-              <img src = "img/cat1.jpg" alt = "캣">
+              <img src = "/img/cat1.jpg" alt = "캣">
             </a>
           </div>
         </div>

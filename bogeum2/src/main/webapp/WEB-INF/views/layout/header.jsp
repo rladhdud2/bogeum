@@ -4,7 +4,7 @@
 
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
@@ -72,7 +72,7 @@
 			</div>
 			<div id="headernav">
 				<ul class="nav">
-					<li><a href="/shelter">보호소</a></li>
+					<li><a href="/auth/shelter">보호소</a></li>
 					<li><a href="#">커뮤니티</a></li>
 					<li><a href="#">쇼핑몰</a></li>
 				</ul>
