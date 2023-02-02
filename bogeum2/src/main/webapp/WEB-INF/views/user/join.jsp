@@ -42,16 +42,16 @@ rel="stylesheet">
             <div id="nameerror" class="error"></div>
         </div>
         <div class="birth">생년월일<br>
-            <input type="text" placeholder="생년월일 8자리를입력해주세요" id="birth">
+            <input type="number" placeholder="생년월일 8자리를입력해주세요" id="birth">
             <div id="birtherror" class="error"></div>
         </div>        
         <div class="address">주소<br>
-            <input id="address">
+            <input id="address" type="text">
             <div id="addresserror" class="error"></div>
         </div>
 
         <div class="tel">전화번호<br>
-            <input placeholder="숫자만 입력해주세요" id="tel">
+            <input type="number" placeholder="숫자만 입력해주세요" id="tel">
             <div id="telerror" class="error"></div>
         </div>        
         <div class="email">이메일<br>
@@ -59,7 +59,7 @@ rel="stylesheet">
             <div id="emailerror" class="error"></div>
         </div>
         <div>인증번호입력<br>
-            <input id="number">
+            <input id="number" type="number">
             <div id="numbererror" class="error"></div>
         </div>
 

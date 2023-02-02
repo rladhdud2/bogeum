@@ -18,7 +18,7 @@ let index = {
 			address : document.getElementById('address').value,
 			email : document.getElementById('email').value,
 		};		
-
+		console.log(data);
 		$.ajax({
 			//회원가입 수행 요청
 			type: "POST",

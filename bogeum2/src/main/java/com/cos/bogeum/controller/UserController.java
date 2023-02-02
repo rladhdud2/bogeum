@@ -45,6 +45,7 @@ public class UserController {
 		return "user/findId";
 	}
 	
+	//아이디찾기
 	@GetMapping("/auth/id/search")    
 	public String 아이디찾기(@RequestParam(value="username2")String username2,	
 							@RequestParam(value="tel")String tel,

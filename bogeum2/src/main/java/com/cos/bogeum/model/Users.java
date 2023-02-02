@@ -53,7 +53,7 @@ public class Users {
 	@Column(nullable = true, length = 100)
 	private String address;	//주소	
 	
-	@Column(nullable = true, length = 30)
+	@Column(nullable = true, length = 50)
 	private String tel;	//전화번호			
 	
 	@Column(nullable = true, length = 30)
