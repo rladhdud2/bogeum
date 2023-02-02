@@ -159,6 +159,17 @@
         .confirm {
             width : 100px;
         }
+        .confirm button {
+        width : 70px;
+        height : 30px;
+        background-color : black;
+        color : white;
+        font-size : 15px;
+        border-radius : 10px;
+        }
+        .confirm button:hover {
+        cursor : pointer;
+        }
 
 
 

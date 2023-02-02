@@ -50,11 +50,15 @@ public class Users {
 	@Column(nullable = true, length = 30)
 	private String birth;	//생년월일
 	
-	@Column(nullable = true, length = 30)
-	private String tel;	//전화번호		
+	@Column(nullable = true, length = 100)
+	private String address;	//주소	
 	
 	@Column(nullable = true, length = 30)
-	private String address;	//주소	
+	private String tel;	//전화번호			
+	
+	@Column(nullable = true, length = 30)
+	private String email;	//이메일	
+	
 	
 //	@ColumnDefault("'user'")
 	@Enumerated(EnumType.STRING)	//Enum을 쓰는게 좋다

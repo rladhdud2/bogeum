@@ -13,9 +13,9 @@ let index = {
 			birth: document.getElementById('birth').value,
 			tel: document.getElementById('tel').value,
 			address: document.getElementById('address').value,
-
+			email : document.getElementById('email').value,
 		};
-		console.log(data);
+		
 		$.ajax({
 			type: "PUT",
 			url: "/user",

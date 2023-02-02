@@ -26,6 +26,7 @@ public class UserApiController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
+	//회원가입
 	@PostMapping("/auth/joinproc") // 회원가입 로직이 실행되는 부분
 	public ResponseDto<Integer> save(@RequestBody Users user) {
 		System.out.println("UserApiController 호출됨");
@@ -37,12 +38,12 @@ public class UserApiController {
 		// result가 1이면 성공, -1이면 실패
 		// 자바 오브젝트를 리턴 받아옴.
 	}
-
+	
+	//회원정보수정
 	@PutMapping("/user")
 	public ResponseDto<Integer> update(@RequestBody Users user) {
 
-		userService.회원수정(user);
-		
+		userService.회원수정(user);		
 		
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
