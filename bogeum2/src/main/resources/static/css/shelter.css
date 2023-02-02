@@ -29,11 +29,12 @@ li {
   
 }
 /* !!!사진영역!!! */
-.pic-section {     
+.pic-section {
   display: flex;
   flex-wrap: wrap;
   padding-left: 50px;
   border-radius: 10px;
+  border:1px solid #f8f8f8;
 }
 
 .pic-section li {
@@ -63,6 +64,11 @@ li {
   width:270px;
   height:270px;
   object-fit:cover;
+  border-radius: 10px;
+
+}
+.picpic {
+  margin: 5px;
 }
 
 .container {

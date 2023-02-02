@@ -21,7 +21,7 @@
       <li><a href="#sales" id="sales-tab">매출표</a></li>
     </ul>
     <div class="tab-content">
-      <c:if test="${category eq 'user'}">
+
         <div id="members">
           <table>
             <thead>
@@ -38,32 +38,21 @@
             <tbody>
               <!-- 테이블 데이터 삽입 -->
 
-              <c:forEach var="user" items="${users.content}">
+              <c:forEach var="user" items="${user.content}">
                 <tr class="line">
                   <th>${user.id}</th>
                   <th>${user.username}</th>
                   <th>${user.username2}</th>
-                  <th>${user.email}</th>
+                  <th>${user.address}</th>
                   <th>${user.tel}</th>
                   <th><fmt:formatDate value="${user.createDate}" pattern="YYYY-MM-dd"/></th>
-                  <th><button class="btn btn-kick" onClick="index2.deleteById(${user.id})" id="btn-del">회원 삭제</button></th>
+                  <th><button class="admin-button" onclick="deleteById(${user.id})">회원 삭제</button></th>
                 </tr>
               </c:forEach>
-
-<%--              <tr>--%>
-<%--                <td>1</td>--%>
-<%--                <td>test</td>--%>
-<%--                <td>kim</td>--%>
-<%--                <td>test@email.com</td>--%>
-<%--                <td>01012345678</td>--%>
-<%--                <td>2022-01-01</td>--%>
-<%--                <td>--%>
-<%--                  <button class="admin-button">탈퇴</button>--%>
-<%--                </td>--%>
-<%--              </tr>--%>
-
             </tbody>
           </table>
+
+
           <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">
             <input type="text" placeholder="Search..." id="searchInput" style="width: 150px;">
             <div class="page_nation">
@@ -86,7 +75,7 @@
           </div>
 
         </div>
-      </c:if>
+
       
       <div id="products">
       	<div class="update_box">
@@ -249,9 +238,35 @@
 
   </div>
   <script type="text/javascript" src="/js/Product.js"></script>
+<script type="text/javascript" src="/js/admin.js"></script>
   <%@ include file="../layout/footer.jsp"%>
  
   <script>
+
+    // const pageLinks = document.querySelectorAll(".page_nation a");
+    // const pages = [];
+    // for (let i = 0; i < pageLinks.length; i++) {
+    //   const pageLink = pageLinks[i];
+    //   if (pageLink.textContent) {
+    //     pages.push(pageLink);
+    //   }
+    // }
+    //
+    // let currentPage = 0;
+    // const displayPage = pageIndex => {
+    //   pages[currentPage].classList.remove("active");
+    //   currentPage = pageIndex;
+    //   pages[currentPage].classList.add("active");
+    //   // 여기에 페이지에 맞는 데이터 로딩 코드를 추가합니다.
+    // };
+    //
+    // for (let i = 0; i < pages.length; i++) {
+    //   pages[i].addEventListener("click", () => {
+    //     displayPage(i);
+    //   });
+    // }
+
+    displayPage(0);
 
     $(document).ready(function() {
       $('.manage-menu a').click(function(e) {
