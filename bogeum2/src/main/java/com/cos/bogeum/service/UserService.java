@@ -5,6 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;
 import com.cos.bogeum.repository.CheckUserRepository;
@@ -57,6 +58,15 @@ public class UserService {
 	public Users 중복체크(String username) {
 		Users check = checkUserRepository.findByUsername(username);
 		return check;
+	}
+	
+	//아이디찾기
+	public Users 아이디찾기(String username2,String tel) {
+		
+		return userRepository.findByUsername2AndTel(username2,tel).orElseThrow(() -> {
+			return new IllegalArgumentException("아이디 찾기 실패");		
+		
+		});
 	}
 
 }
