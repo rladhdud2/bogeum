@@ -4,10 +4,10 @@
     
 <body>
 <%@ include file="../layout/header.jsp"%>
-<%@ include file="../layout/sidenav.jsp"%>
+
 
 <div class="container">        
-
+<%@ include file="../layout/sidenav.jsp"%>
         <div class="mypagecontentbox">
             <div id="joinbox">
                 <div class="title">회원정보수정</div>

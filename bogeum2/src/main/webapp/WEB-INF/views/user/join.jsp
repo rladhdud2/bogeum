@@ -51,7 +51,7 @@ rel="stylesheet">
         </div>
 
         <div class="tel">전화번호<br>
-            <input type="number" placeholder="숫자만 입력해주세요" id="tel">
+            <input type="text" placeholder="숫자만 입력해주세요" id="tel">
             <div id="telerror" class="error"></div>
         </div>        
         <div class="email">이메일<br>
@@ -59,7 +59,7 @@ rel="stylesheet">
             <div id="emailerror" class="error"></div>
         </div>
         <div>인증번호입력<br>
-            <input id="number" type="number">
+            <input id="number" type="text">
             <div id="numbererror" class="error"></div>
         </div>
 
