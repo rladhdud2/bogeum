@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;
+import com.cos.bogeum.repository.CheckUserRepository;
 import com.cos.bogeum.repository.UserRepository;
 
 @Service
@@ -16,16 +17,21 @@ public class UserService {
 
 	@Autowired
 	private BCryptPasswordEncoder encodeer;
+	
+	@Autowired
+	private CheckUserRepository checkUserRepository;
 
+	// 회원가입
 	@Transactional
 	public void 회원가입(Users user) {
 		String rawPassword = user.getPassword();
 		String encPassword = encodeer.encode(rawPassword);
 		user.setPassword(encPassword);
 		user.setRoles(RoleType.USER);
-		userRepository.save(user); // 하나의 트랜젝션
+		userRepository.save(user);
 	}
 
+	// 회원정보수정
 	@Transactional
 	public void 회원수정(Users user) {
 		System.out.println(user.getAddress());
@@ -37,13 +43,19 @@ public class UserService {
 		persistance.setPassword(encPassword);
 		persistance.setAddress(user.getAddress());
 		persistance.setTel(user.getTel());
-
 	}
 
 	// 회원 탈퇴
 	@Transactional
 	public void 회원탈퇴(int id) {
 		userRepository.deleteById(id);
+	}
+
+	// 아이디 중복체크
+	@Transactional
+	public Users 중복체크(String username) {
+		Users check = checkUserRepository.findByUsername(username);
+		return check;
 	}
 
 }

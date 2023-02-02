@@ -42,7 +42,8 @@ public class UserApiController {
 	public ResponseDto<Integer> update(@RequestBody Users user) {
 
 		userService.회원수정(user);
-
+		
+		
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
@@ -59,5 +60,15 @@ public class UserApiController {
 		userService.회원탈퇴(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
+	//아이디 중복 체크
+    @PostMapping("/auth/user/check")
+    public ResponseDto<Integer> findByUsername(@RequestBody String username ) {
+    	int i = 0;
+    	if(userService.중복체크(username)!=null) {
+    		i=userService.중복체크(username).getId();
+    	}
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),i);
+    }
 
 }

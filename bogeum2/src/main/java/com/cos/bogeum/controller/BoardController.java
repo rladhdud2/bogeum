@@ -26,32 +26,34 @@ public class BoardController {
         model.addAttribute("finds", findsService.글목록(pageable));
         return "index";
     }
+    @GetMapping({"/auth/board"})
+    public String mainBoard(){return "board/main_board";}
     /* FAQs 게시판 */
 
-    @GetMapping({ "/auth/inquiry" })
-    public String inquiry_index(Model model,
+    @GetMapping({ "/auth/findboard" })
+    public String finds_index(Model model,
                                 @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("inquirys", findsService.글목록(pageable));
-        return "board/inquiry_board";
+        return "board/find_board";
     }
 
-    @GetMapping("/inquiry/{id}/inquiry_board_updateForm")
+    @GetMapping("/find/{id}/find_board_updateForm")
     public String updateForm(@PathVariable int id, Model model) {
-        model.addAttribute("inquirys", findsService.글상세보기(id));
-        return "board/inquiry_board_updateForm";
+        model.addAttribute("finds", findsService.글상세보기(id));
+        return "board/find_board_updateForm";
     }
 
-    @GetMapping("/inquiry/{id}")
+    @GetMapping("/find/{id}")
     public String findById(@PathVariable int id, Model model) {
-        model.addAttribute("inquirys", findsService.글상세보기(id));
+        model.addAttribute("findss", findsService.글상세보기(id));
         findsService.updateCount(id);
         model.addAttribute("reply", findsService.댓글(id));
-        return "board/inquiry_board_detail";
+        return "board/find_board_detail";
     }
 
-    @GetMapping({ "/inquiry_board_saveForm" })
+    @GetMapping({ "/find_board_saveForm" })
     public String saveForm() {
-        return "board/inquiry_board_saveForm";
+        return "board/find_board_saveForm";
     }
 
     @GetMapping("/auth/inquiry/search")

@@ -247,9 +247,32 @@ function selectAll(selectAll) {
 	})
 }
 function idcheck() {
-	var id2 = document.getElementById('id').value;
-	document.getElementById('idcheck').value = id2;
-	alert('사용 할 수 있는 아이디입니다');
+	var username = document.getElementById('id').value;
+	document.getElementById('idcheck').value = username;
+	console.log(username);
+	
+	$.ajax({
+			type:"POST",
+			url:"/auth/user/check", //auth
+			data:username,
+			contentType:"application/json; charset=utf-8",
+			dataType:"json"
+		}).done(function(resp){
+
+			if(resp.data !== 0) {
+				alert("중복된 아이디 입니다.");
+				location.href="redirect:/";
+			} else {
+				alert("이 아이디는 사용할 수 있습니다.");
+				location.href="redirect:/";
+			}
+
+		}).fail(function(error){
+			alert("아이디를 입력해주세요");
+		});
+	
+	
+	
 	if (id !== "") {
 		document.getElementById('iderror').innerHTML = ""
 	}

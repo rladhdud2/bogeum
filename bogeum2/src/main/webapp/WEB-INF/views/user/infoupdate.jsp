@@ -58,7 +58,7 @@
                     <div id="repwderror" class="error"></div>
                 </div>
                 <div class="name">이름<br>
-                    <input type="text" id="name" value="노민종" disabled>
+                    <input type="text" id="name" value="${principal.user.username2}" disabled>
                     <div id="nameerror" class="error" ></div>
                 </div>
                 <div class="birth">생년월일<br>
