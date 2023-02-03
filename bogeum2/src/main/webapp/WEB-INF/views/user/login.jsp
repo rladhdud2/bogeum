@@ -30,7 +30,7 @@
 						<a href="/auth/joinForm">회원가입</a>
 					</div>
 					<div>
-						<a href="/auth/findId">아이디</a>/<a href="#">비밀번호찾기</a>
+						<a href="/auth/findId">아이디찾기</a>&nbsp;/&nbsp;<a href="/auth/findpwd">비밀번호찾기</a>
 					</div>
 				</div>
 				<div id="loginbutton1">

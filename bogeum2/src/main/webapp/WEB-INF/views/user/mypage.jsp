@@ -3,12 +3,11 @@
 
 <body>
 <%@ include file="../layout/header.jsp"%>
-<%@ include file="../layout/sidenav.jsp"%>
+
 
 
 <div class="container">     
-
-
+<%@ include file="../layout/sidenav.jsp"%>
         <div class="mypagecontentbox">
             <div class="mypagecontent">
                 <div class="mypagecontenttitle">주문/배송 조회</div>

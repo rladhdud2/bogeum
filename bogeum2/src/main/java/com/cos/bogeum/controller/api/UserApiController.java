@@ -1,5 +1,9 @@
 package com.cos.bogeum.controller.api;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,23 +11,24 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.bogeum.dto.ResponseDto;
+import com.cos.bogeum.dto.SendTmpPwdDto;
 import com.cos.bogeum.model.Users;
+import com.cos.bogeum.repository.UserRepository;
 import com.cos.bogeum.service.UserService;
 
 @RestController
 public class UserApiController {
-
+	
+	@Autowired
+	private UserRepository userRepository;
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -75,6 +80,27 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),i);
     }    
     
+    //비밀번호 재발급
+    @PostMapping("/auth/find")
+	public ResponseDto<?> find(@RequestBody SendTmpPwdDto dto) {
+				
+		if(!userRepository.existsByUsername(dto.getUsername()) || !Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
+			Map<String, String> validResult = new HashMap<>();
+			
+			if(!userRepository.existsByUsername(dto.getUsername())) {
+				validResult.put("valid_username", "존재하지 않는 사용자 이름입니다.");
+			}
+			if(!Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
+				validResult.put("valid_email", "올바르지 않은 이메일 형식입니다.");
+			}
+			
+			return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), validResult); 
+		}
+		
+		userService.sendTmpPwd(dto);
+		
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
+	}
     
     
     

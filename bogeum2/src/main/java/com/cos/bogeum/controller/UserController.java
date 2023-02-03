@@ -45,6 +45,11 @@ public class UserController {
 		return "user/findId";
 	}
 	
+	@GetMapping("/auth/findpwd")
+	public String fidpwd() {
+		return "user/findpwd";
+	}
+	
 	//아이디찾기
 	@GetMapping("/auth/id/search")    
 	public String 아이디찾기(@RequestParam(value="username2")String username2,	
@@ -53,5 +58,6 @@ public class UserController {
 		model.addAttribute("board", userService.아이디찾기(username2,tel));
 		return "user/findId";
 	}	
+	
 	
 }

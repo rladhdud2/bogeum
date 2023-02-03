@@ -9,13 +9,12 @@
     margin-left : 350px;
     margin-top: 60px;    
     display: flex;
+    
    
 }
     .mypagenav {        
         width: 200px;
-        height: 800px;   
-        margin-left : 350px;
-        margin-top : 60px;      
+        height: 800px;    
         position : fixed;    
     }
     .mypagenavmenu {
