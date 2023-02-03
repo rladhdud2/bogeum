@@ -4,6 +4,7 @@ import com.cos.bogeum.config.auth.PrincipalDetail;
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;
 import com.cos.bogeum.repository.UserRepository;
+import com.cos.bogeum.service.FindsService;
 import com.cos.bogeum.service.ShopService;
 import com.cos.bogeum.specification.AdminSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +28,9 @@ public class AdminController {
 	private UserRepository userRepository;
 	@Autowired
 	private ShopService shopService;
+
+	@Autowired
+	private FindsService findsService;
 	
 	@GetMapping("/admin") 
 	public String adminPage(Model model,
@@ -59,6 +65,13 @@ public class AdminController {
 
 //		model.addAttribute("users", userRepository.findAll(pageable));
 		return "admin/adminPage";
+	}
+
+	@GetMapping("/api/board/{userId}")
+	public ResponseEntity<?> findByUser(@PathVariable("userId") int id) {
+		List<BoardModalDto> boardModalDtoList = findsService.findByUser(id);
+
+		return new ResponseEntity<>(boardModalDtoList, HttpStatus.OK);
 	}
 	
 	/*상품등록 폼 이동*/

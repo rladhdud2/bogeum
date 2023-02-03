@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class FindsService {
@@ -94,4 +95,9 @@ public class FindsService {
                 .users(finds.getUsers()).createDate(finds.getCreateDate()).count(finds.getCount()).build();
     }
 
+//    @Transactional(readOnly = true)
+//    public List<BoardModalDto> findByUser(int userId) {
+//        List<Finds> boards = findsRepository.findByUserId(userId);
+//        List<BoardModalDto> boardModalDtoList = new ArrayList<>();
+//    }
 }
