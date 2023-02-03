@@ -23,6 +23,41 @@
     <div class="tab-content">
 
         <div id="members">
+          <!-- 정렬 및 검색 탭 -->
+<%--          <form action="/admin" method="GET" class="form-inline bd-highlight justify-content-between">--%>
+<%--            <div class="search">--%>
+<%--              <select id="select" class="form-control searchTerm" style="width: 50%;border-right: 3px solid #333" onchange="selectSearchType()">--%>
+<%--                <option value="username">아이디</option>--%>
+<%--                <option value="username">이름</option>--%>
+<%--              </select>&nbsp;--%>
+<%--              <input type="hidden" name="category" id="category" value="${param.category}">--%>
+<%--              <input type="hidden" name="searchType" id="searchType" value="username">--%>
+
+<%--              <input type="text" class="searchTerm" placeholder="Search" name="searchKeyword">--%>
+<%--              <button type="submit" class="searchButton">--%>
+<%--                <i class="fa fa-search"></i>--%>
+<%--              </button>--%>
+<%--            </div>--%>
+<%--          </form><br>--%>
+          <form action="/admin" method="GET" class="">
+            <div class="search-input">
+              <select id="select" class="" onchange="selectSearchType()">
+                <option value="username">아이디</option>
+                <option value="username2">이름</option>
+              </select>
+              <input type="hidden" name="category" id="category" value="${param.category}">
+              <input type="hidden" name="searchType" id="searchType" value="username">
+
+              <input type="text" class="searchTerm" placeholder="search..." name="searchKeyword">
+              <button type="submit" class="search-btn" >검색
+
+              </button>
+            </div>
+          </form>
+
+
+
+<%--          <input type="text" placeholder="Search..." id="searchInput" style="width: 150px;">--%>
           <table>
             <thead>
               <tr>
@@ -38,7 +73,7 @@
             <tbody>
               <!-- 테이블 데이터 삽입 -->
 
-              <c:forEach var="user" items="${user.content}">
+              <c:forEach var="user" items="${users.content}">
                 <tr class="line">
                   <th>${user.id}</th>
                   <th>${user.username}</th>
@@ -54,7 +89,7 @@
 
 
           <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">
-            <input type="text" placeholder="Search..." id="searchInput" style="width: 150px;">
+            <div style="width: 150px;"></div>
             <div class="page_nation">
               <a class="arrow pprev" href="#"></a>
               <a class="arrow prev" href="#"></a>
@@ -266,7 +301,7 @@
     //   });
     // }
 
-    displayPage(0);
+    // displayPage(0);
 
     $(document).ready(function() {
       $('.manage-menu a').click(function(e) {

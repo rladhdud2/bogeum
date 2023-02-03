@@ -1,13 +1,13 @@
 package com.cos.bogeum.repository;
 
+import com.cos.bogeum.model.Users;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.cos.bogeum.model.Users;
-
 //JSP의 DAO , 자동으로 bean 등록이 된다. @Repository 생략가능
-public interface UserRepository extends JpaRepository<Users,Integer>{
+public interface UserRepository extends JpaRepository<Users,Integer>, JpaSpecificationExecutor<Users> /* Specification 사용 */ {
 	//로그인을 위한 함수
 	//JPA Naming 전략
 	//select * from users where username=? AND password=?;

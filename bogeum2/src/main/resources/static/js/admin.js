@@ -14,3 +14,12 @@ function deleteById(id) {
         alert(JSON.stringify(error));
     });
 }
+
+/**
+ * 검색타입선택
+ */
+function selectSearchType() {
+    var select = document.getElementById("select");
+    var searchTypeInput = document.getElementById("searchType");
+    searchTypeInput.value = select.value;
+}
