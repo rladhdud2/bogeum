@@ -9,8 +9,12 @@
     <div class="filter_wrap">
       <div class="control-group">
         <h1>조건1</h1>
+          <label class="control control--radio">전체
+              <input type="radio" name="animal" value="" checked="checked"/>
+              <div class="control__indicator"></div>
+          </label>
         <label class="control control--radio">강아지
-          <input type="radio" name="animal" value="417000" checked="checked"/>
+          <input type="radio" name="animal" value="417000"/>
           <div class="control__indicator"></div>
         </label>
         <label class="control control--radio">고양이
@@ -36,6 +40,10 @@
           <input type="radio" name="neuter" value="N"/>
           <div class="control__indicator"></div>
         </label>
+          <label class="control control--radio">미상
+              <input type="radio" name="neuter" value="U"/>
+              <div class="control__indicator"></div>
+          </label>
 
       </div>
       <div class="control-group">
@@ -71,7 +79,7 @@
       </div>
       <button class="adopt-search" onclick="shelterSearch()">찾기</button>
     </div>
-
+      <div id="search-rst" style="padding-left: 350px"></div>
       <div id="pic-wrap" style="display: flex; flex-wrap: wrap; padding-left: 50px; border-radius:10px;"></div>
 <%--    <div class="pic-wrap">--%>
 <%--      <ul class="pic-section">--%>
@@ -102,16 +110,8 @@
           <a class="arrow nnext" href="#"></a>
        </div>
       </div>
-
     </div>
   </div>
-
-<script>
-
-
-
-
-</script>
 <script type="text/javascript" src="/js/shelter.js"></script>
 <%@ include file="../layout/footer.jsp"%> 
 

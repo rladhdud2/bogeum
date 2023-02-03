@@ -11,7 +11,6 @@ function shelterSearch() {
         alert("날짜를 입력해주세요")
         return false;
     }
-
     /**
      * 유기동물조회API {XMLHttpRequest}
      */
@@ -23,7 +22,7 @@ function shelterSearch() {
     queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호*/
     queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('JSON'); /*응답형태*/
     queryParams += '&' + encodeURIComponent('upkind') + '=' + encodeURIComponent($('input:radio[name=animal]:checked').val()); /*축종코드 개 : 417000, 고양이 : 422400*/
-    queryParams += '&' + encodeURIComponent('neuterYn') + '=' + encodeURIComponent($('input:radio[name=neuter]:checked').val()); /*(전체 : null(빈값), 예 : Y, 아니오 : N, 미상 : U*/
+    queryParams += '&' + encodeURIComponent('neuter_yn') + '=' + encodeURIComponent($('input:radio[name=neuter]:checked').val()); /*(전체 : null(빈값), 예 : Y, 아니오 : N, 미상 : U*/
 // queryParams += '&' + encodeURIComponent('kind') + '=' + encodeURIComponent(''); /*품종코드*/
     queryParams += '&' + encodeURIComponent('state') + '=' + encodeURIComponent('notice'); /*상태 notice:보호중 */
     queryParams += '&' + encodeURIComponent('bgnde') + '=' + encodeURIComponent(yyyymmdd); /*유기날짜 검색 시작일 YYYYMMDD */
@@ -34,18 +33,23 @@ function shelterSearch() {
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
         // if (this.readyState == 4) {
-        //     alert($('input:radio[name=animal]:checked').val())
+        //     alert($('input:radio[name=neuter]:checked').val())
         //     document.write('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
         // }
         if (this.readyState == 4 && this.status == 200) {
             // alert(yyyymmdd);
+            // alert($('input:radio[name=neuter]:checked').val())
+
             var data = JSON.parse(this.responseText);
             var html = '';
+            count = '<div>전체: ' + data.response.body.totalCount + ' 개</div>'
+            document.getElementById('search-rst').innerHTML = count;
             for (var i in data.response.body.items.item) {
                 var item = data.response.body.items.item[i];
 
-                html += `<div class="picpic"><a href="/auth/shelterDetail"><img class="shelter-pic" src="${item.popfile}"></a>`;
-                html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
+                html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}"><img class="shelter-pic" src="${item.popfile}"></a>`;
+                html += '<p>' + item.kindCd +'&nbsp'+ '<span style="color: #b8dff8">(' + item.noticeSdt + ')</span></p>';
+                // html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
                 html += '<p>지역: ' + item.orgNm + '</p></div>';
             }
             document.getElementById('pic-wrap').innerHTML = html;
@@ -53,3 +57,42 @@ function shelterSearch() {
     };
     xhr.send('');
 }
+
+
+/**
+ * 유기동물조회API {XMLHttpRequest} 전체출력
+ */
+var xhr = new XMLHttpRequest();
+var url = 'http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'PDUYcZF9dcMRdEkUd1Pw9rGid%2BJo0ZfjB3LCXuea%2BFybDCjXK%2FsY5e8uyVqZGqCdwUijgAfBM31dtYDTZmWpOQ%3D%3D'; /*Service Key*/
+
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('9'); /*페이지당 보여줄 갯수*/
+queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호*/
+queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('JSON'); /*응답형태*/
+queryParams += '&' + encodeURIComponent('state') + '=' + encodeURIComponent('notice'); /*상태 notice:보호중 */
+
+xhr.open('GET', url + queryParams);
+
+xhr.onreadystatechange = function () {
+
+    if (this.readyState == 4 && this.status == 200) {
+        // alert("테스트");
+        var data = JSON.parse(this.responseText);
+        var html = '';
+        // var item = data.response.body.items.item
+        count = '<div>전체: ' + data.response.body.totalCount + ' 개</div>'
+        document.getElementById('search-rst').innerHTML = count;
+        for (var i in data.response.body.items.item) {
+            var item = data.response.body.items.item[i];
+
+            html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}"><img class="shelter-pic" src="${item.popfile}"></a>`;
+            html += '<p>' + item.kindCd +'&nbsp'+ '<span style="color: #b8dff8">(' + item.noticeSdt + ')</span></p>';
+            // html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
+            html += '<p>지역: ' + item.orgNm + '</p></div>';
+        }
+
+        document.getElementById('pic-wrap').innerHTML = html;
+    }
+};
+xhr.send('');
+

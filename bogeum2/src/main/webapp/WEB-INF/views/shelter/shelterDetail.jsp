@@ -53,15 +53,28 @@
           <h2> 상세정보 </h2>
           <p style="font-size: 18px;">고양이 고양이 고양이 </p>
           <ul style="font-size: 16 px;">
+<%--            reqNo:요청번호--%>
+<%--            kindCd:품종--%>
+<%--            sexCd:성별--%>
+<%--            neuterYn:중성화여부--%>
+<%--            age:나이--%>
+<%--            weight:체중--%>
+<%--            processState:상태--%>
+<%--            careNm:보호소이름--%>
+<%--            careAddr:보호소장소--%>
+<%--            careTel:보호소전화번호--%>
+<%--            noticeSdt:공고시작일--%>
+<%--            noticeEdt:공고종료일--%>
+
             <li>번호 : <span>444450202101068</span></li>
             <li>품종 : <span>[고양이] 한국 고양이</span></li>
             <li>성 : <span>수컷</span></li>
             <li>나이 : <span>2019(년생)</span></li>
             <li>무게 : <span>5(kg)</span></li>
-            <li>상태 : <span>보호중</span></li>
+
             <li>보호소 이름: <span>한국동물구조관리협회</span></li>
             <li>보호소 주소: <span>경기도 양주시 남면 감악산로 63-37 (남면)</span></li>
-            <li>보호 지역: <span>경기도 양주시</span></li>
+
             <li>공고시작 : <span>20220104</span></li>
             <li>공고만료 : <span>20220114</span></li>
           </ul>
@@ -78,6 +91,9 @@
 
 
   <script>
+    /**
+     *슬라이드
+     */
     const imgs = document.querySelectorAll('.img-select a');
     const imgBtns = [...imgs];
     let imgId = 1;
