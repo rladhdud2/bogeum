@@ -128,6 +128,6 @@ public class UserService {
 		
         user.setPassword(encodeer.encode(tmpPwd));
         System.out.println(tmpPwd);
-	}
-
+	}	
+	
 }

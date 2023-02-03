@@ -15,7 +15,7 @@ let index = {
 			username2: document.getElementById('name').value,
 			birth : document.getElementById('birth').value,
 			tel : document.getElementById('tel').value,
-			address : document.getElementById('address').value,
+			address : document.getElementById('address').value.concat(" "+ document.getElementById('addressdetail').value),
 			email : document.getElementById('email').value,
 		};		
 		console.log(data);

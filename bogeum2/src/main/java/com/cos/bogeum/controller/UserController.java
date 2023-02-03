@@ -1,15 +1,28 @@
 package com.cos.bogeum.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cos.bogeum.dto.ResponseDto;
+import com.cos.bogeum.dto.SendTmpPwdDto;
+import com.cos.bogeum.repository.UserRepository;
 import com.cos.bogeum.service.UserService;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Autowired
 	private UserService userService;
@@ -58,6 +71,7 @@ public class UserController {
 		model.addAttribute("board", userService.아이디찾기(username2,tel));
 		return "user/findId";
 	}	
+	
 	
 	
 }

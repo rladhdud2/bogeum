@@ -100,9 +100,7 @@ public class UserApiController {
 		userService.sendTmpPwd(dto);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
-	}
-    
-    
+	}   
     
 
 }
