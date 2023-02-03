@@ -76,7 +76,8 @@
         height: 45px;
         font-size: 25px;
         font-family: 'Jua', sans-serif;   
-        border-radius: 10px;     
+        border-radius: 10px; 
+        margin-top : 10px;    
     }
     #loginpart2 button:hover {
         cursor: pointer;

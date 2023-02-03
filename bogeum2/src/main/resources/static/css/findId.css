@@ -75,6 +75,7 @@
         background-color: black;
         color: white;
         margin-bottom: 10px;
+        margin-top : 10px;
         height: 45px;
         font-size: 25px;
         font-family: 'Jua', sans-serif;   
@@ -92,6 +93,21 @@
  	font-size : 50px;
  	text-align : center;
  	}   
-    
+ 	
+ #btn-find {
+ 	 width : 300px;
+        background-color: black;
+        color: white;
+        margin-left : 45px;
+        margin-top : 10px;
+        margin-bottom: 10px;        
+        height: 45px;
+        font-size: 25px;
+        font-family: 'Jua', sans-serif;   
+        border-radius: 10px;    
+ }
+    #btn-find:hover{
+    cursor : pointer;
+    }
     
     

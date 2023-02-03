@@ -28,7 +28,7 @@
 						<a href="/auth/joinForm">회원가입</a>
 					</div>
 					<div>
-						<a href="/auth/loginForm">로그인</a>
+						<a href="/auth/loginForm">로그인&nbsp;</a>/<a href="/auth/findpwd">&nbsp;비밀번호찾기</a>
 					</div>
 				</div>				
 				
