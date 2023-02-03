@@ -69,6 +69,7 @@ public class UserController {
 							@RequestParam(value="tel")String tel,
 								Model model) {		
 		model.addAttribute("board", userService.아이디찾기(username2,tel));
+
 		return "user/findId";
 	}	
 	

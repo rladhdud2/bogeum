@@ -67,12 +67,12 @@ public class AdminController {
 		return "admin/adminPage";
 	}
 
-	@GetMapping("/api/board/{userId}")
-	public ResponseEntity<?> findByUser(@PathVariable("userId") int id) {
-		List<BoardModalDto> boardModalDtoList = findsService.findByUser(id);
-
-		return new ResponseEntity<>(boardModalDtoList, HttpStatus.OK);
-	}
+//	@GetMapping("/api/board/{userId}")
+//	public ResponseEntity<?> findByUser(@PathVariable("userId") int id) {
+//		List<BoardModalDto> boardModalDtoList = findsService.findByUser(id);
+//
+//		return new ResponseEntity<>(boardModalDtoList, HttpStatus.OK);
+//	}
 	
 	/*상품등록 폼 이동*/
 	@GetMapping("/save_item")

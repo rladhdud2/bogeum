@@ -90,14 +90,22 @@ public class FindsService {
 
     }
 
-    private FindsDto convertEntityToDto(Finds finds) {
-        return FindsDto.builder().id(finds.getId()).title(finds.getTitle()).content(finds.getContent())
-                .users(finds.getUsers()).createDate(finds.getCreateDate()).count(finds.getCount()).build();
-    }
-
+//    private FindsDto convertEntityToDto(Finds finds) {
+//        return FindsDto.builder().id(finds.getId()).title(finds.getTitle()).content(finds.getContent())
+//                .users(finds.getUsers()).createDate(finds.getCreateDate()).count(finds.getCount()).build();
+//    }
+//
 //    @Transactional(readOnly = true)
 //    public List<BoardModalDto> findByUser(int userId) {
 //        List<Finds> boards = findsRepository.findByUserId(userId);
 //        List<BoardModalDto> boardModalDtoList = new ArrayList<>();
+//        for (int i = 0; i < boards.size(); i++) {
+//            BoardModalDto boardModalDto = BoardModalDto.builder()
+//                    .id(boards.get(i).getId())
+//                    .title(boards.get(i).getTitle())
+//                    .createDate(boards.get(i).getCreateDate())
+//                    .views(boards.get(i).getCount())
+//                    .build();
+//        }
 //    }
 }
