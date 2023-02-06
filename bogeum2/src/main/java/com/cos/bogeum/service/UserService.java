@@ -89,9 +89,9 @@ public class UserService {
 	}
 	
 	//아이디찾기
-	public Users 아이디찾기(String username2,String tel) {
+	public Users 아이디찾기(String username2,String email) {
 		
-		return userRepository.findByUsername2AndTel(username2,tel).orElseThrow(() -> {
+		return userRepository.findByUsername2AndEmail(username2,email).orElseThrow(() -> {
 			return new IllegalArgumentException("아이디 찾기 실패");		
 		
 		});

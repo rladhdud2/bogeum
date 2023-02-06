@@ -2,7 +2,7 @@
 #joinbox {
     border: 1px black solid;    
     width : 800px;
-    height: 900px;
+    height: 950px;
     margin: auto;    
     font-family: 'Jua', sans-serif;
     font-size: 20px;
@@ -56,9 +56,6 @@ input {
     margin-left: 10px;
 }
 
-#gender_man {
-    margin-left: 80px;
-}
 
 .tel button {
     width : 110px;
@@ -71,12 +68,12 @@ input {
     margin-left: 10px;
 }
 
-
-
-.gender input {
-    width : 20px;
-    height: 15px;
+#addressdetail {
+	width : 600px;
+	margin-top : 10px;
 }
+
+
 
 .signUpcheck {
     margin-top: 30px;
@@ -119,5 +116,7 @@ input {
     padding-top: 0px;
 }
 
-
+#kakaomap {
+	display : none;
+}
 

@@ -20,7 +20,7 @@
 				<div id="findtitle">아이디 찾기</div>
 				<div class="logininput">
 					<input id="username2" name="username2" placeholder="&nbsp;이름을 입력해주세요." >
-					<input type="text" id="tel" name="tel" placeholder="&nbsp;전화번호를 입력해주세요.">
+					<input type="text" id="tel" name="email" placeholder="&nbsp;이메일을 입력해주세요.">
 				</div>				
 				
 				<div id="findinfo">
