@@ -3,17 +3,19 @@
 }
     
     
-.container {
+.container {	
     width : 1200px;
     height: 1000px;    
-    margin: auto;
-    margin-top: 80px;    
+    margin-left : 350px;
+    margin-top: 60px;    
     display: flex;
+    
+   
 }
-    .mypagenav {
-        position: fixed;
-        width: 17%;
-        height: 800px;        
+    .mypagenav {        
+        width: 200px;
+        height: 800px;    
+        position : fixed;    
     }
     .mypagenavmenu {
         margin-bottom: 30px;
@@ -35,20 +37,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .mypagecontentbox {
-    width : 80%;
+    width : 950px;
     height: 100%;   
     margin-left: 200px;
+    
+     
 }
 .mypagecontent {
     margin-bottom: 80px;
@@ -158,6 +152,17 @@
         }
         .confirm {
             width : 100px;
+        }
+        .confirm button {
+        width : 70px;
+        height : 30px;
+        background-color : black;
+        color : white;
+        font-size : 15px;
+        border-radius : 10px;
+        }
+        .confirm button:hover {
+        cursor : pointer;
         }
 
 

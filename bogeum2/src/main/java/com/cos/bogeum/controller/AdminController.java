@@ -1,5 +1,6 @@
 package com.cos.bogeum.controller;
 
+import com.cos.bogeum.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -13,6 +14,9 @@ import com.cos.bogeum.service.ShopService;
 
 @Controller
 public class AdminController {
+
+	@Autowired
+	private UserRepository userRepository;
 	@Autowired
 	private ShopService shopService;
 	
@@ -20,6 +24,8 @@ public class AdminController {
 	public String adminPage(Model model,@PageableDefault(size=10, sort = "id", 
 			direction = Sort.Direction.ASC)Pageable pageable) {
 		model.addAttribute("ItemList", shopService.상품목록(pageable));
+
+		model.addAttribute("user", userRepository.findAll(pageable));
 		return "admin/adminPage";
 	}
 	

@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.csrf().disable()	//csrf 토큰 비활성화(테스트시 걸어두는게 좋음)
 			.authorizeRequests()
-			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**")
+			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**","/shelter/**")
 			.permitAll()
 			.anyRequest()	//이게 아닌 다른 모든 요청은
 			.authenticated()	//인증이 필요
@@ -50,9 +50,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
+	
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 	    return super.authenticationManagerBean();
 	}
+	
 }

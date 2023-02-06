@@ -1,5 +1,9 @@
 package com.cos.bogeum.controller.api;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,17 +19,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.bogeum.dto.ResponseDto;
+import com.cos.bogeum.dto.SendTmpPwdDto;
 import com.cos.bogeum.model.Users;
+import com.cos.bogeum.repository.UserRepository;
 import com.cos.bogeum.service.UserService;
 
 @RestController
 public class UserApiController {
-
+	
+	@Autowired
+	private UserRepository userRepository;
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
+	//회원가입
 	@PostMapping("/auth/joinproc") // 회원가입 로직이 실행되는 부분
 	public ResponseDto<Integer> save(@RequestBody Users user) {
 		System.out.println("UserApiController 호출됨");
@@ -37,12 +46,13 @@ public class UserApiController {
 		// result가 1이면 성공, -1이면 실패
 		// 자바 오브젝트를 리턴 받아옴.
 	}
-
+	
+	//회원정보수정
 	@PutMapping("/user")
 	public ResponseDto<Integer> update(@RequestBody Users user) {
 
-		userService.회원수정(user);
-
+		userService.회원수정(user);		
+		
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
@@ -59,5 +69,38 @@ public class UserApiController {
 		userService.회원탈퇴(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
+	//아이디 중복 체크
+    @PostMapping("/auth/user/check")
+    public ResponseDto<Integer> findByUsername(@RequestBody String username ) {
+    	int i = 0;
+    	if(userService.중복체크(username)!=null) {
+    		i=userService.중복체크(username).getId();
+    	}
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),i);
+    }    
+    
+    //비밀번호 재발급
+    @PostMapping("/auth/find")
+	public ResponseDto<?> find(@RequestBody SendTmpPwdDto dto) {
+				
+		if(!userRepository.existsByUsername(dto.getUsername()) || !Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
+			Map<String, String> validResult = new HashMap<>();
+			
+			if(!userRepository.existsByUsername(dto.getUsername())) {
+				validResult.put("valid_username", "존재하지 않는 사용자 이름입니다.");
+			}
+			if(!Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
+				validResult.put("valid_email", "올바르지 않은 이메일 형식입니다.");
+			}
+			
+			return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), validResult); 
+		}
+		
+		userService.sendTmpPwd(dto);
+		
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
+	}   
+    
 
 }

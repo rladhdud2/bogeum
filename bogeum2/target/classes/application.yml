@@ -39,3 +39,15 @@ spring:
       location: C:/images/
       max-file-size: 10MB
       max-request-size: 50MB
+      
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: tv9579@gmail.com
+    password: htqtsmetmkzzizyy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true 
