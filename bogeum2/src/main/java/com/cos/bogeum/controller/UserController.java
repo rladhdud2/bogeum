@@ -66,9 +66,9 @@ public class UserController {
 	//아이디찾기
 	@GetMapping("/auth/id/search")    
 	public String 아이디찾기(@RequestParam(value="username2")String username2,	
-							@RequestParam(value="tel")String tel,
+							@RequestParam(value="email")String email,
 								Model model) {		
-		model.addAttribute("board", userService.아이디찾기(username2,tel));
+		model.addAttribute("board", userService.아이디찾기(username2,email));
 
 		return "user/findId";
 	}	
