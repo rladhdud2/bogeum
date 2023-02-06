@@ -11,11 +11,15 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,8 +41,17 @@ public class ShopController {
 	
 	/*쇼핑몰 메인페이지*/
 	@GetMapping("/auth/shop")
-	public String Shoppingmall() {
+	public String Shoppingmall(Model model, @PageableDefault(size=12, sort = "id", 
+			direction = Sort.Direction.DESC)Pageable pageable) {
+		model.addAttribute("shop", shopService.상품목록(pageable));
+		
 		return "shop/Shoppingmall";
+	}
+	/*쇼핑몰 상세페이지*/
+	@GetMapping("/auth/shop/{id}")
+	public String shoppingmallDetail(@PathVariable int id, Model model) {
+		model.addAttribute("item", shopService.상품아이디조회(id));
+		return "shop/ShoppingmallDetail";
 	}
 		
 	/*관리자페이지 상품등록*/

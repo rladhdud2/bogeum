@@ -74,7 +74,7 @@
 				<ul class="nav">
 					<li><a href="/shelter">보호소</a></li>
 					<li><a href="#">커뮤니티</a></li>
-					<li><a href="#">쇼핑몰</a></li>
+					<li><a href="/auth/shop">쇼핑몰</a></li>
 				</ul>
 			</div>
 		</div>

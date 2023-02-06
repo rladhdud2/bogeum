@@ -7,13 +7,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.cos.bogeum.model.Review;
 import com.cos.bogeum.model.items;
+import com.cos.bogeum.repository.ReviewReoisitory;
 import com.cos.bogeum.repository.ShopRepository;
 
 @Service
 public class ShopService {
 	@Autowired
 	private ShopRepository shopRepository;
+	@Autowired
+	private ReviewReoisitory reviewReoisitory;
 	
 	@Transactional
 	public void 상품등록(items item) {
@@ -24,6 +28,7 @@ public class ShopService {
 	public Page<items> 상품목록(Pageable pageable){
 		return shopRepository.findAll(pageable);
 	}
+
 	
 	@Transactional
 	public void 상품수정(items requestItem, int id) {
@@ -54,4 +59,12 @@ public class ShopService {
 	public void 상품삭제(int id) {
 		shopRepository.deleteById(id);
 	}
+	
+	@Transactional
+	public void 리뷰등록(int itemId, Review review) {
+		items item = shopRepository.findById(itemId)
+				.orElseThrow(()->new IllegalArgumentException("해당 itemId가 없습니다. id"+itemId));
+		reviewReoisitory.save(review);
+	}
+	
 }
