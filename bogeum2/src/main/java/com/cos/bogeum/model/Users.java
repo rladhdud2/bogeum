@@ -44,7 +44,7 @@ public class Users {
 	@Column(nullable = false, length = 100)	//해쉬로 변경하여 암호화 length 크기
 	private String password;
 	
-	@Column(nullable = false, length = 30)
+	@Column(length = 30)
 	private String username2;	//이름		
 	
 	@Column(nullable = true, length = 30)
@@ -57,7 +57,9 @@ public class Users {
 	private String tel;	//전화번호			
 	
 	@Column(nullable = true, length = 30)
-	private String email;	//이메일	
+	private String email;	//이메일
+	
+	private String oauth;
 	
 	
 //	@ColumnDefault("'user'")

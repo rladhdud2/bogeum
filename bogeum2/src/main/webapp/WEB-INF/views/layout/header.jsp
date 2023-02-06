@@ -12,29 +12,15 @@
 <link rel="stylesheet" href="/css/header.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"	rel="stylesheet">
 
-<script src="https://kit.fontawesome.com/462a97624e.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/462a97624e.js"	crossorigin="anonymous"></script>
 
-
-
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<link
-	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
-
-
-
+<script	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"	rel="stylesheet">
+<script	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 </head>
 <body>
@@ -44,7 +30,7 @@
 			<c:when test="${empty principal}">
 				<div id="login">
 					<a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a
-						href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
+						href="/auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
 			</c:when>
 			<c:otherwise>

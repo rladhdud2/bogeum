@@ -51,3 +51,6 @@ spring:
           auth: true
           starttls:
             enable: true 
+            
+cos:
+  key: cos1234        
