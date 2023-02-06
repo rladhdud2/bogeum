@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <%--Css--%>
-<link rel="stylesheet" href=/css/inquiry_board.css>
+<link rel="stylesheet" href=/css/inquiry_board.css>f
 
 <body>
 <div class="board_wrap">
@@ -27,7 +27,7 @@
             <div class="title form_group">
                 <dl>
                     <dt>제목</dt>
-                    <dd><input type="text" class="form_control" placeholder="제목 입력" id="title" value="${findAnimal.title}"></dd>
+                    <dd><input type="text" class="form_control" placeholder="제목 입력" id="title" value="${finds.title}"></dd>
                 </dl>
             </div>
             <br>

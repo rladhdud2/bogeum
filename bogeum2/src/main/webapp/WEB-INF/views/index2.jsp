@@ -101,7 +101,7 @@
     <div class="container">
         <div id="content2">
             <div class="board">
-                <div class="contenttitle2"> 입양홍보</div>
+                <div class="contenttitle2"> 분실/습득</div>
                 <div class="content2">
                     <div class="content2title"><a href="#">&nbsp첫번째 게시글</a></div>
                     <div class="content2time">작성시간</div>

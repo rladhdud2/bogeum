@@ -42,16 +42,6 @@ a {
     font-size: 0;
 }
 
-.bt_wrap a {
-    display: inline-block;
-    min-width: 80px;
-    margin-left: 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 2px;
-    font-size: 1.4rem;
-}
-
 .bt_wrap a:first-child {
     margin-left: 0;
 }
@@ -163,11 +153,22 @@ a {
     background-color: white;
 }
 .bt1{
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #ffebb6;
+    border-radius: 2px;
+    font-size: 2rem;
+    font-family: 'Jua', sans-serif !important;
+
     background-color: #ffebb6;
 }
 .bt2{
     background-color: #e65d5d;
 }
+
+
 /*Reply*/
 h5{
     font-size: 2rem;

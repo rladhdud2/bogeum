@@ -15,6 +15,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 
+<!-- SweetAlert -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+
 <script src="https://kit.fontawesome.com/462a97624e.js"
 	crossorigin="anonymous"></script>
 
@@ -73,7 +77,7 @@
 			<div id="headernav">
 				<ul class="nav">
 					<li><a href="/auth/shelter">보호소</a></li>
-					<li><a href="#">커뮤니티</a></li>
+					<li><a href="/auth/board">커뮤니티</a></li>
 					<li><a href="#">쇼핑몰</a></li>
 				</ul>
 			</div>

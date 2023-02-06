@@ -99,14 +99,12 @@ body {
 }
 
 .content2 {
-    display: flex;
-    border-bottom: 1px solid gray;
     height: 40px;
     line-height: 40px;
 }
 
 .content2 .content2title {
-    width: 80%;
+    border-bottom: 1px solid gray;
 }
 
 .content2 .content2time {
