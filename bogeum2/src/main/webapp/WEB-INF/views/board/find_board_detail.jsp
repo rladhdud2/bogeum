@@ -6,7 +6,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="/css/reset.css">
 <%--Jstl--%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec"
+           uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp" %>
 <title>보금자리>분실/습득</title>
@@ -29,6 +31,7 @@
                 ${finds.title}
             </div>
             <div class="info">
+                <span id="id" style="display: none;">${finds.id}</span>
                 <dl>
                     <dt>번호</dt>
                     <dd>${finds.id}</dd>
@@ -52,12 +55,13 @@
             </div>
         </div>
         <div class="bt_wrap">
-            <button class="btn" onclick="location.href='#'">목록</button>
+            <button class="btn" onclick="location.href='/auth/findboard'">목록</button>
             <c:if test="${finds.users.id == principal.user.id}">
-                <button id="btn_update" class="btn bt1" href="/inquiry/${finds.id}/find_board_updateForm">수정</button>
+                <a class="btn bt1" href="/finds/${finds.id}/find_board_updateForm">수정</a>
                 <button id="btn_delete" class="btn bt2">삭제</button>
             </c:if>
         </div>
+
         <!-- 댓글 -->
         <div id="reply">
             <div id="reply_div">
@@ -68,19 +72,9 @@
 							<textarea id="reply_content"
                                       placeholder="닉네임: ${principal.user.username}">1231</textarea>
                         </div>
-                        <c:choose>
-                            <c:when test="${principal.user.roles  == 'ADMIN' or inquirys.users.id == principal.user.id}">
                                 <div id="reply_btn">
                                     <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
                                 </div>
-                            </c:when>
-                            <c:otherwise>
-                                <div id="reply_btn" style="display: none;">
-                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
-                                </div>
-                            </c:otherwise>
-                        </c:choose>
-
                     </div>
                 </div>
             </div>
@@ -112,5 +106,5 @@
 </div>
 </div>
 </body>
-<script type="text/javascript" src="/js/finds.js"></script>
+<script type="text/javascript" src="/js/FindBoard.js"></script>
 <%@ include file="../layout/footer.jsp" %>

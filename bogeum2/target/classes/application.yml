@@ -16,7 +16,7 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-        
+
   jpa:
     open-in-view: true
     hibernate:
@@ -51,6 +51,3 @@ spring:
           auth: true
           starttls:
             enable: true 
-            
-cos:
-  key: cos1234        

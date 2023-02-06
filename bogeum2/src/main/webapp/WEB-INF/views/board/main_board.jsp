@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp" %>
@@ -20,6 +21,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/7e47ddf105.js" crossorigin="anonymous"></script>
+    <%--jstl--%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="sec"
+               uri="http://www.springframework.org/security/tags" %>
+    <sec:authorize access="isAuthenticated()">
+        <sec:authentication property="principal" var="principal"/>
+        <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    </sec:authorize>
 </head>
 <body>
 
@@ -27,81 +36,45 @@
 <div class="container">
     <div id="content2">
         <div class="board">
-            <div class="contenttitle2"> 공지사항</div>
+            <div class="contenttitle2"><a href=/auth/notice> 공지사항</a></div>
             <div class="content2">
-                <div class="content2title">&nbsp첫번째 게시글</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp두번째 게시글</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
+                <c:forEach var="notice" items="${notice.content}">
+                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/notice/${notice.id}';"><a
+                            href="/notice/${notice.id}">${notice.title} <span style="float: right"> <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${notice.createDate}"/></span></a></div>
+                </c:forEach>
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"> 문의사항</div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
+            <div class="contenttitle2"><a href="/auth/inquiry"> 문의사항</a></div>
+            <div class="content2" >
+                <c:forEach var="inquirys" items="${inquirys.content}">
+                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/inquiry/${inquirys.id}';"><a
+                            href="/inquiry/${inquirys.id}">${inquirys.title} <span style="float: right"> <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${inquirys.createDate}"/></span></a></div>
+                </c:forEach>
             </div>
         </div>
     </div>
     <div id="content3">
         <div class="board">
-            <div class="contenttitle2"> 분실/습득</div>
+            <div class="contenttitle2"><a href="/auth/findboard"> 분실/습득</a></div>
             <div class="content2">
-                <div class="content2title">&nbsp첫번째 게시글</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp두번째 게시글</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
+                <c:forEach var="finds" items="${finds.content}">
+                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/finds/${finds.id}';"><a
+                            href="/finds/${finds.id}">${finds.title}  <span style="float: right"> <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${finds.createDate}"/></span></a></div>
+                </c:forEach>
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"> 자유게시판</div>
+            <div class="contenttitle2"><a href="/auth/free"> 자유게시판</a></div>
             <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
-            </div>
-            <div class="content2">
-                <div class="content2title">&nbsp게시글 제목</div>
-                <div class="content2time">2023.01.23</div>
+                <c:forEach var="free" items="${free.content}">
+                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/free/${free.id}';"><a
+                            href="/finds/${free.id}">${free.title} <span style="float: right">  <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${free.createDate}"/></span></a></div>
+                </c:forEach>
             </div>
         </div>
     </div>

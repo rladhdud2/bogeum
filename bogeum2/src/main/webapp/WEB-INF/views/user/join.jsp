@@ -79,8 +79,8 @@ function findAddr(){
 		</div>
 		 
 		<div class="address">
-			주소<br> <input id="address" type="text" onclick="findAddr()" readonly>			
-			<input id="addressdetail" type="text" placeholder="상세주소를 입력해주세요" >
+			주소<br> <input id="address" type="text" readonly>			
+			<input id="addressdetail" type="text" placeholder="상세주소를 입력해주세요">
 			<button onclick="findAddr()">주소찾기</button>
 			<div id="addresserror" class="error"></div>
 		</div>

@@ -98,7 +98,7 @@ input {
     
 }
 
-.signUp .updatebutton {
+.signUp #updatebutton {
     width : 200px;   
     height: 45px;
     background-color: black;
@@ -116,7 +116,19 @@ input {
     padding-top: 0px;
 }
 
+<<<<<<< HEAD
 #kakaomap {
 	display : none;
 }
 
+=======
+.id input {
+	background-color : #eee;
+}
+.name input {
+	background-color : #eee;
+}
+.birth input {
+	background-color : #eee;
+}
+>>>>>>> main

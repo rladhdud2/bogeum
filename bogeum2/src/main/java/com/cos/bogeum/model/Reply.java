@@ -33,6 +33,14 @@ public class Reply {
     @JoinColumn(name = "FindsId")
     private Finds finds;
 
+    @ManyToOne
+    @JoinColumn(name = "inquirysId")
+    private Inquirys inquirys;
+    @ManyToOne
+    @JoinColumn(name = "freeId")
+    private Free free;
+
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userid")
     private Users users;

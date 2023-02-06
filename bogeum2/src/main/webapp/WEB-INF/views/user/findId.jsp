@@ -36,7 +36,7 @@
 				<button type="submit">검색</button>
 				</div>
 			</form>
-			<div class="searchresult">${findId.username}</div>
+			<div class="searchresult">${board.username}</div>
 		</div>
 
 

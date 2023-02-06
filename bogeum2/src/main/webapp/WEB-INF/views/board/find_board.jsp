@@ -19,6 +19,9 @@
     <sec:authentication property="principal" var="principal"/>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 </sec:authorize>
+<!-- SweetAlert -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 <%--Header--%>
 <%@ include file="../layout/header.jsp" %>
 <body>
@@ -27,15 +30,15 @@
     <div class="board_menu">
         <div class="subject"><b>커뮤니티</b></div>
         <br>
-        <div class="menuList"><i class="fa-solid fa-bell"></i> 공지사항</div>
+        <div class="menuList"><a href="/auth/notice"><i class="fa-solid fa-bell"></i> 공지사항</a></div>
         <br>
-        <div class="menuList"><i class="fa-regular fa-pen-to-square"></i> 자유게시판</div>
+        <div class="menuList"><a href="/auth/free"><i class="fa-regular fa-pen-to-square"></i> 자유게시판</a></div>
         <br>
-        <div class="menuList"><i class="fa-solid fa-cat"></i> 입양안내</div>
+        <div class="menuList"><a href="#"><i class="fa-solid fa-cat"></i> 입양안내</a></div>
         <br>
-        <div class="menuList"><i class="fa-solid fa-person-circle-question"></i> 분실/습득</div>
+        <div class="menuList"><a href="/auth/findboard"><i class="fa-solid fa-person-circle-question"></i> 분실/습득</a></div>
         <br>
-        <div class="menuList"><i class="fa-solid fa-comment"></i> 문의사항</div>
+        <div class="menuList"><a href="/auth/inquiry"><i class="fa-solid fa-comment"></i> 문의사항</a></div>
         <br>
     </div>
     <div class="board_wrap">
@@ -52,10 +55,10 @@
                     <div class="date">작성일</div>
                     <div class="count">조회수</div>
                 </div>
-                <c:forEach var="notice" items="${finds.content}">
+                <c:forEach var="finds" items="${finds.content}">
                     <div>
                         <div class="num">${finds.id}</div>
-                        <div class="title"><a href="#">${finds.title}</a></div>
+                        <div class="title"><a href="/finds/${finds.id}">${finds.title}</a></div>
                         <div class="writer">${finds.users.username}</div>
                         <div class="date"><fmt:formatDate
                                 pattern="yyyy-MM-dd HH:mm" value="${finds.createDate}"/></div>
@@ -86,12 +89,12 @@
                 <c:choose>
                     <c:when test="${principal.user.roles == 'USER'}">
                       <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '#'">글쓰기</button>
+                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
                       </div>
                     </c:when>
                     <c:otherwise>
-                        <div style="display: none;">
-                        <button type="button" id="btnWrite" onclick="location.href = '#'">글쓰기</button>
+                        <div>
+                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
                         </div>
                     </c:otherwise>
                 </c:choose>
