@@ -48,9 +48,11 @@ let index = {
 			username2: document.getElementById('name').value,
 			birth: document.getElementById('birth').value,
 			tel: document.getElementById('tel').value,
-			address: document.getElementById('address').value.concat(" " + document.getElementById('addressdetail').value),
+			address: document.getElementById('address').value,
 			email: document.getElementById('email').value,
 		};
+		
+		console.log(data);
 		
 		$.ajax({
 			type: "PUT",
@@ -71,7 +73,6 @@ let index = {
 
 	updateCheck: function() {
 		var pwd = document.getElementById('pwd');
-
 		var repwd = document.getElementById('repwd');
 		var name = document.getElementById('name');
 		var birth = document.getElementById('birth');		
@@ -166,7 +167,7 @@ let index = {
 		var address = document.getElementById('address');
 		var tel = document.getElementById('tel');
 		var email = document.getElementById('email');
-		
+				
 		var birthCheck = /^(?=.*[0-9]).{8}$/;
 		var telCheck = /^(?=.*[0-9]).{10,11}$/;
 		
