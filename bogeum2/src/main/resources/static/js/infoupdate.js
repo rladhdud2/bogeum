@@ -17,10 +17,8 @@ let index = {
 			username2: document.getElementById('name').value,
 			birth: document.getElementById('birth').value,
 			tel: document.getElementById('tel').value,
-
-			address: document.getElementById('address').value.concat(" " + document.getElementById('addressdetail').value),
-			email: document.getElementById('email').value,
-		
+			address: document.getElementById('address').value,
+			email: document.getElementById('email').value,		
 			address: document.getElementById('address').value,
 			email : document.getElementById('email').value,
 		};
