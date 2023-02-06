@@ -3,13 +3,11 @@ let index = {
 		$("#updatebutton").on("click", () => {
 			this.updateCheck();
 		});
-<<<<<<< HEAD
+
 		$("#updatebutton2").on("click", () => {
 			this.updateCheck2();
 		});
 
-=======
->>>>>>> main
 	},
 
 	update: function() {
@@ -19,17 +17,15 @@ let index = {
 			username2: document.getElementById('name').value,
 			birth: document.getElementById('birth').value,
 			tel: document.getElementById('tel').value,
-<<<<<<< HEAD
+
 			address: document.getElementById('address').value.concat(" " + document.getElementById('addressdetail').value),
 			email: document.getElementById('email').value,
-		};
-
-=======
+		
 			address: document.getElementById('address').value,
 			email : document.getElementById('email').value,
 		};
 		
->>>>>>> main
+
 		$.ajax({
 			type: "PUT",
 			url: "/user",
@@ -42,7 +38,7 @@ let index = {
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
-<<<<<<< HEAD
+
 
 	},
 
@@ -56,8 +52,6 @@ let index = {
 			email: document.getElementById('email').value,
 		};
 		
-		
-
 		$.ajax({
 			type: "PUT",
 			url: "/user2",
@@ -71,14 +65,13 @@ let index = {
 			alert(JSON.stringify(error));
 		});
 
-=======
->>>>>>> main
+
 	},
 
 
 	updateCheck: function() {
 		var pwd = document.getElementById('pwd');
-<<<<<<< HEAD
+
 		var repwd = document.getElementById('repwd');
 		var name = document.getElementById('name');
 		var birth = document.getElementById('birth');		
@@ -102,7 +95,7 @@ let index = {
 			return false;
 		};
 
-=======
+
 		var repwd = document.getElementById('repwd');	
 		
 		var pwdCheck = /^(?=.*[0-9]).{8,25}$/;
@@ -114,13 +107,13 @@ let index = {
 		};
 
 
->>>>>>> main
+
 		if (repwd.value !== pwd.value) {
 			alert("비밀번호가 일치하지 않습니다");
 			repwd.focus();
 			return false;
 		};
-<<<<<<< HEAD
+
 		if (name.value == "") {
 			alert("이름을 입력해주세요");
 			name.focus();
@@ -136,8 +129,7 @@ let index = {
 			birth.focus();
 			return false;
 		};
-=======
->>>>>>> main
+
 		
 		if (address.value == "") {
 			alert("주소를 입력해주세요");

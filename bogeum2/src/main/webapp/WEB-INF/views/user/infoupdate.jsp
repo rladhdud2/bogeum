@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
+
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/infoupdate.css">
 <script	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -38,15 +38,11 @@ function findAddr(){
     }).open();
 }
 </script>
-	<%@ include file="../layout/header.jsp"%>
-=======
-    pageEncoding="UTF-8"%>   
-    <link rel="stylesheet" href="/css/infoupdate.css">
-    
+	
+
+    <link rel="stylesheet" href="/css/infoupdate.css">    
 <body>
 <%@ include file="../layout/header.jsp"%>
->>>>>>> main
-
 
 <div class="container">        
 <%@ include file="../layout/sidenav.jsp"%>
@@ -92,9 +88,9 @@ function findAddr(){
                 </div>      
             </div> 
 
-<<<<<<< HEAD
+
 				<c:choose>
-					<c:when test="${principal.user.oauth=='kakao'}">
+					<c:when test="${principal.user.id=='100'}">
 						<div class="password">
 							비밀번호<br> <input id="pwd" 
 								placeholder="카카오계정은 수정이 불가능 합니다"  disabled>
@@ -148,7 +144,7 @@ function findAddr(){
 				
 				
 				<c:choose> 
-					<c:when test="${principal.user.oauth=='kakao'}">
+					<c:when test="${principal.user.id=='100'}">
 						<div class="signUp">
 							<button class="updatebutton" id="updatebutton2">수정하기</button>
 						</div>
@@ -165,21 +161,11 @@ function findAddr(){
 
 		</div>
 
-	</div>
-
+	
 
 	<%@ include file="../layout/footer.jsp"%>
 	<script src="/js/infoupdate.js"></script>
-=======
-            
-        </div>
 
-    </div>  
-
-
-<%@ include file="../layout/footer.jsp" %>
-<script src="/js/infoupdate.js"></script>
->>>>>>> main
 
 </body>
 </html>
