@@ -94,7 +94,7 @@
  
     <div class="banner2">
         <div class="bannercontainer2">
-            <div class="inner"><a href="#"><img src="/img/banner/banner2.png"></a></div>
+            <div class="inner2"><a href="#"><img src="/img/banner/banner2.png"></a></div>
         </div>
     </div>
 
@@ -181,11 +181,10 @@
 
 		function slide() {
 			for (var i = 0; i < totalslide; i++) {
-				slider.style.left = -(sliderWidth * slideIndex) + '%';
-				console.log(slideIndex)
+				slider.style.left = -(sliderWidth * slideIndex) + '%';				
 			}
 			slideIndex++;
-			if (slideIndex === totalslide-1) {
+			if (slideIndex === totalslide) {
 				slideIndex = 0;
 			}
 			setTimeout(slide, 2000);
