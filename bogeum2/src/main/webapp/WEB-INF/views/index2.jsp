@@ -18,6 +18,7 @@
             <div class="inner"><a href="#"><img src="/img/banner/banner3.jpg"></a></div>
             <div class="inner"><a href="#"><img src="/img/banner/banner2.png"></a></div>
             <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>
+            <div class="inner"><a href="#"><img src="/img/banner/banner4.png"></a></div>
         </div>        
     </div>    
    
