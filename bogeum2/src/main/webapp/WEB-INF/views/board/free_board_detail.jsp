@@ -67,40 +67,30 @@
                     <div id="reply_input_box">
                         <div id="reply_input_box2">
 							<textarea id="reply_content"
-                                      placeholder="닉네임: ${principal.user.username}">1231</textarea>
+                                      placeholder="닉네임: ${principal.user.username}"></textarea>
                         </div>
-                        <c:choose>
-                            <c:when test="${principal.user.roles  == 'ADMIN' or free.users.id == principal.user.id}">
-                                <div id="reply_btn">
-                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
-                                </div>
-                            </c:when>
-                            <c:otherwise>
-                                <div id="reply_btn" >
-                                    <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
-                                </div>
-                            </c:otherwise>
-                        </c:choose>
-
+                        <div id="reply_btn">
+                            <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div>
+            <div id="reply_control">
                 <c:forEach var="reply" items="${reply}">
                     <table class="table_reply" id="table">
                         <colgroup>
                             <col>
-                            <col width="140px;">
                         </colgroup>
                         <tbody>
                         <tr>
-                            <td style="font-weight: bold">${reply.users.username}</td>
-                            <td class="second_col"><fmt:formatDate
-                                    pattern="yyyy-MM-dd HH:mm" value="${reply.createDate}"/></td>
+                            <td class="first_col" style="font-weight: bold">${reply.users.username}</td>
+                            <td class="second_col">(<fmt:formatDate
+                                    pattern="yyyy-MM-dd HH:mm" value="${reply.createDate}"/>)</td>
                         </tr>
                         <tr>
                             <td class="inquiry_title" colspan="2">${reply.content}</td>
+
                         </tr>
                         </tbody>
                     </table>

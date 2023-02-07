@@ -175,7 +175,7 @@ private FreeService freeService;
     public String findById3(@PathVariable int id, Model model) {
         model.addAttribute("free", freeService.글상세보기(id));
         freeService.updateCount(id);
-//        model.addAttribute("reply", noticeService.댓글(id));
+        model.addAttribute("reply", freeService.댓글(id));
         return "board/free_board_detail";
     }
 

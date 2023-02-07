@@ -41,7 +41,7 @@
         <div class="menuList"><a href="/auth/inquiry"><i class="fa-solid fa-comment"></i> 문의사항</a></div>
         <br>
     </div>
-    <div class="board_wrap">
+    <div class="board_wrap2">
         <div class="board_title">
             <strong>분실/습득</strong>
             <p>반려동물을 찾아주세요!! 가족들이 기다리고 있습니다</p>
@@ -56,7 +56,7 @@
                     <div class="count">조회수</div>
                 </div>
                 <c:forEach var="finds" items="${finds.content}">
-                    <div>
+                    <div class="list_content">
                         <div class="num">${finds.id}</div>
                         <div class="title"><a href="/finds/${finds.id}">${finds.title}</a></div>
                         <div class="writer">${finds.users.username}</div>
@@ -94,7 +94,7 @@
                     </c:when>
                     <c:otherwise>
                         <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
+                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" style="display: none">글쓰기</button>
                         </div>
                     </c:otherwise>
                 </c:choose>

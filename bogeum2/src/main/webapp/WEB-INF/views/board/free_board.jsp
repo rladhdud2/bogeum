@@ -38,7 +38,7 @@
         <div class="menuList"><a href="/auth/inquiry"><i class="fa-solid fa-comment"></i> 문의사항</a></div>
         <br>
     </div>
-    <div class="board_wrap">
+    <div class="board_wrap2">
         <div class="board_title">
             <strong>자유게시판</strong>
             <p>자유게시판</p>
