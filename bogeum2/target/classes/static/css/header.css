@@ -14,7 +14,7 @@ header {
     #login {
         width : 100%;
         text-align: right;
-        background-color: rgb(226, 226, 226);
+        background-color: #eee;
         height: 30px;
         line-height: 30px;
     }

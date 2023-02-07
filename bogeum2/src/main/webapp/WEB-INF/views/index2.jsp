@@ -32,57 +32,57 @@
         <div class="main">
             <div id="content1">
                 <div class="content_flex" style="display: flex; justify-content: space-between">
-                    <div class="contenttitle"> &nbsp보호소</div>
+                    <div class="contenttitle"> &nbsp;보호소</div>
                     <div class="contenttitle"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <div id="content1items">
                     <ul>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/cat1.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/dog5.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/cat3.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/cat4.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/dog1.jpeg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/dog2.jpeg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/dog3.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>
                         <li><a href="#">
                             <div id="itemphoto"><img src="/img/content1item/dog4.jpg"></div><br>           
-                            <div id="itemdetail">&nbsp공고날짜 : 2023년 1월 25일
-                                <br>&nbsp발견장소 : 수원역</div>
+                            <div id="itemdetail">&nbsp;공고날짜 : 2023년 1월 25일
+                                <br>&nbsp;발견장소 : 수원역</div>
                             </a>
                         </li>                        
                     </ul>
@@ -103,38 +103,38 @@
             <div class="board">
                 <div class="contenttitle2"> 분실/습득</div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp첫번째 게시글</a></div>
+                    <div class="content2title"><a href="#">&nbsp;첫번째 게시글</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp두번째 게시글</a></div>
+                    <div class="content2title"><a href="#">&nbsp;두번째 게시글</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
             </div>
             <div class="board">
                 <div class="contenttitle2"> 공지사항</div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
                 <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp게시글 제목</a></div>
+                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
                     <div class="content2time">작성시간</div>
                 </div>
             </div>

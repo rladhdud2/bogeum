@@ -5,49 +5,7 @@ ul {
 body {
     font-family: 'Jua', sans-serif;
     line-height: 25px;
-}
-
-header { 
-  width : 100%;
-  height: 150px;  
-  
-}
-    #login {
-        width : 100%;
-        text-align: right;
-        background-color: rgb(226, 226, 226);
-        height: 30px;
-        line-height: 30px;
-    }
-    #header2 {
-        height: 120px;
-        display: flex;
-        justify-content: center;
-        align-items:center;        
-    }
-
-        #logo {            
-            width : 250px;
-            height : 100px; 
-        }
-        #logo img {
-            height: 100%;
-            width : 100%;
-        }
-        .nav {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        
-        }
-        .nav li {
-            width : 250px;
-            height: 100px;
-            line-height: 100px;            
-            text-align: center;
-            font-size: 35px;                     
-        }
-   
+}   
 
 .container {    
   width: 1200px;
@@ -75,7 +33,7 @@ header {
     margin-bottom: 20px;
     border-radius: 10px;    
     line-height: 20px;
-    background-color: rgb(230, 230, 230);
+    background-color: #eee;
 }
 #content1items li img:hover {
     transform: scale(1.3);
@@ -179,10 +137,13 @@ header {
 .bannercontainer {
     width : 5700px;
     transition: transform 0.5s;
+    position : relative;
+    z-index : 5;
 }
 .inner {
     width: 1900px;
     float: left;
+    
 }
 .banner {
     overflow: hidden;
@@ -193,19 +154,22 @@ header {
 }
 .buttonbox {
     margin : auto;
-    margin-top: 20px;
+    margin-top : -25px;
     display: flex;
     justify-content: center;
     width : 500px;   
    
 }
 .buttonbox button  {
-    margin-left: 10px;
+    margin-left: 12px;
     border-radius: 10px;   
     border: none; 
-    background-color: rgb(212, 212, 212);
-    height: 20px;
-    width: 20px;    
+    background-color: #eee;
+    height: 8px;
+    width: 45px;
+    position : relative;   
+    z-index : 10; 
+    
 }
 .buttonbox button:hover {
     cursor: pointer;
