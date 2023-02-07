@@ -19,13 +19,13 @@
             <div class="inner"><a href="#"><img src="/img/banner/banner2.png"></a></div>
             <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>
         </div>        
-    </div>
+    </div>    
+   
     <div class="buttonbox">
         <button class="button1"></button>
         <button class="button2"></button>
         <button class="button3"></button>
     </div>
-
 
 
     <div class="container">
@@ -92,8 +92,8 @@
         </div>
     </div>
  
-    <div class="banner">
-        <div class="bannercontainer">
+    <div class="banner2">
+        <div class="bannercontainer2">
             <div class="inner"><a href="#"><img src="/img/banner/banner2.png"></a></div>
         </div>
     </div>
@@ -157,6 +157,7 @@
   <%@ include file="layout/footer.jsp"%>
 
 <script>
+	//배너 버튼
     document.querySelector('.button1').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.transform = 'translate(0px)';       
     })
@@ -166,6 +167,33 @@
     document.querySelector('.button3').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.transform = 'translate(-3800px)';
     })
+        
+    //배너 슬라이드
+    let img = document.querySelectorAll(".inner");
+		let totalslide = img.length;//3
+
+		var sliderWidth = 100; // container의 width
+		var slideIndex = 0;
+		var slider = document.querySelector('.bannercontainer');
+		slider.style.width = sliderWidth * totalslide + '%';
+
+		slide()
+
+		function slide() {
+			for (var i = 0; i < totalslide; i++) {
+				slider.style.left = -(sliderWidth * slideIndex) + '%';
+				console.log(slideIndex)
+			}
+			slideIndex++;
+			if (slideIndex === totalslide-1) {
+				slideIndex = 0;
+			}
+			setTimeout(slide, 2000);
+		}
 </script>
+
+
+
+
 </body>
 </html>
