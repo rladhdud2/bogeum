@@ -19,7 +19,7 @@ let index = {
 			tel: document.getElementById('tel').value,
 			address: document.getElementById('address').value,
 			email: document.getElementById('email').value,		
-			address: document.getElementById('address').value,
+			address: document.getElementById('address').value.concat(" "+ document.getElementById('detailaddress').value),
 			email : document.getElementById('email').value,
 		};
 		
@@ -46,7 +46,7 @@ let index = {
 			username2: document.getElementById('name').value,
 			birth: document.getElementById('birth').value,
 			tel: document.getElementById('tel').value,
-			address: document.getElementById('address').value,
+			address: document.getElementById('address').value.concat(" "+ document.getElementById('detailaddress').value),
 			email: document.getElementById('email').value,
 		};
 		
@@ -81,6 +81,8 @@ let index = {
 		var pwdCheck = /^(?=.*[0-9]).{8,25}$/;
 		var birthCheck = /^(?=.*[0-9]).{8}$/;
 		var telCheck = /^(?=.*[0-9]).{10,11}$/;
+		var emailCheck = /^(?=.*[a-z])[a-z0-9]{4,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		
 		
 		if (pwd.value == "") {
 			alert("비밀번호를 입력해주세요");
@@ -104,8 +106,6 @@ let index = {
 			pwd.focus();
 			return false;		
 		};
-
-
 
 		if (repwd.value !== pwd.value) {
 			alert("비밀번호가 일치하지 않습니다");
@@ -153,6 +153,12 @@ let index = {
 			email.focus();
 			return false;
 		};
+				
+		if (!emailCheck.test(email.value)) {
+			alert("정확한 이메일을 입력해주세요");
+			email.focus();
+			return false;
+		};
 
 		this.update();
 
@@ -168,6 +174,7 @@ let index = {
 				
 		var birthCheck = /^(?=.*[0-9]).{8}$/;
 		var telCheck = /^(?=.*[0-9]).{10,11}$/;
+		var emailCheck = /^(?=.*[a-z])[a-z0-9]{4,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 		
 		
 		if (name.value == "") {
@@ -206,6 +213,12 @@ let index = {
 		
 		if (email.value == "") {
 			alert("이메일을 입력해주세요");
+			email.focus();
+			return false;
+		};
+		
+		if (!emailCheck.test(email.value)) {
+			alert("정확한 이메일을 입력해주세요");
 			email.focus();
 			return false;
 		};

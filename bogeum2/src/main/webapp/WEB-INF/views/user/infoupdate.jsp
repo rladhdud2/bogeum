@@ -18,9 +18,7 @@
 <script>
 	function findAddr() {
 		new daum.Postcode({
-			oncomplete : function(data) {
-
-				console.log(data);
+			oncomplete : function(data) {				
 
 				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 				// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
@@ -88,9 +86,11 @@
 						id="birth" value="${principal.user.birth}">
 					<div id="birtherror" class="error"></div>
 				</div>
+				
 				<div class="address">
-					주소<br> <input id="address" value="${principal.user.address}">
+					주소<br> <input id="address" value="${principal.user.address}" onclick="findAddr()" readonly>
 					<div id="addresserror" class="error"></div>
+					<input id="detailaddress"  type="text" placeholder="상세주소를 입력해주세요">
 				</div>
 
 				<div class="tel">
