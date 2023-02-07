@@ -174,6 +174,7 @@ public class UserController {
 		}
 
 		System.out.println("자동 로그인 진행");
+		
 		// 로그인 처리
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), cosKey));

@@ -38,7 +38,7 @@
 				</div>
 				<div id="or">or</div>
 				<div id="kakaologin">
-					<a href="https://kauth.kakao.com/oauth/authorize?client_id=f58010a68faa4d0a1e5774f2768482ac&redirect_uri=http://localhost:8111/auth/kakao/callback&response_type=code"><img src="/img/카카오로그인.png"></a>
+					<a href="https://kauth.kakao.com/oauth/authorize?client_id=f58010a68faa4d0a1e5774f2768482ac&redirect_uri=http://localhost:8111/auth/kakao/callback&response_type=code&prompt=login"><img src="/img/카카오로그인.png"></a>
 				</div>
 			</div>
 		</form>
