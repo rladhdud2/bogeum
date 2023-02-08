@@ -17,17 +17,21 @@
         <div class="bannercontainer">
             <div class="inner"><a href="#"><img src="/img/banner/banner3.jpg"></a></div>
             <div class="inner"><a href="#"><img src="/img/banner/banner2.png"></a></div>
-            <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>
             <div class="inner"><a href="#"><img src="/img/banner/banner4.png"></a></div>
-        </div>        
-    </div>    
-   
-    <div class="buttonbox">
+            <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>            
+        </div>       
+        
+        
+    </div>
+          <div class="buttonbox">
         <button class="button1"></button>
         <button class="button2"></button>
         <button class="button3"></button>
-    </div>
-
+        <button class="button4"></button>
+        
+   		 </div>   
+   
+    
 
     <div class="container">
         <div class="main">
@@ -157,39 +161,44 @@
 
   <%@ include file="layout/footer.jsp"%>
 
-<script>
+<script>        
+    //배너 슬라이드
+   	let img = document.querySelectorAll(".inner");
+	let totalslide = img.length;//3
+
+	var sliderWidth = 100; // container의 width
+	var slideIndex = 0;
+	var slider = document.querySelector('.bannercontainer');
+	slider.style.width = sliderWidth * totalslide + '%';
+
+	slide()
+
+	function slide() {
+		for (var i = 0; i < totalslide; i++) {
+			slider.style.left = -(sliderWidth * slideIndex) + '%';				
+		}
+		slideIndex++;
+		if (slideIndex === totalslide) {
+			slideIndex = 0;
+		}
+		setTimeout(slide, 2000);
+	}
+		
 	//배너 버튼
     document.querySelector('.button1').addEventListener('click', function() {
-        document.querySelector('.bannercontainer').style.transform = 'translate(0px)';       
+        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';       
     })
     document.querySelector('.button2').addEventListener('click', function() {
-        document.querySelector('.bannercontainer').style.transform = 'translate(-1900px)';
+        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1) + '%';
     })
     document.querySelector('.button3').addEventListener('click', function() {
-        document.querySelector('.bannercontainer').style.transform = 'translate(-3800px)';
+        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2) + '%';
     })
-        
-    //배너 슬라이드
-    let img = document.querySelectorAll(".inner");
-		let totalslide = img.length;//3
-
-		var sliderWidth = 100; // container의 width
-		var slideIndex = 0;
-		var slider = document.querySelector('.bannercontainer');
-		slider.style.width = sliderWidth * totalslide + '%';
-
-		slide()
-
-		function slide() {
-			for (var i = 0; i < totalslide; i++) {
-				slider.style.left = -(sliderWidth * slideIndex) + '%';				
-			}
-			slideIndex++;
-			if (slideIndex === totalslide) {
-				slideIndex = 0;
-			}
-			setTimeout(slide, 2000);
-		}
+    document.querySelector('.button4').addEventListener('click', function() {
+        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
+    })
+	
+		
 </script>
 
 
