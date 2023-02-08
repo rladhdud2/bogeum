@@ -1,5 +1,6 @@
 package com.cos.bogeum.service;
 
+import com.cos.bogeum.dto.FreeDto;
 import com.cos.bogeum.model.Free;
 import com.cos.bogeum.model.Reply;
 import com.cos.bogeum.model.Users;
@@ -83,15 +84,15 @@ public class FreeService {
 
     // 게시글 검색 기능
 
-//    @Transactional
-//    public Page<Free> searchPosts(String keyword, Pageable pageable) {
-//        return freeService.findByTitleContaining(keyword, pageable);
-//
-//    }
-//
-//    private FindsDto convertEntityToDto(Free finds) {
-//        return FindsDto.builder().id(finds.getId()).title(finds.getTitle()).content(finds.getContent())
-//                .users(finds.getUsers()).createDate(finds.getCreateDate()).count(finds.getCount()).build();
-//    }
+    @Transactional
+    public Page<Free> searchPosts(String keyword, Pageable pageable) {
+        return freeRepository.findByTitleContaining(keyword, pageable);
+
+    }
+
+    private FreeDto convertEntityToDto(Free free) {
+        return FreeDto.builder().id(free.getId()).title(free.getTitle()).content(free.getContent())
+                .users(free.getUsers()).createDate(free.getCreateDate()).count(free.getCount()).build();
+    }
 
 }

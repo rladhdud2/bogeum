@@ -38,7 +38,7 @@
     </form>
     <div class="bt_wrap">
         <button id="btn_update" class="btn">수정</button>
-        <button class="btn" value="#">취소</button>
+        <button class="btn" value="#" onclick="history.back()">취소</button>
     </div>
 </div>
 <script>

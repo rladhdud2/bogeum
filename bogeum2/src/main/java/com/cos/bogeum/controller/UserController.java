@@ -180,9 +180,7 @@ public class UserController {
 				.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), cosKey));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
-		return "redirect:/";	
-
-		
+		return "redirect:/";		
 
 	}
 

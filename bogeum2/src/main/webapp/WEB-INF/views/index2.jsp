@@ -21,7 +21,6 @@
             <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>            
         </div>       
         
-        
     </div>
           <div class="buttonbox">
         <button class="button1"></button>
@@ -29,9 +28,11 @@
         <button class="button3"></button>
         <button class="button4"></button>
         
-   		 </div>   
-   
-    
+   		 </div>    
+   		 
+   		 <!--  
+   		 <button id="stop">stop</button>
+   		 -->
 
     <div class="container">
         <div class="main">
@@ -181,10 +182,11 @@
 		if (slideIndex === totalslide) {
 			slideIndex = 0;
 		}
-		setTimeout(slide, 2000);
-	}
-
+		setTimeout(slide, 3000);
+	}	
+	
 		
+	
 	//배너 버튼
     document.querySelector('.button1').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';       
@@ -197,8 +199,7 @@
     })
     document.querySelector('.button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
-    })
-	
+    })	 	
 		
 </script>
 

@@ -92,6 +92,11 @@ public class NoticeService {
         return noticeRepository.findByTitleContaining(keyword, pageable);
 
     }
+    @Transactional
+    public Page<Notice> searchPosts1(String keyword, Pageable pageable) {
+        return noticeRepository.findByContentContaining(keyword, pageable);
+
+    }
 
     private NoticeDto convertEntityToDto(Notice notice) {
         return NoticeDto.builder().id(notice.getId()).title(notice.getTitle()).content(notice.getContent()).users(notice.getUsers()).createDate(notice.getCreateDate()).count(notice.getCount()).build();

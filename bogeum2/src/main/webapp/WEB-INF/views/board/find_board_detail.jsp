@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="/css/reset.css">
+
 <%--Jstl--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <!-- Css-->
+<link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/boardDetail.css">
 </head>
 <body>
@@ -70,7 +71,7 @@
                     <div id="reply_input_box">
                         <div id="reply_input_box2">
 							<textarea id="reply_content"
-                                      placeholder="닉네임: ${principal.user.username}">1231</textarea>
+                                      placeholder="닉네임: ${principal.user.username}"></textarea>
                         </div>
                                 <div id="reply_btn">
                                     <button type="submit" id="btn_reply_save" class="bt3">등록하기</button>
@@ -79,21 +80,21 @@
                 </div>
             </div>
 
-            <div>
+            <div id="reply_control">
                 <c:forEach var="reply" items="${reply}">
                     <table class="table_reply" id="table">
                         <colgroup>
                             <col>
-                            <col width="140px;">
                         </colgroup>
                         <tbody>
                         <tr>
-                            <td style="font-weight: bold">${reply.users.username}</td>
-                            <td class="second_col"><fmt:formatDate
-                                    pattern="yyyy-MM-dd HH:mm" value="${reply.createDate}"/></td>
+                            <td class="first_col" style="font-weight: bold">${reply.users.username}</td>
+                            <td class="second_col">(<fmt:formatDate
+                                    pattern="yyyy-MM-dd HH:mm" value="${reply.createDate}"/>)</td>
                         </tr>
                         <tr>
                             <td class="inquiry_title" colspan="2">${reply.content}</td>
+
                         </tr>
                         </tbody>
                     </table>

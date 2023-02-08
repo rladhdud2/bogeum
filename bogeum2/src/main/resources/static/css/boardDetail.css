@@ -28,12 +28,12 @@ a {
 }
 
 .board_title strong {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .board_title p {
     margin-top: 5px;
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
 .bt_wrap {
@@ -183,6 +183,10 @@ h5{
     height:80px !important;
     border: #ffebb6 1px solid;
 }
+#reply_control{
+    margin-top: 3rem;
+    width: 100% !important;
+}
 .bt3 {
     display: inline-block;
     min-width: 80px;
@@ -193,4 +197,17 @@ h5{
     background-color: #ffebb6;
     font-size: 2rem;
     font-family: 'Jua', sans-serif !important;
+}
+.first_col {
+    font-size: 1.8rem;
+    padding-top: 1.8rem;
+}
+.second_col {
+    font-size: 1.8rem;
+}
+.inquiry_title{
+    font-size: 1.8rem;
+}
+.swal2-popup{
+    font-size: 2rem !important;
 }

@@ -37,7 +37,7 @@
 	                    <div><br><a href="#">개인정보처리방침&nbsp;</a>  <a href="#">저작권정책&nbsp;</a>  
 	                            <a href="#">이메일주소무단수집거부&nbsp;</a>  <a href="#">찾아오시는길</a></div>
 	                    <div>수원시 팔달구 인계동 | 대표번호 031-123-1234</div>
-	                    <div>COPYRIGHT(C) SUWONCITY ALLRIGHTS RESERVED.</div>
+	                    <div>COPYRIGHT&COPY SUWONCITY ALLRIGHTS RESERVED.</div>
 	                </div>
 	            </div>
 	        </div>

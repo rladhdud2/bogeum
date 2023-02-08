@@ -40,7 +40,7 @@
     </form>
     <div class="bt_wrap">
         <button id="btn_save" class="btn">글쓰기</button>
-        <button class="btn">취소</button>
+        <button class="btn" onclick="history.back()">취소</button>
     </div>
 </div>
 <script>

@@ -1,7 +1,10 @@
 function idcheck() {
     var id2 = document.getElementById('id').value;    
     document.getElementById('idcheck').value = id2;
-    alert('사용 할 수 있는 아이디입니다');
+    Swal.fire({
+        html: "<b>사용할 수 있는 아이디입니다.",
+        icon: "success",
+    });
     if(id!=="") {
         document.getElementById('iderror').innerHTML = ""
     }
@@ -131,12 +134,18 @@ function signUpCheck() {
         document.getElementById('addresserror').innerHTML = ""
     };
     if(!agree1.checked) {
-        alert("약관동의를 체크하세요");
+        Swal.fire({
+            html: "<b>약관동의를 체크하세요.",
+            icon: "warning",
+        });
         agree1.focus();
         return false;
     };
     if(!agree2.checked) {
-        alert("약관동의를 체크하세요");
+        Swal.fire({
+            html: "<b>약관동의를 체크하세요.",
+            icon: "warning",
+        });
         agree1.focus();
         return false;
     };       

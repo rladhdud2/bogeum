@@ -82,7 +82,7 @@
 					<div id="nameerror" class="error"></div>
 				</div>
 				<div class="birth">
-					생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요"
+					생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요" maxlength="8"
 						id="birth" value="${principal.user.birth}">
 					<div id="birtherror" class="error"></div>
 				</div>
@@ -94,7 +94,7 @@
 				</div>
 
 				<div class="tel">
-					전화번호<br> <input placeholder="숫자만입력해주세요" id="tel"
+					전화번호<br> <input placeholder="숫자만입력해주세요" id="tel" maxlength="11"
 						value="${principal.user.tel}">
 					<div id="telerror" class="error"></div>
 				</div>
