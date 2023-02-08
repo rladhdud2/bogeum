@@ -28,9 +28,13 @@ let index = {
 			dataType: "json"
 			//응답의 결과가 문자열이 아닌 json으로 변환
 		}).done(function(resp) {
-			alert("회원가입이 완료되었습니다.");
-			location.href = "/auth/loginForm";
-			//응답이 정상
+			Swal.fire({
+				html: "<b>회원가입이 완료되었습니다.",
+				icon: "success",
+			}).then(function() {
+				location.href = "/auth/loginForm";
+			});
+
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 			//응답이 비정상
@@ -174,12 +178,18 @@ let index = {
 		};
 
 		if (!agree1.checked) {
-			alert("약관동의를 체크하세요");
+			Swal.fire({
+				html: "<b>약관동의를 체크하세요.",
+				icon: "warning",
+			});
 			agree1.focus();
 			return false;
 		};
 		if (!agree2.checked) {
-			alert("약관동의를 체크하세요");
+			Swal.fire({
+				html: "<b>약관동의를 체크하세요.",
+				icon: "warning",
+			});
 			agree1.focus();
 			return false;
 		};
@@ -273,12 +283,17 @@ function idcheck() {
 	}).done(function(resp) {
 
 		if (resp.data !== 0) {
-			alert("중복된 아이디 입니다.");
+			Swal.fire({
+				html: "중복된 아이디입니다.",
+				icon: "error"
+			});
 			document.getElementById('id').value = "";
-			location.href = "redirect:/";
 		} else {
-			alert("이 아이디는 사용할 수 있습니다.");
-			location.href = "redirect:/";
+			Swal.fire({
+				html: "이아이디는 사용할 수 있습니다.",
+				icon: "success"
+			});
+
 		}
 
 	});
