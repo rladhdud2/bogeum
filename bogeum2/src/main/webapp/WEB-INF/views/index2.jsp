@@ -29,13 +29,8 @@
         <button class="button3"></button>
         <button class="button4"></button>
         
-   		 </div>   
+   		 </div>    
    		 
-   		 
-   		 <hr><hr><hr><hr><hr>
-   		 <button id="stop">stop</button>
-   
-    
 
     <div class="container">
         <div class="main">
