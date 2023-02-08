@@ -19,7 +19,7 @@
     }
         #loginimgbox{
             width : 70%;
-            height: 40%;            
+            height: 60%;            
             margin: auto;
             margin-top: 100px;
         }
@@ -29,7 +29,7 @@
            
         }
 #loginpart2{
-    width : 400px;
+    width : 393px;
     height: 100%;
     border: 5px rgb(253, 232, 175) solid;  
     border-left: none;  
@@ -54,6 +54,7 @@
         width : 310px;                
         margin : auto;
         
+        
     }
     #loginpart2 input {
         width : 290px;
@@ -66,9 +67,10 @@
         
     }
     #findinfo {
-        width : 300px;
-        margin: auto;
-        margin-bottom: 20px;        
+         width : 290px;
+        margin-top : 10px;
+        margin-left: 45px;
+        margin-bottom: 15px;        
         display: flex;
         justify-content: space-between;
     }
@@ -81,11 +83,12 @@
         background-color: black;
         color: white;
         margin-bottom: 10px;
+         margin-top : 10px;
         height: 45px;
         font-size: 25px;
         font-family: 'Jua', sans-serif;   
         border-radius: 10px; 
-        margin-top : 10px;    
+           
     }
     #loginpart2 button:hover {
         cursor: pointer;
