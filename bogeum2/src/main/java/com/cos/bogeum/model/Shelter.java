@@ -66,6 +66,9 @@ public class Shelter {
     @Column(nullable = true, length = 200)
     private String careAddr;
 
+    @Column(nullable = true, length = 200)
+    private String processState;
+
 
 
 }

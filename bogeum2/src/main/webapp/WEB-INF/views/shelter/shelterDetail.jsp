@@ -18,9 +18,9 @@
 <%--            <img src = "${info.popfile}" alt = "캣">--%>
 <%--            <img src = "${info.popfile}" alt = "캣">--%>
 <%--            <img src = "${info.popfile}" alt = "캣">--%>
-<%--          </div>--%>
+          </div>
         </div>
-<%--        <div class = "img-select">--%>
+        <div class = "img-select">
 <%--          <div class = "img-item">--%>
 <%--            <a href = "#" data-id = "1">--%>
 <%--              <img src = "${info.popfile}" alt = "캣">--%>
@@ -41,17 +41,17 @@
 <%--              <img src = "${info.popfile}" alt = "캣">--%>
 <%--            </a>--%>
 <%--          </div>--%>
-<%--        </div>--%>
+        </div>
       </div>
       <!-- card right -->
       <div class = "animal-content">
-        <h2 class = "animal-title">고양이</h2>
-        <a href = "#" class = "animal-link">테스트</a>
+        <h2 class = "animal-title">${info.kindCd}</h2>
+        <span class = "animal-link">${info.processState}</span>
 
   
         <div class = "animal-detail">
-          <h2> 상세정보 </h2>
-          <p style="font-size: 18px;">고양이 고양이 고양이 </p>
+<%--          <h2> 상세정보 </h2>--%>
+<%--          <p style="font-size: 18px;">고양이 고양이 고양이 </p>--%>
           <ul style="font-size: 16 px;">
 <%--            reqNo:요청번호--%>
 <%--            kindCd:품종--%>
@@ -80,11 +80,9 @@
             <li>공고만료 : <span>${info.noticeEdt}</span></li>
           </ul>
         </div>
-  
 <%--        <div class = "adopt-info">--%>
 <%--          <button type = "button" class = "btn">입양신청</button>--%>
 <%--        </div>--%>
-  
 
       </div>
     </div>
@@ -114,5 +112,6 @@
 <%--    window.addEventListener('resize', slideImage);--%>
 <%--  </script>--%>
 
-<%--  <%@ include file="../layout/footer.jsp"%>--%>
+  <%@ include file="../layout/footer.jsp"%>
+
   

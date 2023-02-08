@@ -72,6 +72,7 @@ function shelterSearch() {
                     careNm: itemnn.careNm,
                     careTel: itemnn.careTel,
                     careAddr: itemnn.careAddr,
+                    processState: itemnn.processState,
                 };
                 console.log(data)
                 $.ajax({
@@ -144,6 +145,7 @@ function shelterSearch() {
                     careNm: itemnn.careNm,
                     careTel: itemnn.careTel,
                     careAddr: itemnn.careAddr,
+                    processState: itemnn.processState,
                 };
                 console.log(data)
                 $.ajax({
