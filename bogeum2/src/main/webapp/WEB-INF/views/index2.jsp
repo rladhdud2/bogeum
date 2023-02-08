@@ -31,6 +31,9 @@
         
    		 </div>    
    		 
+   		 <!--  
+   		 <button id="stop">stop</button>
+   		 -->
 
     <div class="container">
         <div class="main">
@@ -181,8 +184,10 @@
 			slideIndex = 0;
 		}
 		setTimeout(slide, 3000);
-	}
+	}	
+	
 		
+	
 	//배너 버튼
     document.querySelector('.button1').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';       
@@ -195,7 +200,10 @@
     })
     document.querySelector('.button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
-    })	       
+    })	 
+    slider.addEventListener("mouseover", () => {
+  		
+	});
 		
 </script>
 

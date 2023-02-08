@@ -22,7 +22,8 @@ header {
         height: 120px;
         display: flex;
         justify-content: center;
-        align-items:center;        
+        align-items:center; 
+            
     }
 
         #logo {            
@@ -38,11 +39,19 @@ header {
         display: flex;
         justify-content: space-between;
         
+        
         }
         .nav li {
-            width : 250px;
+            width : 150px;
             height: 100px;
-            line-height: 100px;            
+            line-height: 120px;            
             text-align: center;
-            font-size: 35px;                     
+            font-size: 35px;              
+            margin-left : 40px;	    
+            border-bottom : 3px solid white;        	
+                                   
         }
+        .nav li:hover {
+        	border-bottom : 3px solid black;
+        }
+        

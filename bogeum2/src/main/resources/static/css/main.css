@@ -138,6 +138,7 @@ body {
   overflow: hidden;  
   z-index: 1;  
   margin : auto; 
+  margin-top : 10px;
   height : 350px;   
   
   
