@@ -25,6 +25,4 @@ public interface UserRepository extends JpaRepository<Users,Integer>, JpaSpecifi
 	
 	
 	
-	
-	
 }

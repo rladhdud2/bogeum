@@ -65,7 +65,6 @@ let index = {
 			alert(JSON.stringify(error));
 		});
 
-
 	},
 
 
@@ -81,7 +80,7 @@ let index = {
 		var pwdCheck = /^(?=.*[0-9]).{8,25}$/;
 		var birthCheck = /^(?=.*[0-9]).{8}$/;
 		var telCheck = /^(?=.*[0-9]).{10,11}$/;
-		var emailCheck = /^(?=.*[a-z])[a-z0-9]{4,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		var emailCheck = /^(?=.*[a-z])[a-z0-9]{1,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 		
 		
 		if (pwd.value == "") {
