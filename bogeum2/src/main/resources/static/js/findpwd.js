@@ -6,18 +6,26 @@ let index2 = {
 			var email = document.getElementById('email');
 
 			if (username.value == "") {
-				alert("아이디를 입력해주세요");
+				Swal.fire({
+					html: "아이디를 입력해주세요",
+					icon: "warning"
+				});
 				username.focus();
 				return false;
 
 			};
 			if (email.value == "") {
-				alert("이메일을 입력해주세요");
-				email.focus();
+				Swal.fire({
+					html: "이메일을 입력해주세요",
+					icon: "warning"
+				});
 				return false;
 			};
 
-			alert("임시 비밀번호가 발송되었습니다.");
+			Swal.fire({
+				html: "임시 비밀번호를 발송하였습니다",
+				icon: "success"
+			});;
 			this.find();
 		});
 
