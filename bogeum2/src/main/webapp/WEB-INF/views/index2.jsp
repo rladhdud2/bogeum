@@ -23,10 +23,10 @@
         
     </div>
           <div class="buttonbox">
-        <button class="button1"></button>
-        <button class="button2"></button>
-        <button class="button3"></button>
-        <button class="button4"></button>
+        <button class="bannerbutton" id="button1"></button>
+        <button class="bannerbutton" id="button2"></button>
+        <button class="bannerbutton" id="button3"></button>
+        <button class="bannerbutton" id="button4"></button>
         
    		 </div>    
    		 
@@ -170,11 +170,14 @@
 	var sliderWidth = 100; // container의 width
 	var slideIndex = 0;
 	var slider = document.querySelector('.bannercontainer');
+	var time = 3000;
 	slider.style.width = sliderWidth * totalslide + '%';
 
 	slide()
+	
 
-	function slide() {
+	function slide() {	
+		setTimeout(slide, time);
 		for (var i = 0; i < totalslide; i++) {
 			slider.style.left = -(sliderWidth * slideIndex) + '%';				
 		}
@@ -182,24 +185,35 @@
 		if (slideIndex === totalslide) {
 			slideIndex = 0;
 		}
-		setTimeout(slide, 3000);
-	}	
-	
+		
+	}			
 		
 	
 	//배너 버튼
-    document.querySelector('.button1').addEventListener('click', function() {
-        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';       
+    document.querySelector('#button1').addEventListener('click', function() {
+        document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';   
+        slideIndex = 0;
+        time=30000;
     })
-    document.querySelector('.button2').addEventListener('click', function() {
+    document.querySelector('#button2').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1) + '%';
+        slideIndex = 1;
+        time=30000;
     })
-    document.querySelector('.button3').addEventListener('click', function() {
+    document.querySelector('#button3').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2) + '%';
+        slideIndex = 2;
+        time=30000;
     })
-    document.querySelector('.button4').addEventListener('click', function() {
+    document.querySelector('#button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
-    })	 	
+        slideIndex = 3;
+        time=30000;
+    })	        
+     document.querySelector('.bannercontainer').addEventListener('mouseleave', function() {     	 
+    	 time=3000;  	
+    	
+    })	
 		
 </script>
 
