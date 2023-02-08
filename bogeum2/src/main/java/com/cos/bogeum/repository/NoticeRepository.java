@@ -17,5 +17,6 @@ public interface NoticeRepository extends JpaRepository<Notice, Integer> {
     int updateCount(int id);
 
     Page<Notice> findByTitleContaining(String keyword, Pageable pageable);
+    Page<Notice> findByContentContaining(String keyword, Pageable pageable);
 
 }

@@ -55,14 +55,14 @@
                     <div class="date">작성일</div>
                     <div class="count">조회수</div>
                 </div>
-                <c:forEach var="finds" items="${finds.content}">
+                <c:forEach var="findslist" items="${findsList.content}">
                     <div class="list_content">
-                        <div class="num">${finds.id}</div>
-                        <div class="title"><a href="/finds/${finds.id}">${finds.title}</a></div>
-                        <div class="writer">${finds.users.username}</div>
+                        <div class="num">${findslist.id}</div>
+                        <div class="title"><a href="/finds/${findslist.id}">${findslist.title}</a></div>
+                        <div class="writer">${findslist.users.username}</div>
                         <div class="date"><fmt:formatDate
-                                pattern="yyyy-MM-dd HH:mm" value="${finds.createDate}"/></div>
-                        <div class="count">${finds.count}</div>
+                                pattern="yyyy-MM-dd HH:mm" value="${findslist.createDate}"/></div>
+                        <div class="count">${findslist.count}</div>
                     </div>
                 </c:forEach>
             </div>
@@ -75,7 +75,6 @@
                 <a href="#" class="bt next">></a>
                 <a href="#" class="bt last">>></a>
             </div>
-
             <%--===================검색기능===================--%>
             <div class="bt_wrap">
                 <form name="searchForm" method="GET" action="/auth/finds/search">
@@ -87,17 +86,16 @@
                     <input type="text" name="keyword" id="keyword">
                     <input type="submit" id="search" name="submit" value="">
                 </form>
-
-            <%--===================글쓰기===================--%>
+                <%--===================글쓰기===================--%>
                 <c:choose>
                     <c:when test="${principal.user.roles == 'USER'}">
-                      <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
-                      </div>
+                        <div>
+                            <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" style="display: none">글쓰기</button>
+                            <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" style="display: none">글쓰기</button>
                         </div>
                     </c:otherwise>
                 </c:choose>

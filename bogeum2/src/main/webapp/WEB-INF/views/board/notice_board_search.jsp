@@ -19,9 +19,6 @@
     <sec:authentication property="principal" var="principal"/>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 </sec:authorize>
-<!-- SweetAlert -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 <%--Header--%>
 <%@ include file="../layout/header.jsp" %>
 <body>
@@ -43,8 +40,8 @@
     </div>
     <div class="board_wrap2">
         <div class="board_title">
-            <strong>분실/습득</strong>
-            <p>반려동물을 찾아주세요!! 가족들이 기다리고 있습니다</p>
+            <strong>공지사항</strong>
+            <p>공지사항을 안내드립니다</p>
         </div>
         <div class="board_list_wrap">
             <div class="board_list">
@@ -55,14 +52,14 @@
                     <div class="date">작성일</div>
                     <div class="count">조회수</div>
                 </div>
-                <c:forEach var="finds" items="${finds.content}">
-                    <div class="list_content">
-                        <div class="num">${finds.id}</div>
-                        <div class="title"><a href="/finds/${finds.id}">${finds.title}</a></div>
-                        <div class="writer">${finds.users.username}</div>
+                <c:forEach var="noticelist" items="${noticeList.content}">
+                    <div>
+                        <div class="num">${noticelist.id}</div>
+                        <div class="title"><a href="/notice/${noticelist.id}">${noticelist.title}</a></div>
+                        <div class="writer">${noticelist.users.username}</div>
                         <div class="date"><fmt:formatDate
-                                pattern="yyyy-MM-dd HH:mm" value="${finds.createDate}"/></div>
-                        <div class="count">${finds.count}</div>
+                                pattern="yyyy-MM-dd HH:mm" value="${noticelist.createDate}"/></div>
+                        <div class="count">${noticelist.count}</div>
                     </div>
                 </c:forEach>
             </div>
@@ -75,29 +72,27 @@
                 <a href="#" class="bt next">></a>
                 <a href="#" class="bt last">>></a>
             </div>
-
             <%--===================검색기능===================--%>
             <div class="bt_wrap">
-                <form name="searchForm" method="GET" action="/auth/finds/search">
+                <form name="searchForm" method="GET" action="/auth/notice/search">
                     <select name="searchOption">
                         <option value="title">제목</option>
                         <option value="writer">작성자</option>
                         <option value="content">내용</option>
                     </select>
-                    <input type="text" name="keyword" id="keyword">
+                    <input type="text" name="keyword" id="keyword" >
                     <input type="submit" id="search" name="submit" value="">
                 </form>
-
-            <%--===================글쓰기===================--%>
+                <%--===================글쓰기===================--%>
                 <c:choose>
                     <c:when test="${principal.user.roles == 'USER'}">
-                      <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
-                      </div>
+                        <div>
+                            <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" style="display: none">글쓰기</button>
+                            <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
                         </div>
                     </c:otherwise>
                 </c:choose>

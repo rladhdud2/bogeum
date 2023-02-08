@@ -17,5 +17,6 @@ public interface FindsRepository extends JpaRepository<Finds, Integer> {
     int updateCount(int id);
 
     Page<Finds> findByTitleContaining(String keyword, Pageable pageable);
+    Page<Finds> findByContentContaining(String keyword, Pageable pageable);
 
 }

@@ -72,17 +72,18 @@
                 <a href="#" class="bt next">></a>
                 <a href="#" class="bt last">>></a>
             </div>
+            <%--===================검색기능===================--%>
             <div class="bt_wrap">
-                <form name="searchForm" method="post" action="#">
+                <form name="searchForm" method="GET" action="/auth/notice/search">
                     <select name="searchOption">
                         <option value="title">제목</option>
                         <option value="writer">작성자</option>
                         <option value="content">내용</option>
-                        <option value="all">제목 +작성자 + 내용</option>
                     </select>
-                    <input name="keyword" id="keyword" value="#">
+                    <input type="text" name="keyword" id="keyword" >
                     <input type="submit" id="search" name="submit" value="">
                 </form>
+            <%--===================글쓰기===================--%>
                 <c:choose>
                     <c:when test="${principal.user.roles == 'USER'}">
                         <div>

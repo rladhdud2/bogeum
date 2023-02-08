@@ -88,6 +88,12 @@ public class FindsService {
         return findsRepository.findByTitleContaining(keyword, pageable);
 
     }
+    @Transactional
+    public Page<Finds> searchPosts1(String keyword, Pageable pageable) {
+        return findsRepository.findByContentContaining(keyword, pageable);
+
+    }
+
 
     private FindsDto convertEntityToDto(Finds finds) {
         return FindsDto.builder().id(finds.getId()).title(finds.getTitle()).content(finds.getContent())

@@ -2,6 +2,9 @@ package com.cos.bogeum.controller;
 
 
 import com.cos.bogeum.model.Finds;
+import com.cos.bogeum.model.Free;
+import com.cos.bogeum.model.Inquirys;
+import com.cos.bogeum.model.Notice;
 import com.cos.bogeum.repository.FreeRepository;
 import com.cos.bogeum.service.FindsService;
 import com.cos.bogeum.service.FreeService;
@@ -77,14 +80,15 @@ private FreeService freeService;
         return "board/find_board_saveForm";
     }
 
-    @GetMapping("/auth/inquiry/search")
+    @GetMapping("/auth/finds/search")
     public String search(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
 
-        Page<Finds> inquiryDtoList = findsService.searchPosts(keyword, pageable);
+        Page<Finds> findsDtoList = findsService.searchPosts(keyword, pageable);
         model.addAttribute("keyword", keyword);
-        model.addAttribute("inquiryList", inquiryDtoList);
-        return "board/inquiry_board_search";
+        model.addAttribute("findsList", findsDtoList);
+        return "board/find_board_search";
     }
+
     /* ======공지사항====== */
     @GetMapping({ "/auth/notice" })
     public String finds_index1(Model model,
@@ -112,14 +116,14 @@ private FreeService freeService;
         return "board/notice_board_saveForm";
     }
 
-//    @GetMapping("/auth/inquiry/search")
-//    public String search1(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-//
-//        Page<Notice> inquiryDtoList = noticeService.searchPosts(keyword, pageable);
-//        model.addAttribute("keyword", keyword);
-//        model.addAttribute("inquiryList", inquiryDtoList);
-//        return "board/inquiry_board_search";
-//    }
+    @GetMapping("/auth/notice/search")
+    public String search1(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+
+        Page<Notice> noticeDtoList = noticeService.searchPosts(keyword, pageable);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("noticeList", noticeDtoList);
+        return "board/notice_board_search";
+    }
     /* FAQs 게시판 */
 
     @GetMapping({ "/auth/inquiry" })
@@ -148,14 +152,14 @@ private FreeService freeService;
         return "board/inquiry_board_saveForm";
     }
 
-//    @GetMapping("/auth/inquiry/search")
-//    public String search2(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-//
-//        Page<Inquirys> inquiryDtoList = inquiryService.searchPosts(keyword, pageable);
-//        model.addAttribute("keyword", keyword);
-//        model.addAttribute("inquiryList", inquiryDtoList);
-//        return "board/inquiry_board_search";
-//    }
+    @GetMapping("/auth/inquiry/search")
+    public String search2(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+
+        Page<Inquirys> inquiryDtoList = inquiryService.searchPosts(keyword, pageable);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("inquiryList", inquiryDtoList);
+        return "board/inquiry_board_search";
+    }
 
     /* ======자유게시판====== */
     @GetMapping({ "/auth/free" })
@@ -184,14 +188,14 @@ private FreeService freeService;
         return "board/free_board_saveForm";
     }
 
-//    @GetMapping("/auth/free/search")
-//    public String search1(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-//
-//        Page<Notice> inquiryDtoList = noticeService.searchPosts(keyword, pageable);
-//        model.addAttribute("keyword", keyword);
-//        model.addAttribute("inquiryList", inquiryDtoList);
-//        return "board/inquiry_board_search";
-//    }
+    @GetMapping("/auth/free/search")
+    public String search3(@RequestParam(value = "keyword") String keyword, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+
+        Page<Free> freeDtoList = freeService.searchPosts(keyword, pageable);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("freeList", freeDtoList);
+        return "board/free_board_search";
+    }
 
 
 }

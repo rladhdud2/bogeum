@@ -6,7 +6,7 @@ let index = {
         $("#btn_delete").on("click", () => {
             Swal.fire({
                 html: '정말 삭제하시겠습니까?',
-                icon: 'question',
+                icon: 'warning',
 
                 showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
                 confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
@@ -19,7 +19,7 @@ let index = {
                 if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
                     Swal.fire({
                         html: '<b>삭제가 완료되었습니다.',
-                        icon: 'info'
+                        icon: 'success'
                     }).then(result => { this.deleteById(); })
                 } else {
                     location.go(-1);
@@ -42,7 +42,7 @@ let index = {
                 if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
                     Swal.fire({
                         html: '<b>수정이 완료되었습니다.',
-                        icon: 'info'
+                        icon: 'success'
                     }).then(result => { this.update(); })
                 } else {
                     location.go(-1);
@@ -69,7 +69,7 @@ let index = {
         }).done(function(resp) {
             Swal.fire({
                 html: "<b>글쓰기가 완료되었습니다.",
-                icon: "info",
+                icon: "success",
             }).then(function() {
                 location.href = "/auth/findboard";
             });

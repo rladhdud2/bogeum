@@ -484,3 +484,6 @@ body {
 #btn_update {
     background-color: #ffebb6;
 }
+.swal2-popup{
+    font-size: 2rem !important;
+}
