@@ -48,7 +48,7 @@
 			<c:when test="${empty principal}">
 				<div id="login">
 					<a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a
-						href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
+						href="/auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
 			</c:when>
 			<c:otherwise>

@@ -19,10 +19,16 @@
 
 				<div id="findtitle">아이디 찾기</div>
 				<div class="logininput">
-					<input id="username2" name="username2" placeholder="&nbsp;이름을 입력해주세요." >
-					<input type="text" id="tel" name="tel" placeholder="&nbsp;전화번호를 입력해주세요.">
-				</div>				
-				
+					<div class="inputbox">
+						<input id="username2" name="username2"
+							placeholder="이름을 입력해주세요.">
+					</div>
+					<div class="inputbox">
+						<input type="text" id="tel" name="email"
+							placeholder="이메일을 입력해주세요.">
+					</div>
+				</div>
+
 				<div id="findinfo">
 					<div>
 						<a href="/auth/joinForm">회원가입</a>
@@ -30,10 +36,10 @@
 					<div>
 						<a href="/auth/loginForm">로그인&nbsp;</a>/<a href="/auth/findpwd">&nbsp;비밀번호찾기</a>
 					</div>
-				</div>				
-				
-				<div id="searchbutton1">				
-				<button type="submit">검색</button>
+				</div>
+
+				<div id="searchbutton1">
+					<button type="submit">검색</button>
 				</div>
 			</form>
 			<div class="searchresult">${board.username}</div>

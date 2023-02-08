@@ -40,22 +40,29 @@
     font-size: 45px;
     margin: auto;
     margin-top: 35px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;    
 }
+	.inputbox  {	
+	height : 38px;
+	margin-bottom : 10px;	
+	border : 1px solid black;
+	border-radius: 10px;
+	}
     .logininput {
-        width : 310px;
-        height: 90px;        
+        width : 310px;                
         margin : auto;
+        
     }
     #loginpart2 input {
-        width : 300px;
+        width : 290px;
         height: 35px;
-        margin : auto;
-       margin-bottom: 10px;
-        font-size: 18px;
-        border-radius: 10px;
-        border: 1px black solid;
+        margin-left : 10px;  
+        margin-top : 2px;   
+        font-size: 18px;     
+        border : none;   
+        outline : none;
+        
     }
     #findinfo {
         width : 300px;

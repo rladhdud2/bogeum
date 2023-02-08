@@ -5,11 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/join.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"	rel="stylesheet">
+<%--<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"	rel="stylesheet">--%>
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 <script	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,7 +19,7 @@
 <script	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
-<body>
+
 <body>
 <div id="kakaomap">
 <p>카카오(다음) 주소찾기</p>
@@ -73,20 +75,20 @@ function findAddr(){
 			<div id="nameerror" class="error"></div>
 		</div>
 		<div class="birth">
-			생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요"
+			생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요" maxlength="8"
 				id="birth">
 			<div id="birtherror" class="error"></div>
 		</div>
 		 
 		<div class="address">
-			주소<br> <input id="address" type="text" readonly>			
+			주소<br> <input id="address" type="text" onclick="findAddr()" readonly>			
 			<input id="addressdetail" type="text" placeholder="상세주소를 입력해주세요">
 			<button onclick="findAddr()">주소찾기</button>
 			<div id="addresserror" class="error"></div>
 		</div>
 	
 		<div class="tel">
-			전화번호<br> <input type="text" placeholder="숫자만 입력해주세요" id="tel">
+			전화번호<br> <input type="text" placeholder="숫자만 입력해주세요" id="tel" maxlength="11">
 			<div id="telerror" class="error"></div>
 		</div>
 		<div class="email">
