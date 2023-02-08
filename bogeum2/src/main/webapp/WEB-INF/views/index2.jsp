@@ -21,7 +21,6 @@
             <div class="inner"><a href="#"><img src="/img/banner/banner1.jpg"></a></div>            
         </div>       
         
-        
     </div>
           <div class="buttonbox">
         <button class="button1"></button>
@@ -200,10 +199,7 @@
     })
     document.querySelector('.button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
-    })	 
-    slider.addEventListener("mouseover", () => {
-  		
-	});
+    })	 	
 		
 </script>
 
