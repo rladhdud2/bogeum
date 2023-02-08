@@ -154,7 +154,7 @@ let index = {
 			document.getElementById('emailerror').innerHTML = ""
 		};
 		
-		var emailCheck = /^(?=.*[a-z])[a-z0-9]{4,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		var emailCheck = /^(?=.*[a-z])[a-z0-9]{1,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 		
 		if (!emailCheck.test(email.value)) {
 			document.getElementById('emailerror').innerHTML = "정확한 이메일을 입력해주세요"
@@ -244,12 +244,7 @@ document.getElementById('number').addEventListener("keyup", () => {
 		document.getElementById('numbererror').innerHTML = ""
 	}
 })
-document.getElementById('detailaddress').addEventListener("keyup", () => {
-	var address2 = document.getElementById('address');
-	if (address2 !== "") {
-		document.getElementById('addresserror').innerHTML = ""
-	}
-})
+
 
 function selectAll(selectAll) {
 	const checkboxes
@@ -289,3 +284,24 @@ function idcheck() {
 	}
 
 }
+
+
+
+$('#btn-joinnumber').click(function() {
+	
+	
+		const eamil = $('#email').val(); // 이메일 주소값 얻어오기!
+		console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
+		const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
+		
+		$.ajax({
+			type : 'get',
+			url : '/mailcheck/'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+			success : function (data) {			
+			checkInput.attr('disabled',false);
+			code =data;
+			alert('인증번호가 전송되었습니다.')
+			}			
+		}); // end ajax
+		
+	}); // end send eamil
