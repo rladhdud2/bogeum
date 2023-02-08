@@ -154,7 +154,7 @@ let index = {
 			document.getElementById('emailerror').innerHTML = ""
 		};
 		
-		var emailCheck = /^(?=.*[a-z])[a-z0-9]{4,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		var emailCheck = /^(?=.*[a-z])[a-z0-9]{1,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 		
 		if (!emailCheck.test(email.value)) {
 			document.getElementById('emailerror').innerHTML = "정확한 이메일을 입력해주세요"

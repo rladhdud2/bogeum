@@ -183,6 +183,7 @@
 		}
 		setTimeout(slide, 2000);
 	}
+
 		
 	//배너 버튼
     document.querySelector('.button1').addEventListener('click', function() {

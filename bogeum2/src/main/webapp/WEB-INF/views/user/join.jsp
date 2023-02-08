@@ -75,7 +75,7 @@ function findAddr(){
 			<div id="nameerror" class="error"></div>
 		</div>
 		<div class="birth">
-			생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요"
+			생년월일<br> <input type="text" placeholder="생년월일 8자리를입력해주세요" maxlength="8"
 				id="birth">
 			<div id="birtherror" class="error"></div>
 		</div>
@@ -88,7 +88,7 @@ function findAddr(){
 		</div>
 	
 		<div class="tel">
-			전화번호<br> <input type="text" placeholder="숫자만 입력해주세요" id="tel">
+			전화번호<br> <input type="text" placeholder="숫자만 입력해주세요" id="tel" maxlength="11">
 			<div id="telerror" class="error"></div>
 		</div>
 		<div class="email">

@@ -36,7 +36,7 @@ function modalOpen(type, username2, userId) {
                 <th class="board-table-no">번호</th>
                 <th class="board-table-title">제목</th>
                 <th class="board-table-date">작성일</th>
-                <th class="board-table-view">조회수?</th>
+                <th class="board-table-view">조회수</th>
             </tr>`;
 
         $.ajax({
