@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,6 +27,9 @@ import com.cos.bogeum.service.UserService;
 
 @RestController
 public class UserApiController {
+	
+	@Value("${cos.key}")
+	private String cosKey;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -62,6 +66,22 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 
 	}
+	
+	//회원정보수정2
+		@PutMapping("/user2")
+		public ResponseDto<Integer> update2(@RequestBody Users user) {
+
+			userService.회원수정2(user);		
+			
+			Authentication authentication = authenticationManager
+					.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), cosKey));
+
+			SecurityContext securityContext = SecurityContextHolder.getContext();
+			securityContext.setAuthentication(authentication);
+
+			return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+
+		}
 
 	// 회원 탈퇴
 	@DeleteMapping("/api/user/out/{id}")

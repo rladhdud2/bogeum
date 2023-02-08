@@ -59,6 +59,21 @@ public class UserService {
 		persistance.setTel(user.getTel());
 		persistance.setEmail(user.getEmail());
 	}
+	
+	// 회원정보수정2
+		@Transactional
+		public void 회원수정2(Users user) {
+			System.out.println(user.getAddress());
+			Users persistance = userRepository.findByUsername(user.getUsername()).orElseThrow(() -> {
+				return new IllegalArgumentException("회원 찾기 실패");
+			});
+			
+			persistance.setUsername2(user.getUsername2());
+			persistance.setBirth(user.getBirth());
+			persistance.setAddress(user.getAddress());
+			persistance.setTel(user.getTel());
+			persistance.setEmail(user.getEmail());
+		}
 
 	// 회원 탈퇴
 	@Transactional
@@ -74,13 +89,26 @@ public class UserService {
 	}
 	
 	//아이디찾기
-	public Users 아이디찾기(String username2,String tel) {
+	public Users 아이디찾기(String username2,String email) {
 		
-		return userRepository.findByUsername2AndTel(username2,tel).orElseThrow(() -> {
+		return userRepository.findByUsername2AndEmail(username2,email).orElseThrow(() -> {
 			return new IllegalArgumentException("아이디 찾기 실패");		
 		
 		});
 	}
+	
+	@Transactional(readOnly = true)
+	public Users 회원찾기(String username) {
+		
+		//orElseGet-회원을 찾았는데 없으면 빈 객체를 리턴
+		Users user = userRepository.findByUsername(username).orElseGet(()->{
+			return new Users();
+		});
+		return user;
+			
+			
+	}
+	
 	
 	@Value("${spring.mail.username}")
 	private String sendFrom;
