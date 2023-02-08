@@ -21,12 +21,10 @@ let index2 = {
 				});
 				return false;
 			};
-
 			Swal.fire({
 				html: "임시 비밀번호를 발송하였습니다",
 				icon: "success"
-			});;
-			this.find();
+			}).then(this.find);
 		});
 
 	},
@@ -58,8 +56,6 @@ let index2 = {
 				} else {
 					$('#valid_username').text('');
 				}
-
-
 			} else {				
 				location.href = "/auth/loginForm";
 			}
