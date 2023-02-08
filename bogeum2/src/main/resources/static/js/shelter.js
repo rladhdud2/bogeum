@@ -9,7 +9,10 @@ function shelterSearch() {
     var dd = date.getDate().toString().padStart(2, '0');
     var yyyymmdd = yyyy + mm + dd;
     if (yyyymmdd == 'NaNNaNNaN'){
-        alert("날짜를 입력해주세요")
+        Swal.fire({
+            html: "날짜를 입력해주세요",
+            icon: "warning"
+        });
         return false;
     }
     /**
