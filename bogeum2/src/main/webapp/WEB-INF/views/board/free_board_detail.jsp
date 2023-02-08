@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="bt_wrap">
-            <button class="btn" onclick="location.href='#'">목록</button>
+            <button class="btn" onclick="location.href='/auth/free'">목록</button>
             <c:if test="${free.users.id == principal.user.id}">
                 <a class="btn bt1" href="/free/${free.id}/free_board_updateForm">수정</a>
                 <button id="btn_delete" class="btn bt2">삭제</button>

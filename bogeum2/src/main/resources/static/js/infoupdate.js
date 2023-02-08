@@ -31,8 +31,13 @@ let index = {
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(resp) {
-			alert("회원수정이 완료되었습니다.");
-			location.href = "/";
+			Swal.fire({
+				html: "<b>회원수정이 완료되었습니다.",
+				icon: "success",
+			}).then(function() {
+				location.href = "/";
+			});
+
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
@@ -59,8 +64,12 @@ let index = {
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(resp) {
-			alert("회원수정이 완료되었습니다.");
-			location.href = "/";
+			Swal.fire({
+				html: "<b>회원수정이 완료되었습니다.",
+				icon: "success",
+			}).then(function() {
+				location.href = "/";
+			});
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
@@ -84,13 +93,19 @@ let index = {
 		
 		
 		if (pwd.value == "") {
-			alert("비밀번호를 입력해주세요");
+			Swal.fire({
+				html: "비밀번호를 입력해주세요",
+				icon: "warning"
+			});
 			pwd.focus();
 			return false;
 		};
 
 		if (!pwdCheck.test(pwd.value)) {
-			alert("비밀번호는 8~25자리를 사용합니다");
+			Swal.fire({
+				html: "비밀번호는 8~25자리를 사용합니다",
+				icon: "warning"
+			});
 			pwd.focus();
 			return false;
 		};
@@ -101,60 +116,90 @@ let index = {
 		var pwdCheck = /^(?=.*[0-9]).{8,25}$/;
 
 		if (!pwdCheck.test(pwd.value)) {
-			alert("비밀번호는 8~25자리를 사용합니다");
+			Swal.fire({
+				html: "비밀번호는 8~25자리를 사용합니다",
+				icon: "warning"
+			});
 			pwd.focus();
 			return false;		
 		};
 
 		if (repwd.value !== pwd.value) {
-			alert("비밀번호가 일치하지 않습니다");
+			Swal.fire({
+				html: "비밀번호가 일치하지 않습니다",
+				icon: "warning"
+			});
 			repwd.focus();
 			return false;
 		};
 
 		if (name.value == "") {
-			alert("이름을 입력해주세요");
+			Swal.fire({
+			html: "이름을 입력해주세요",
+			icon: "warning"
+		});
 			name.focus();
 			return false;
 		};
 		if (birth.value == "") {
-			alert("생년월일을 입력해주세요");
+			Swal.fire({
+				html: "생년월일을 입력해주세요",
+				icon: "warning"
+			});
 			birth.focus();
 			return false;
 		};
 		if (!birthCheck.test(birth.value)) {
-			alert("정확한 생년월일을 입력해주세요");
+			Swal.fire({
+				html: "정확한 생년월일을 입력해주세요",
+				icon: "warning"
+			});
 			birth.focus();
 			return false;
 		};
 
 		
 		if (address.value == "") {
-			alert("주소를 입력해주세요");
+			Swal.fire({
+				html: "주소를 입력해주세요",
+				icon: "warning"
+			});
 			address.focus();
 			return false;
 		};
 		
 		if (tel.value == "") {
-			alert("전화번호를 입력해주세요");
+			Swal.fire({
+				html: "전화번호를 입력해주세요",
+				icon: "warning"
+			});
 			tel.focus();
 			return false;
 		};
 
 		if (!telCheck.test(tel.value)) {
-			alert("정확한 전화번호를 입력해주세요");
+			Swal.fire({
+				html: "정확한 전화번호를 입력해주세요",
+				icon: "warning"
+			});
 			tel.focus();
 			return false;
 		};			
 		
 		if (email.value == "") {
-			alert("이메일을 입력해주세요");
+			Swal.fire({
+				html: "이메일을 입력해주세요",
+				icon: "warning"
+			});
 			email.focus();
 			return false;
 		};
 				
 		if (!emailCheck.test(email.value)) {
-			alert("정확한 이메일을 입력해주세요");
+			Swal.fire({
+				html: "정확한 이메일을 입력해주세요",
+				icon: "warning"
+			});
 			email.focus();
 			return false;
 		};
@@ -177,47 +222,71 @@ let index = {
 		
 		
 		if (name.value == "") {
-			alert("이름을 입력해주세요");
+			Swal.fire({
+				html: "이름을 입력해주세요",
+				icon: "warning"
+			});
 			name.focus();
 			return false;
 		};
 		if (birth.value == "") {
-			alert("생년월일을 입력해주세요");
+			Swal.fire({
+				html: "생년월일을 입력해주세요",
+				icon: "warning"
+			});
 			birth.focus();
 			return false;
 		};
 		if (!birthCheck.test(birth.value)) {
-			alert("정확한 생년월일을 입력해주세요");
+			Swal.fire({
+				html: "정확한 생년월일을 입력해주세요",
+				icon: "warning"
+			});
 			birth.focus();
 			return false;
 		};
 		
 		if (address.value == "") {
-			alert("주소를 입력해주세요");
+			Swal.fire({
+				html: "주소를 입력해주세요",
+				icon: "warning"
+			});
 			address.focus();
 			return false;
 		};
 		
 		if (tel.value == "") {
-			alert("전화번호를 입력해주세요");
+			Swal.fire({
+				html: "전화번호를 입력해주세요",
+				icon: "warning"
+			});
 			tel.focus();
 			return false;
 		};
 
 		if (!telCheck.test(tel.value)) {
-			alert("정확한 전화번호를 입력해주세요");
+			Swal.fire({
+				html: "정확한 전화번호를 입력해주세요",
+				icon: "warning"
+			});
 			tel.focus();
 			return false;
 		};			
 		
 		if (email.value == "") {
-			alert("이메일을 입력해주세요");
+			Swal.fire({
+				html: "이메일을 입력해주세요",
+				icon: "warning"
+			});
 			email.focus();
 			return false;
 		};
 		
 		if (!emailCheck.test(email.value)) {
-			alert("정확한 이메일을 입력해주세요");
+			Swal.fire({
+				html: "정확한 이메일을 입력해주세요",
+				icon: "warning"
+			});
 			email.focus();
 			return false;
 		};
