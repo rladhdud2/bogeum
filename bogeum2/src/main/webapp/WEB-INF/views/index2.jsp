@@ -30,6 +30,10 @@
         <button class="button4"></button>
         
    		 </div>   
+   		 
+   		 
+   		 <hr><hr><hr><hr><hr>
+   		 <button id="stop">stop</button>
    
     
 
@@ -181,7 +185,7 @@
 		if (slideIndex === totalslide) {
 			slideIndex = 0;
 		}
-		setTimeout(slide, 2000);
+		setTimeout(slide, 3000);
 	}
 		
 	//배너 버튼
@@ -196,8 +200,7 @@
     })
     document.querySelector('.button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
-    })
-	
+    })	       
 		
 </script>
 
