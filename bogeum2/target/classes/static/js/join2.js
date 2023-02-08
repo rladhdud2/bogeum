@@ -238,6 +238,12 @@ document.getElementById('tel').addEventListener("keyup", () => {
 		document.getElementById('telerror').innerHTML = ""
 	}
 })
+document.getElementById('email').addEventListener("keyup", () => {
+	var email2 = document.getElementById('email');
+	if (email2 !== "") {
+		document.getElementById('emailerror').innerHTML = ""
+	}
+})
 document.getElementById('number').addEventListener("keyup", () => {
 	var number2 = document.getElementById('number');
 	if (number2 !== "") {
