@@ -48,7 +48,7 @@ function shelterSearch() {
             for (var i in dat.response.body.items.item) {
                 var item = dat.response.body.items.item[i];
 
-                html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}"><img class="shelter-pic" src="${item.popfile}"></a>`;
+                html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}" target="_blank"><img class="shelter-pic" src="${item.popfile}"></a>`;
                 html += '<p>' + item.kindCd +'&nbsp'+ '<span style="color: #b8dff8">(' + item.noticeSdt + ')</span></p>';
                 // html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
                 html += '<p>지역: ' + item.orgNm + '</p></div>';
@@ -120,7 +120,7 @@ function shelterSearch() {
             for (var i in dat.response.body.items.item) {
                 let item = dat.response.body.items.item[i];
 
-                html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}"><img class="shelter-pic" src="${item.popfile}"></a>`;
+                html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}" target="_blank"><img class="shelter-pic" src="${item.popfile}"></a>`;
                 html += '<p>' + item.kindCd + '&nbsp' + '<span style="color: #b8dff8">(' + item.noticeSdt + ')</span></p>';
                 // html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
                 html += '<p>지역: ' + item.orgNm + '</p></div>';

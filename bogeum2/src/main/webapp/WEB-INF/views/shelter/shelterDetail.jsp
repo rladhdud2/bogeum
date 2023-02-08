@@ -8,7 +8,7 @@
     헤더부분
   </div> -->
   <div class = "card-wrapper">
-    
+    <div onclick="window.close()" style="cursor: pointer"><i class="fa-solid fa-reply" style="width: 24px"></i></div>
     <div class = "card">
       <!-- card left -->
       <div class = "animal-imgs">
@@ -68,7 +68,19 @@
 
             <li>유기번호 : <span>${info.desertionNo}</span></li>
             <li>품종 : <span>${info.kindCd}</span></li>
-            <li>성 : <span>${info.sexCd}</span></li>
+            <li>성 :
+                <span>
+                    <c:if test="${info.sexCd eq 'Q'}">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </c:if>
+                    <c:if test="${info.sexCd eq 'M'}">
+                        <img src="/img/male.png" style="width: 24px">
+                    </c:if>
+                   <c:if test="${info.sexCd eq 'F'}">
+                       <img src="/img/female.png" style="width: 24px">
+                   </c:if>
+                </span>
+            </li>
             <li>나이 : <span>${info.age}</span></li>
             <li>무게 : <span>${info.weight}</span></li>
             <li>털색 : <span>${info.colorCd}</span></li>

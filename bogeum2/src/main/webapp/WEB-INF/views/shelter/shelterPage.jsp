@@ -40,10 +40,10 @@
           <input type="radio" name="neuter" value="N"/>
           <div class="control__indicator"></div>
         </label>
-          <label class="control control--radio">미상
-              <input type="radio" name="neuter" value="U"/>
-              <div class="control__indicator"></div>
-          </label>
+<%--          <label class="control control--radio">미상--%>
+<%--              <input type="radio" name="neuter" value="U"/>--%>
+<%--              <div class="control__indicator"></div>--%>
+<%--          </label>--%>
 
       </div>
       <div class="control-group">
