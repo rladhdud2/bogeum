@@ -10,6 +10,7 @@ import com.cos.bogeum.model.CartItem;
 import com.cos.bogeum.model.Order;
 import com.cos.bogeum.model.OrderItem;
 import com.cos.bogeum.model.Users;
+import com.cos.bogeum.model.items;
 import com.cos.bogeum.repository.OrderItemRepository;
 import com.cos.bogeum.repository.OrderRepository;
 
@@ -34,7 +35,7 @@ public class OrderService {
     public List<OrderItem> findUserOrderItems(int userId) {
         return orderItemRepository.findOrderItemsByUserId(userId);
     }
-    
+   
     // OrderItem 하나 찾기
     public OrderItem findOrderitem(int orderItemId) {
     	return orderItemRepository.findOrderItemById(orderItemId);
@@ -60,6 +61,30 @@ public class OrderService {
         Order userOrder = Order.createOrder(user, orderItemList);
 
         orderRepository.save(userOrder);
+    }
+    
+    //바로주문
+    @Transactional
+    public void addOneItemOrder(int userId, items item, int count) {
+    	Users user = userService.findUser(userId);
+    	Order userOrder = Order.createOrder(user);
+    	OrderItem orderItem = OrderItem.createOrderItem(item.getId(), user, item, count, userOrder);
+    	
+    	orderItemRepository.save(orderItem);
+    	orderRepository.save(userOrder);
+    }
+    
+    public List<Order> findByUserId(int id){
+    	return orderRepository.findOrdersByUserId(id);
+    }
+    
+    //주문취소
+    @Transactional
+    public void orderCancel(int orderId) {
+    	Order order = orderRepository.findOrderById(orderId);
+    	order.setIsCancel(order.getIsCancel()+1);
+    	order.setIsDelevery(0);
+    	orderRepository.save(order);
     }
 
 }

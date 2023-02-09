@@ -1,5 +1,7 @@
 package com.cos.bogeum.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,10 @@ public class ShopService {
 	public Page<items> 상품목록(Pageable pageable){
 		return shopRepository.findAll(pageable);
 	}
-
+	@Transactional
+	public items 아이템갯수(){
+		return shopRepository.findByItemCount();
+	}
 	
 	@Transactional
 	public void 상품수정(items requestItem, int id) {

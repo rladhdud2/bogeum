@@ -61,7 +61,7 @@
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>
@@ -78,7 +78,7 @@
 				<ul class="nav">
 					<li><a href="/auth/shelter">보호소</a></li>
 					<li><a href="/auth/board">커뮤니티</a></li>
-					<li><a href="#">쇼핑몰</a></li>
+					<li><a href="/auth/shop">쇼핑몰</a></li>
 				</ul>
 			</div>
 		</div>

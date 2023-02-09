@@ -37,7 +37,7 @@
                         <div class="total_price"><input type="text" name="sum" id="sum" readonly></div>    
                     </div>
                 <div class="detail_payment">
-                    <button type="submit" onclick="alert('장바구니에 등록되었습니다.')">장바구니</button>
+                    <input type="button" onclick="alert('장바구니에 등록되었습니다.')">장바구니
                 </div>
                 </form>
                 <div class="goods_payment_now">
