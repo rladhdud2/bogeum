@@ -15,6 +15,7 @@ body {
 }
 #content1 {
     margin-bottom : 50px;
+    
 }
 .contenttitle {    
     font-size: 30px;    
@@ -91,6 +92,7 @@ body {
     width : 100%;
     height: 300px;    
     margin-bottom: 100px;
+    
     display: flex;
 }
     #productinfo{
@@ -115,7 +117,7 @@ body {
         margin-left: 20px;
     }
         .product{
-            width : 30%;
+            width : 32%;
             height: 100%;            
             border-radius: 10px;
         }
@@ -167,6 +169,7 @@ body {
 .banner2 {
 	width : 100%;	 
 	 height : 250px;
+	 margin-top : 50px;
 }
 .inner2 {
 	width : 100%;
@@ -199,4 +202,8 @@ body {
 }
 .buttonbox button:hover {
     cursor: pointer;
+}
+#maincontent {
+	width : 1200px;
+	height : 1100px;
 }
