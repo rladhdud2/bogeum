@@ -44,7 +44,7 @@ public class ShopController {
 	public String Shoppingmall(Model model, @PageableDefault(size=12, sort = "id", 
 			direction = Sort.Direction.DESC)Pageable pageable) {
 		model.addAttribute("shop", shopService.상품목록(pageable));
-		
+		model.addAttribute("item", shopService.아이템갯수());
 		return "shop/Shoppingmall";
 	}
 	/*쇼핑몰 상세페이지*/

@@ -1,5 +1,7 @@
 package com.cos.bogeum.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -9,20 +11,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.cos.bogeum.config.auth.PrincipalDetail;
 import com.cos.bogeum.model.KakaoProfile;
 import com.cos.bogeum.model.OAuthToken;
+import com.cos.bogeum.model.Order;
+import com.cos.bogeum.model.OrderItem;
 import com.cos.bogeum.model.Users;
 import com.cos.bogeum.repository.UserRepository;
+import com.cos.bogeum.service.OrderService;
 import com.cos.bogeum.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -30,7 +38,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class UserController {
-	
+	@Autowired
+	private OrderService orderService;
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
@@ -58,8 +67,12 @@ public class UserController {
 		return "user/updateForm";
 	}
 
-	@GetMapping("/user/mypage")
-	public String mypage() {
+	@GetMapping("/user/mypage/{id}")
+	public String mypage(@PathVariable("id") int id, Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+		List<OrderItem> orderItem = orderService.findUserOrderItems(id);
+		List<Order> order = orderService.findByUserId(id);
+		model.addAttribute("orderItem", orderItem);
+		model.addAttribute("order", order);
 		return "user/mypage";
 	}
 

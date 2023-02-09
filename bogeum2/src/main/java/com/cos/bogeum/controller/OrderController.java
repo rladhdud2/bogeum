@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.cos.bogeum.config.auth.PrincipalDetail;
 import com.cos.bogeum.model.Cart;
 import com.cos.bogeum.model.CartItem;
+import com.cos.bogeum.model.Order;
 import com.cos.bogeum.model.OrderItem;
 import com.cos.bogeum.model.Users;
 import com.cos.bogeum.model.items;
@@ -102,10 +103,33 @@ public class OrderController {
 		model.addAttribute("item", item);
 		return "shop/ShoppingmallPayment";
 	}
+	/* 바로 결제 */
+	@Transactional
+	@PostMapping("/now/checkout/{userId}/{itemId}/{count}")
+	public String nowCheckout(@PathVariable("userId") int id,@PathVariable("itemId") int itemId, @PathVariable("count") int count,
+								Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+		if(principalDetail.getUser().getId() == id) {
+			Users user = userService.findUser(id);
+			items item = shopService.itemView(itemId);
+			
+			//최종결제금액
+			int totalPrice = item.getPrice()*count;
+			orderService.addOneItemOrder(user.getId(), item, count);
+			return "shop/finish";
+		}else {
+			return "redirect:/";
+		}
+	}
 	/*결제 완료 페이지*/
 	@GetMapping("/order/finish/{id}")
 	public String orderFinish(@PathVariable("id") int id) {
 		return "shop/finish";
 	}
-	
+	/*주문 취소*/
+	@Transactional
+	@GetMapping("/order/cancel/{id}/{orderId}")
+	public String orderCancle(@PathVariable("id") int id, @PathVariable("orderId") int OrderId, Model model) {
+		orderService.orderCancel(OrderId);
+		return "redirect:/";
+	}
 }

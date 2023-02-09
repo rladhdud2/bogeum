@@ -3,6 +3,7 @@ package com.cos.bogeum.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -42,7 +43,7 @@ public class OrderItem {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="userId")
 	private Users user;
-	
+		
 	private int itemId; // 주문 상품 번호
     private String itemName; // 주문 상품 이름
     private int itemPrice; // 주문 상품 가격

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <body>
 <%@ include file="../layout/header.jsp"%>
 
@@ -76,40 +77,33 @@
                         <div class="deliveryprice">배송비</div>
                         <div class="confirm">확인/취소</div>
                     </div>
-
-                    <div class="myorder2content">
-                        <div class="orderdate">2022.01.30</div>
-                        <div class="myorderitem">  
-                            <div class="itemimg"><img src="/img/catcoution.jpg"></div>          
-                            <div class="itemname">고양이 쿠션</div>                           
-                        </div>                        
-                        <div class="orderprice">12,800원<br><br>(1개)</div>
-                        <div class="deliveryprice">무료</div>
-                        <div class="confirm"><button>확인/취소</button></div>
-                    </div>
-                    <div class="myorder2content">
-                        <div class="orderdate">2022.01.30</div>
-                        <div class="myorderitem">  
-                            <div class="itemimg"><img src="/img/catfood.jpg"></div>          
-                            <div class="itemname">고양이 사료</div>                           
-                        </div>                        
-                        <div class="orderprice">12,800원<br><br>(1개)</div>
-                        <div class="deliveryprice">무료</div>
-                        <div class="confirm"><button>확인/취소</button></div>
-                    </div>
-                    <div class="myorder2content">
-                        <div class="orderdate">2022.01.30</div>
-                        <div class="myorderitem">  
-                            <div class="itemimg"><img src="/img/scratcher.jpg"></div>          
-                            <div class="itemname">스크래쳐</div>                           
-                        </div>                        
-                        <div class="orderprice">12,800원<br><br>(1개)</div>
-                        <div class="deliveryprice">무료</div>
-                        <div class="confirm"><button>확인/취소</button></div>
-                    </div>
-
+			
+					<c:forEach var="order" items="${order}">
+	                    <div class="myorder2content">
+	                        <div class="orderdate">${order.createDate}</div>
+	                        <c:forEach var="orderItem" items="${orderItem}">
+	                        <div class="myorderitem">         
+	                            <div class="itemname">${orderItem.itemName}</div>                           
+	                        </div>                        
+	                        <div class="orderprice"><fmt:formatNumber type="number" maxFractionDigits="3" value="${orderItem.itemPrice}" />원<br><br>(${orderItem.itemCount}개)</div>
+	                        </c:forEach>
+	                        <div class="deliveryprice">무료</div>
+	                        <div class="confirm">
+	                        	<c:choose>
+	                 			<c:when test="${order.isCancel eq 2}">
+	                       	 		<p>취소완료</p>
+	                       	 	</c:when>
+	                       	 	<c:otherwise>
+	                       	 		<a href="/order/cancel/${principal.user.id}/${order.id}" style="color: red">주문취소</a>
+	                       	 	</c:otherwise>
+	                       	 	</c:choose>
+	                        </div>
+	                    </div>
+					</c:forEach>
                 </div>
-
+				<!-- userId -->
+				<input type="hidden" value="${principal.user.id}"> 
+				<!-- ------ -->
             </div>
         </div>
 
