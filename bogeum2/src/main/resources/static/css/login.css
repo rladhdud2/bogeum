@@ -29,7 +29,7 @@
            
         }
 #loginpart2{
-    width : 393px;
+    width : 392px;
     height: 100%;
     border: 5px rgb(253, 232, 175) solid;  
     border-left: none;  
@@ -41,7 +41,7 @@
     font-size: 45px;
     margin: auto;
     margin-top: 35px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     text-align: center;    
 }
 	.inputbox  {	

@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="maincontent2">
         <div id="content2">
             <div class="board">
                 <div class="contenttitle2"> 분실/습득</div>
