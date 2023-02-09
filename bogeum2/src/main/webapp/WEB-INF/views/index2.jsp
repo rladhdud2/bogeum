@@ -37,7 +37,7 @@
             <div id="content1">
                 <div class="content_flex" style="display: flex; justify-content: space-between">
                     <div class="contenttitle"> &nbsp;보호소</div>
-                    <div class="contenttitle"><i class="fa-solid fa-plus"></i></div>
+                    <a href="/auth/shelter"><div class="contenttitle"><i class="fa-solid fa-plus"></i></div></a>
                 </div>
                 <div id="search-rst" style="padding-left: 350px"></div>
                 <div id="pic-wrap" style="display: flex; flex-wrap: wrap; padding-left: 50px; border-radius:10px;"></div>
@@ -135,7 +135,7 @@
             <div id="productinfo">
                 <div id="productstitle">추천 상품</div>
                 <div id="productintro">보금자리에서만 만나볼 수 있는 특별한 상품들을 지금 소개합니다</div>
-                <div><a href="#">더보기+</a></div>
+                <div><a href="/auth/shop">더보기+</a></div>
             </div>
             <div id="products">
             	<c:forEach var="item" items="${shop.content}">
