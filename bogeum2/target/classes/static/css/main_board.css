@@ -25,7 +25,7 @@ body {
 }
 
 .contenttitle {
-    font-size: 30px;
+    font-size: 1.9rem;
     font-weight: bold;
     margin-top: 30px;
     font-family: 'Jua', sans-serif;
@@ -76,7 +76,7 @@ body {
     margin-top: 30px;
 }
 .contenttitle2 {
-    font-size: 30px;
+    font-size: 1.9rem;
     font-weight: bold;
     margin-top: 10px;
     border-bottom: 2px black solid;
