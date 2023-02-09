@@ -1,17 +1,24 @@
 package com.cos.bogeum.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController//Json 형태로 객체 데이터를 반환하는 주용도
+@Controller
+@Log4j2
 public class ChatContrller {
 
-    @RequestMapping("/mychat")
-    public ModelAndView chat() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("testChat");
-        return mv;
+    @GetMapping("/chat")
+    public String chatGET() {
+        log.info("@ChatController, chat GET()");
+        return "thymeleaf/chat";
     }
+
+//    @RequestMapping("/mychat")
+//    public ModelAndView chat() {
+//        ModelAndView mv = new ModelAndView();
+//        mv.setViewName("testChat");
+//        return mv;
+//    }
 
 }

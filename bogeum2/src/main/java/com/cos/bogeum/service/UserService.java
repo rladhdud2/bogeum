@@ -157,5 +157,11 @@ public class UserService {
         user.setPassword(encodeer.encode(tmpPwd));
         System.out.println(tmpPwd);
 	}	
-	
+	@Transactional(readOnly = true)
+	public Users findUser(int id) {
+		Users user = userRepository.findById(id).orElseGet(()->{
+			return new Users();
+		});
+		return user;
+	}
 }
