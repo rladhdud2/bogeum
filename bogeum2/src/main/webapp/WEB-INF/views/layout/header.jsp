@@ -43,8 +43,8 @@
 		<c:choose>
 			<c:when test="${empty principal}">
 				<div id="login">
-					<a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a
-						href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;
+					<a href="auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
 			</c:when>
 			<c:otherwise>
@@ -57,7 +57,7 @@
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/mypage">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>

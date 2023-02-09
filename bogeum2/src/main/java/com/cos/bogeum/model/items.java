@@ -1,15 +1,25 @@
 package com.cos.bogeum.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Formula;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -55,6 +65,13 @@ public class items {
 	private String fileOriName;
 	private String fileurl;
 	
-	//장바구니 테이블 참조
+	@JsonIgnoreProperties({"items"})
+	@OneToMany (mappedBy="items", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	private List<Review> reviewList;
+	
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="sellerId")
+	private Users seller;
 	
 }

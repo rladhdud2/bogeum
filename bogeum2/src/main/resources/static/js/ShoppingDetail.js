@@ -69,23 +69,4 @@ function cknum(num){
 	$("#re_modify_box"+num).show();
 }
 
-function replySave(){
-	let data={
-			content: $("#comment").val(),
-		}
-	let itemId=$("#itemID").val();
-	console.log(data);
-	console.log(communityId);
-	$.ajax({
-		type:"POST",
-		url:"/api/shop/"+itemId+"/save",
-		data:JSON.stringify(data),
-		contentType:"application/json; charset=utf-8",
-		dataType:"text"
-	}).done(function(resp){
-		alert("댓글작성이 완료되었습니다");
-		location.href="";
-	}).fail(function(error){
-		alert(JSON.stringify(error));
-	});
-}
+

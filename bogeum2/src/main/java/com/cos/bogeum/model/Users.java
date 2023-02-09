@@ -1,7 +1,10 @@
 package com.cos.bogeum.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -58,6 +63,15 @@ public class Users {
 	
 	@Column(nullable = true, length = 30)
 	private String email;	//이메일	
+	
+	@OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)	//mappedBy는 조인된 테이블의 칼럼명을 따라가야됨!!!!!
+	private Cart cart;	// 구매자의 장바구니
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+	private List<Order> userOrder = new ArrayList<>();	// 구매자의 주문
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+	private List<OrderItem> userOrderItem = new ArrayList<>();	// 구매자의 주문상품들
 	
 	
 //	@ColumnDefault("'user'")

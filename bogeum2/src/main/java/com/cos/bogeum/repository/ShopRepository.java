@@ -6,5 +6,5 @@ import com.cos.bogeum.model.items;
 
 
 public interface ShopRepository extends JpaRepository<items, Integer>{
-	
+	items findItemById(int itemId);
 }

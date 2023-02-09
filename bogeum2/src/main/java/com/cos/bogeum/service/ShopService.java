@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.cos.bogeum.model.Review;
+import com.cos.bogeum.model.Users;
 import com.cos.bogeum.model.items;
 import com.cos.bogeum.repository.ReviewReoisitory;
 import com.cos.bogeum.repository.ShopRepository;
@@ -59,11 +60,9 @@ public class ShopService {
 		shopRepository.deleteById(id);
 	}
 	
-	@Transactional
-	public void 리뷰등록(int itemId, Review review) {
-		items item = shopRepository.findById(itemId)
-				.orElseThrow(()->new IllegalArgumentException("해당 itemId가 없습니다. id"+itemId));
-		reviewReoisitory.save(review);
+	
+	public items itemView(int id) {
+		return shopRepository.findById(id).get();
 	}
 	
 }
