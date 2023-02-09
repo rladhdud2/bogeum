@@ -1,19 +1,15 @@
 package com.cos.bogeum.service;
 
-import org.springframework.security.core.parameters.P;
+import com.cos.bogeum.model.Room;
+import com.cos.bogeum.model.Users;
+import com.cos.bogeum.repository.ChatRoomRepository;
+import com.cos.bogeum.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
 @Service
-@ServerEndpoint(value = "/chat")
+@RequiredArgsConstructor
 public class ChatService {
 //    private static Set<Session> clients = Collections.synchronizedSet(new
 //            HashSet<Session>());
@@ -45,4 +41,18 @@ public class ChatService {
 //        clients.remove(s);
 //
 //    }
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ChatRoomRepository chatRoomRepository;
+
+    /**
+     * 채팅 방 만들기
+     */
+
+
+
+
 }

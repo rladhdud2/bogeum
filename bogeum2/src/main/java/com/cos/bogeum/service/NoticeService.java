@@ -2,11 +2,8 @@ package com.cos.bogeum.service;
 
 
 import com.cos.bogeum.dto.NoticeDto;
-
 import com.cos.bogeum.model.Notice;
-
 import com.cos.bogeum.model.Users;
-
 import com.cos.bogeum.repository.NoticeRepository;
 import com.cos.bogeum.repository.ReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class NoticeService {

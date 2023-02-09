@@ -18,7 +18,7 @@
             <div class="item_info_box">
                 <div class="item_num">
                 
-                    <p>총 <strong><c:out value="${item.itemCount}"></c:out></strong>개의 상품이 있습니다.</p>
+                    <p>총 <strong><c:out value="${item.itemCount}"/></strong>개의 상품이 있습니다.</p>
                 </div>
                 <div class="itema_array_method">
                 	<a href="#"><span>최신순 ㅣ</span></a>
