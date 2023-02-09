@@ -12,6 +12,8 @@
 img{
     width: 500px;
     /*display: block;*/
+    height: 450px;
+    object-fit: cover;
 
 }
 .img-display{
