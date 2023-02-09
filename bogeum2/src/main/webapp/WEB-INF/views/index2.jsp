@@ -193,25 +193,33 @@
     document.querySelector('#button1').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';   
         slideIndex = 0;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button2').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1) + '%';
         slideIndex = 1;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button3').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2) + '%';
         slideIndex = 2;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
         slideIndex = 3;
-        time=30000;
+        time = 20000;
+       
     })	        
-     document.querySelector('.bannercontainer').addEventListener('mouseleave', function() {     	 
-    	 time=3000;  	
+     document.querySelector('.bannercontainer').addEventListener('mouseleave', function() { 
+    	 time = 3000;
+        	
+    })	
+     document.querySelector('.bannercontainer').addEventListener('mouseover', function() { 
+    	 time = 20000;
     	
     })	
 		
