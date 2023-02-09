@@ -1,0 +1,158 @@
+@charset "UTF-8";
+#Shop_pay_wrap{
+    width: 80%;
+    height: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-family: 'Jua', sans-serif;
+}
+/*주문결제*/
+#pay_bigbox1{
+    width: 100%;
+    height: 300px;
+}
+.pay_font{
+    width: 100%;
+    height: 10%;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+/*테이블*/
+.pay_table{
+    width: 100%;
+    height: 50%;
+}
+.table_info{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    border-bottom: 1px solid #828282;
+    border-top: 1px solid #828282;
+}
+.items_name{
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    font-size: 35px;
+    border-left: 1px solid #828282;
+    border-right: 1px solid #828282;
+}
+.items_count, .items_price, .items_delivery{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 35px;
+    border-right: 1px solid #828282;
+}
+.items_count>p{
+    padding-top: 5px;
+}
+.items_delivery>p{
+    padding-top: 5px;
+}
+
+.table_content{
+    width: 100%;
+    height: 80%;
+    border-bottom: 1px solid #828282;
+}
+.table_content>ul{
+    width: 100%;
+    height: 100%;
+}
+.table_content>ul>li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.items_name_box{
+    width: 40%;
+    height: 100%;
+    display: flex;
+}
+.items_count_box, .items_delivery_box, .items_price_box{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+.items_image_box{
+    width: 30%;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.items_image_box>img{
+	width: 100%;
+    height: 100%;
+}
+.items_naming_box{
+    width: 70%;
+    height: 100%;
+}
+.items_naming_box>p{
+    font-size: 30px;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+.items_count_box>p, .items_delivery_box>p, .items_price_box>p{
+    font-size: 30px;
+    margin-top: 100px;
+}
+
+#pay_bigbox2{
+    margin-top: 80px;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+.address_box{
+    width: 45%;
+    height: 100%;
+}
+.address_font, .payment_font{
+    width: 100%;
+    height: 15%;
+    font-size: 40px;
+    border-bottom: 1px solid #828282;
+}
+.address_font>p{
+    padding-top: 20px;
+}
+.address_content{
+    width: 100%;
+    height: 85%;
+    font-size: 30px;
+    line-height: 3;
+}
+.payment_box{
+    width: 45%;
+    height: 100%;
+}
+.payment_font>p{
+    padding-top: 30px;
+}
+.payment_content{
+    width: 100%;
+    height: 85%;
+}
+.cacaopay_box{
+    width: 100%;
+    height: 85%;
+}
+.paybox{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+.paybox>button{
+    width: 50%;
+    height: 100%;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #FF8868;
+    color: white;
+    border: none;
+    font-family: 'Jua', sans-serif;
+}

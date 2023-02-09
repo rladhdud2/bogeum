@@ -69,6 +69,7 @@ li {
 }
 .picpic {
   margin: 5px;
+  position: relative;
 }
 
 .container {
@@ -78,6 +79,17 @@ li {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+/*.picpic img {*/
+/*  transition: all 0.2s ease-in-out;*/
+/*}*/
+
+/*.picpic img:hover {*/
+/*  !*border: 1px solid #ccc;*!*/
+/*  transform: translateY(-10px);*/
+/*  box-shadow: 0 10px 20px #ccc;*/
+/*}*/
+
 
 /* !!!필터검색!!! */
 
