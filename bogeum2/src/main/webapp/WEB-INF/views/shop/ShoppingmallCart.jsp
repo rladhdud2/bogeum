@@ -25,9 +25,7 @@
                     <div class="basket_list_info2">
                         <div class="basket_amount">
                             <div class="goods_count_btn">
-                                <input type="button" value="-">
-                                <input type="text" value="${cartItem.count}" readonly>
-                                <input type="button" value="+">
+                                <input type="text" value="${cartItem.count}" id="amount" name="amount" readonly>
                             </div>  
                         </div>
                         <div class="basket_price">
@@ -51,4 +49,5 @@
             </div>
         </div>
     </div>
+
 <%@ include file="../layout/footer.jsp" %>

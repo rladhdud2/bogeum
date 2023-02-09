@@ -57,10 +57,7 @@ public class items {
 	
 	@Lob
 	private String content;	//상품설명
-	
-	@Formula("(SELECT count(1) FROM items)")
-	private int itemCount;	//상품갯수
-	
+		
 	private String filename; //이미지
 	private String fileOriName;
 	private String fileurl;

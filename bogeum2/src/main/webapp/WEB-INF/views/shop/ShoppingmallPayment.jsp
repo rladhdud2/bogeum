@@ -20,6 +20,8 @@
                 </div>
                 <div class="table_content">
                     <ul>
+                    <c:choose>
+                    <c:when test="${cartItem != null }"> <!-- 장바구니에 물품이 담겨있으면 -->
                     <c:forEach var="cartItem" items="${cartItem}">
                         <li>
                             <div class="items_name_box">
@@ -31,6 +33,19 @@
                             <div class="items_price_box"><p><fmt:formatNumber type="number" maxFractionDigits="3" value="${(cartItem.count)*(cartItem.item.price)}" />원</p></div>
                         </li>
                     </c:forEach>
+                    </c:when>
+                    <c:otherwise> <!-- 바로 결제시 -->
+                    	<li>
+                            <div class="items_name_box">
+                                <div class="items_image_box"><img src="/auth/images?filename=${item.filename}"></div>
+                                <div class="items_naming_box"><p>${item.name}<p></div>
+                            </div>
+                            <div class="items_count_box"><p>${count}개</p></div>
+                            <div class="items_delivery_box"><p>무료</p></div>
+                            <div class="items_price_box"><p><fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</p></div>
+                        </li>
+                    </c:otherwise>
+                    </c:choose>
                     </ul>
                 </div>
             </div>
@@ -67,6 +82,11 @@
             <input type="hidden" name="cartId" id="cartId" value="${user.cart.id}">
             <input type="hidden" name="totalPrice" id="totalPrice" value="${totalPrice}">
             <!-- --------------------- -->
+            <!-- 바로결제시 필요 데이터(상품id,수량,가격) -->
+            <input type="hidden" name="itemId" id="itemId" value="${item.id}">
+            <input type="hidden" name="count" id="count" value="${count}">
+            <input type="hidden" name="price" id="price" value="${totalPrice}">
+            <!-- --------------------- -->
             
             <div class="payment_box">
                 <div class="payment_font">
@@ -75,8 +95,14 @@
                 <div class="payment_content">
                     <div class="cacaopay_box"></div>
                     <div class="paybox">
-                        <input type="button" id="btn_order_cart" value="결제">
-                       
+                    	<c:choose>
+	                    	<c:when test="${count != null}">
+	                        	<input type="button" id="btn_order_now" value="바로 결제">
+	                        </c:when>
+	                        <c:otherwise>
+								<input type="button" id="btn_order_cart" value="장바구니 결제">
+	                        </c:otherwise>
+                       </c:choose>
                     </div>
                 </div>
             </div>
