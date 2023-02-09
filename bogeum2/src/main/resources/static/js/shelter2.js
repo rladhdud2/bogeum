@@ -102,7 +102,7 @@ function shelterSearch() {
     var url = 'http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic'; /*URL*/
     var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'PDUYcZF9dcMRdEkUd1Pw9rGid%2BJo0ZfjB3LCXuea%2BFybDCjXK%2FsY5e8uyVqZGqCdwUijgAfBM31dtYDTZmWpOQ%3D%3D'; /*Service Key*/
 
-    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('12'); /*페이지당 보여줄 갯수*/
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('8'); /*페이지당 보여줄 갯수*/
     queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지 번호*/
     queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('JSON'); /*응답형태*/
     queryParams += '&' + encodeURIComponent('state') + '=' + encodeURIComponent('notice'); /*상태 notice:보호중 */
@@ -124,8 +124,8 @@ function shelterSearch() {
                 let item = dat.response.body.items.item[i];
 
                 html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}" target="_blank"><img class="shelter-pic" src="${item.popfile}"></a>`;
-                html += '<p>' + item.kindCd + '&nbsp' + '<span style="color: #b8dff8">(' + item.noticeSdt + ')</span></p>';
-                // html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
+                html += '<p>' + item.kindCd + '&nbsp' + '<span style="color: #b8dff8">(' + item.age + ')</span></p>';
+                html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
                 html += '<p>지역: ' + item.orgNm + '</p></div>';
             }
             document.getElementById('pic-wrap').innerHTML = html;
