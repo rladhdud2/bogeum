@@ -108,41 +108,23 @@
         <div id="content2">
             <div class="board">
                 <div class="contenttitle2"> 분실/습득</div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;첫번째 게시글</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;두번째 게시글</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
+	                <c:forEach var="free" items="${free.content}">
+		                <div class="content2">
+		                    <div class="content2title"><a href="#">&nbsp;${free.title}</a></div>
+		                    <div class="content2time"><span style="float: right"> <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${free.createDate}"/></span></div>
+		                </div>   
+	                </c:forEach>             
             </div>
             <div class="board">
                 <div class="contenttitle2"> 공지사항</div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
-                <div class="content2">
-                    <div class="content2title"><a href="#">&nbsp;게시글 제목</a></div>
-                    <div class="content2time">작성시간</div>
-                </div>
+                 <c:forEach var="notice" items="${notice.content}">
+	                <div class="content2">
+	                    <div class="content2title"><a href="#">&nbsp;${notice.title}</a></div>
+	                    <div class="content2time"><span style="float: right"> <fmt:formatDate
+                            pattern="yyyy-MM-dd" value="${notice.createDate}"/></span></div>
+	                </div>
+                </c:forEach>
             </div>
         </div>
 
@@ -153,9 +135,10 @@
                 <div><a href="#">더보기+</a></div>
             </div>
             <div id="products">
-                <div class="product"><a href="#"><img src="/img/cattower.avif"></a></div>
-                <div class="product"><a href="#"><img src="/img/catcoution.jpg"></a></div>
-                <div class="product"><a href="#"><img src="/img/catfood.jpg"></a></div>
+            	<c:forEach var="item" items="${shop.content}">
+	                <div class="product"><a href="/auth/shop/${item.id}"><img src="/auth/images?filename=${item.filename}"></a></div>	        
+	                
+	            </c:forEach>
             </div>
         </div>
     </div>
@@ -193,25 +176,33 @@
     document.querySelector('#button1').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0) + '%';   
         slideIndex = 0;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button2').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1) + '%';
         slideIndex = 1;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button3').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2) + '%';
         slideIndex = 2;
-        time=30000;
+        time = 20000;
+        
     })
     document.querySelector('#button4').addEventListener('click', function() {
         document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3) + '%';
         slideIndex = 3;
-        time=30000;
+        time = 20000;
+       
     })	        
-     document.querySelector('.bannercontainer').addEventListener('mouseleave', function() {     	 
-    	 time=3000;  	
+     document.querySelector('.bannercontainer').addEventListener('mouseleave', function() { 
+    	 time = 3000;
+        	
+    })	
+     document.querySelector('.bannercontainer').addEventListener('mouseover', function() { 
+    	 time = 20000;
     	
     })	
 		

@@ -63,7 +63,7 @@
                   <th>${user.id}</th>
                   <th>${user.username}</th>
                   <th>${user.username2}</th>
-                  <th>${user.address}</th>
+                  <th>${user.email}</th>
                   <th>${user.tel}</th>
                   <th><fmt:formatDate value="${user.createDate}" pattern="YYYY-MM-dd"/></th>
                   <th><button class="admin-button" onclick="deleteById(${user.id})">회원 삭제</button></th>
