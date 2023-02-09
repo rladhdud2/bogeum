@@ -8,11 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/main_board.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <!--Swiper-->
+      <!--Swiper-->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -29,10 +28,12 @@
         <sec:authentication property="principal" var="principal"/>
         <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     </sec:authorize>
+    <link rel="stylesheet" href="/css/main_board.css">
 </head>
 <body>
 
-<div class="banner1"><img src="/img/BoardBanner_1.png"></div>
+<div class="banner1"><img src="/img/BoardBanner1.png"></div>
+<div class="banner1_small"><img src="/img/BoardBanner1_phone.png"></div>
 <div class="container">
     <div id="content2">
         <div class="board">
@@ -81,20 +82,18 @@
     <div id="content4">
         <div class="contenttitle2"> 입양 지원 / 안내</div>
     </div>
-    <div class="information">
         <!-- Swiper -->
-        <div class="swiper mySwiper banner2">
+        <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide banner3"><img src="/img/BoardBanner_2.png"></div>
-                <div class="swiper-slide banner3"><img src="/img/BoardBanner_3.png"></div>
-                <div class="swiper-slide banner3"><img src="/img/BoardBanner_4.png"></div>
+                <div class="swiper-slide "><img src="/img/BoardBanner_2.png"></div>
+                <div class="swiper-slide "><img src="/img/BoardBanner_3.png"></div>
+                <div class="swiper-slide "><img src="/img/BoardBanner_4.png"></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
         </div>
 
-    </div>
 </div>
 <!-- Initialize Swiper -->
 <script>

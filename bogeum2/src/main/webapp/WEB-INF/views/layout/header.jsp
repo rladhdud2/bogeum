@@ -55,7 +55,7 @@
 				<c:choose>
 					<c:when test="${principal.user.roles=='ADMIN'}">
 						<div id="login">
-							<a href="/user/mypage">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							<a href="/user/cart/${principal.user.id}">장바구니 |</a>&nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:when>

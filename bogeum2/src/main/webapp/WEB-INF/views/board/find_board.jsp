@@ -97,7 +97,7 @@
                     </c:when>
                     <c:otherwise>
                         <div>
-                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" style="display: none">글쓰기</button>
+                        <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'" >글쓰기</button>
                         </div>
                     </c:otherwise>
                 </c:choose>

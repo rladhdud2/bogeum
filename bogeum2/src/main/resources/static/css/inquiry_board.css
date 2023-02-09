@@ -380,7 +380,6 @@ a {
 
 .list_content {
     text-align: center;
-
 }
 
 /*search button*/
@@ -465,7 +464,10 @@ body {
     width: 80%;
 
 }
+#login{
+    font-size: 16px;
 
+}
 /*button*/
 .btn {
     display: inline-block;

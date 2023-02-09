@@ -11,10 +11,11 @@ body {
   width: 1200px;
   margin : auto;
   margin-top: 100px;
-  margin-bottom: 100px;
+  
 }
 #content1 {
     margin-bottom : 50px;
+    
 }
 .contenttitle {    
     font-size: 30px;    
@@ -89,8 +90,7 @@ body {
 
 #productbox {
     width : 100%;
-    height: 300px;    
-    margin-bottom: 100px;
+    height: 300px;       
     display: flex;
 }
     #productinfo{
@@ -115,7 +115,7 @@ body {
         margin-left: 20px;
     }
         .product{
-            width : 30%;
+            width : 32%;
             height: 100%;            
             border-radius: 10px;
         }
@@ -167,6 +167,7 @@ body {
 .banner2 {
 	width : 100%;	 
 	 height : 250px;
+	 margin-top : 50px;
 }
 .inner2 {
 	width : 100%;
@@ -199,4 +200,16 @@ body {
 }
 .buttonbox button:hover {
     cursor: pointer;
+}
+#maincontent {
+	width : 1200px;
+	height : 1100px;
+}
+#search-rst {	
+	text-align : right;
+	font-size : 20px;
+}
+
+#maincontent2 {	
+	height : 800px;
 }
