@@ -68,16 +68,16 @@
 
             <li>유기번호 : <span>${info.desertionNo}</span></li>
             <li>품종 : <span>${info.kindCd}</span></li>
-            <li>성 :
+            <li>성별 :
                 <span>
                     <c:if test="${info.sexCd eq 'Q'}">
                         <i class="fa-regular fa-circle-question"></i>
                     </c:if>
                     <c:if test="${info.sexCd eq 'M'}">
-                        <img src="/img/male.png" style="width: 24px">
+                        <img src="/img/male.png" style="width: 24px; height: 24px">
                     </c:if>
                    <c:if test="${info.sexCd eq 'F'}">
-                       <img src="/img/female.png" style="width: 24px">
+                       <img src="/img/female.png" style="width: 24px; height: 24px">
                    </c:if>
                 </span>
             </li>
