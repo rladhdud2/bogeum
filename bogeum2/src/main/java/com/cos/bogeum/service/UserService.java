@@ -96,6 +96,23 @@ public class UserService {
 
 		});
 	}
+	
+	//비밀번호 재발급
+	public Users 비밀번호재발급(String username, String email) {
+		
+		Users check2 = userRepository.findByUsernameAndEmail(username, email);
+		
+		return check2;
+		
+		/*
+
+		return userRepository.findByUsernameAndEmail(username, email).orElseThrow(() -> {
+			return new IllegalArgumentException("아이디 찾기 실패");
+
+		});
+		*/
+	}
+	
 
 	@Transactional(readOnly = true)
 	public Users 회원찾기(String username) {
