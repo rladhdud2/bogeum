@@ -12,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cos.bogeum.dto.SendJoinNumberDto;
 import com.cos.bogeum.dto.SendTmpPwdDto;
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;

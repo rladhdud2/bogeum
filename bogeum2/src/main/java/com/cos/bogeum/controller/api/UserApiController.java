@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.bogeum.dto.ResponseDto;
-import com.cos.bogeum.dto.SendJoinNumberDto;
 import com.cos.bogeum.dto.SendTmpPwdDto;
 import com.cos.bogeum.model.Users;
 import com.cos.bogeum.repository.UserRepository;

@@ -201,10 +201,8 @@ let index = {
 			document.getElementById('numbererror').innerHTML = ""
 		};
 		
-		if (number.value != code) {
-			document.getElementById('numbererror').innerHTML = "인증번호가 일치하지 않습니다"
-			console.log(number.value);
-			console.log(code);
+		if (number.value !== code) {
+			document.getElementById('numbererror').innerHTML = "인증번호가 일치하지 않습니다"			
 			number.focus();
 			return false;
 		} else {
