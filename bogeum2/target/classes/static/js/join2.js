@@ -1,25 +1,49 @@
-var code ;
+//인증번호 발송
+var code;
 
 function joinNumber() {
+
+	var email = document.getElementById('email');
+
+	if (email.value == "") {
+		document.getElementById('emailerror').innerHTML = "이메일을 입력해주세요"
+		email.focus();
+		return false;
+	} else {
+		document.getElementById('emailerror').innerHTML = ""
+	};
 	
+	var emailCheck = /^(?=.*[a-z])[a-z0-9]{1,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+	if (!emailCheck.test(email.value)) {
+		document.getElementById('emailerror').innerHTML = "정확한 이메일을 입력해주세요"
+		email.focus();
+		return false;
+	} else {
+		document.getElementById('emailerror').innerHTML = ""
+	};
+
 	var email = document.getElementById('email').value;
-	console.log(email);
 	alert("인증번호가 발송되었습니다.");
-	
+
 	$.ajax({
 		type: "POST",
 		url: "/auth/joinnumber", //auth
 		data: email,
 		contentType: "application/json; charset=utf-8",
 		dataType: "json"
-	}).done(function(resp) {				
-		code = resp.data;					
-		console.log(code);			
-	}).fail(function(error){
-		alert("이메일을 다시 확인해주세요");	
+	}).done(function(resp) {
+		code = resp.data;
+
+	}).fail(function(error) {
+		alert("이메일을 다시 확인해주세요");
 	});
+
+
 }
 
+
+//회원가입
 let index = {
 	init: function() {
 		document.getElementById('signUpButton').addEventListener("click", () => {	//회원가입 버튼을 클릭했을때
@@ -78,8 +102,8 @@ let index = {
 		var agree1 = document.getElementById('agree1');
 		var agree2 = document.getElementById('agree2');
 		var idcheck = document.getElementById('idcheck');
-				
-		
+
+
 
 		if (id.value == "") {
 			document.getElementById('iderror').innerHTML = "아이디를 입력해주세요"
@@ -181,9 +205,9 @@ let index = {
 		} else {
 			document.getElementById('emailerror').innerHTML = ""
 		};
-		
+
 		var emailCheck = /^(?=.*[a-z])[a-z0-9]{1,12}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-		
+
 		if (!emailCheck.test(email.value)) {
 			document.getElementById('emailerror').innerHTML = "정확한 이메일을 입력해주세요"
 			email.focus();
@@ -200,14 +224,14 @@ let index = {
 		} else {
 			document.getElementById('numbererror').innerHTML = ""
 		};
-		
+
 		if (number.value !== code) {
-			document.getElementById('numbererror').innerHTML = "인증번호가 일치하지 않습니다"			
+			document.getElementById('numbererror').innerHTML = "인증번호가 일치하지 않습니다"
 			number.focus();
 			return false;
 		} else {
 			document.getElementById('numbererror').innerHTML = ""
-		};		
+		};
 
 		if (!agree1.checked) {
 			Swal.fire({
@@ -230,13 +254,11 @@ let index = {
 
 	},
 
-
-
 }
-
 index.init();
 
 
+//정보 입력시 에러메세지 지움
 document.getElementById('id').addEventListener("keyup", () => {
 	var id2 = document.getElementById('id');
 	if (id2 !== "") {
@@ -274,6 +296,12 @@ document.getElementById('birth').addEventListener("keyup", () => {
 		document.getElementById('birtherror').innerHTML = ""
 	}
 })
+document.getElementById('addressdetail').addEventListener("keyup", () => {
+	var addressdetail = document.getElementById('addressdetail');
+	if (addressdetail !== "") {
+		document.getElementById('addresserror').innerHTML = ""
+	}
+})
 document.getElementById('tel').addEventListener("keyup", () => {
 	var tel2 = document.getElementById('tel');
 	if (tel2 !== "") {
@@ -294,6 +322,7 @@ document.getElementById('number').addEventListener("keyup", () => {
 })
 
 
+//약관동의 일괄체크
 function selectAll(selectAll) {
 	const checkboxes
 		= document.getElementsByName('agree');
@@ -303,6 +332,8 @@ function selectAll(selectAll) {
 	})
 }
 
+
+//아이디중복검사
 function idcheck() {
 	var username = document.getElementById('id').value;
 	document.getElementById('idcheck').value = username;
@@ -326,7 +357,6 @@ function idcheck() {
 				html: "이아이디는 사용할 수 있습니다.",
 				icon: "success"
 			});
-
 		}
 
 	});
@@ -334,7 +364,6 @@ function idcheck() {
 	if (id !== "") {
 		document.getElementById('iderror').innerHTML = ""
 	}
-
 }
 
 
