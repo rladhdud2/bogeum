@@ -62,10 +62,10 @@ public class Users {
 	private String tel;	//전화번호			
 	
 	@Column(nullable = true, length = 30)
-	private String email;	//이메일	
-	
+	private String email;	//이메일		
 
 	private String oauth; //Kakao 회원판별
+	
 	@OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)	//mappedBy는 조인된 테이블의 칼럼명을 따라가야됨!!!!!
 	private Cart cart;	// 구매자의 장바구니
 	
@@ -74,7 +74,6 @@ public class Users {
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
 	private List<OrderItem> userOrderItem = new ArrayList<>();	// 구매자의 주문상품들
-
 	
 	
 //	@ColumnDefault("'user'")
