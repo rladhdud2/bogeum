@@ -1,3 +1,25 @@
+var code ;
+
+function joinNumber() {
+	
+	var email = document.getElementById('email').value;
+	console.log(email);
+	alert("인증번호가 발송되었습니다.");
+	
+	$.ajax({
+		type: "POST",
+		url: "/auth/joinnumber", //auth
+		data: email,
+		contentType: "application/json; charset=utf-8",
+		dataType: "json"
+	}).done(function(resp) {				
+		code = resp.data;					
+		console.log(code);			
+	}).fail(function(error){
+		alert("이메일을 다시 확인해주세요");	
+	});
+}
+
 let index = {
 	init: function() {
 		document.getElementById('signUpButton').addEventListener("click", () => {	//회원가입 버튼을 클릭했을때
@@ -56,6 +78,8 @@ let index = {
 		var agree1 = document.getElementById('agree1');
 		var agree2 = document.getElementById('agree2');
 		var idcheck = document.getElementById('idcheck');
+				
+		
 
 		if (id.value == "") {
 			document.getElementById('iderror').innerHTML = "아이디를 입력해주세요"
@@ -176,6 +200,14 @@ let index = {
 		} else {
 			document.getElementById('numbererror').innerHTML = ""
 		};
+		
+		if (number.value !== code) {
+			document.getElementById('numbererror').innerHTML = "인증번호가 일치하지 않습니다"			
+			number.focus();
+			return false;
+		} else {
+			document.getElementById('numbererror').innerHTML = ""
+		};		
 
 		if (!agree1.checked) {
 			Swal.fire({
@@ -270,6 +302,7 @@ function selectAll(selectAll) {
 		checkbox.checked = selectAll.checked;
 	})
 }
+
 function idcheck() {
 	var username = document.getElementById('id').value;
 	document.getElementById('idcheck').value = username;
@@ -298,12 +331,11 @@ function idcheck() {
 
 	});
 
-
-
 	if (id !== "") {
 		document.getElementById('iderror').innerHTML = ""
 	}
 
 }
+
 
 

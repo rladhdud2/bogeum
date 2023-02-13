@@ -97,7 +97,7 @@ function findAddr(){
 		</div>
 		<div class="email">
 			이메일<br> <input id="email" type="text">
-			<button id="btn-joinnumber">인증번호받기</button>
+			<button id="btn-joinnumber" onclick="joinNumber()">인증번호받기</button>
 			<div id="emailerror" class="error"></div>
 		</div>
 		<div>

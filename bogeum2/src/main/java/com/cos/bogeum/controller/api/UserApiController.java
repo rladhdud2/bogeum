@@ -13,13 +13,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.bogeum.dto.ResponseDto;
@@ -125,6 +122,16 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
 	}
   
-    
+  //인증번호 발송
+    @PostMapping("/auth/joinnumber")
+	public ResponseDto<String> joinnumber(@RequestBody String email) {		
+				
+		System.out.println(email);		
+		
+		String joinNumber = userService.sendJoinNumber(email);
+		
+		
+		return new ResponseDto<String>(HttpStatus.OK.value(), joinNumber); 
+	}
 
 }
