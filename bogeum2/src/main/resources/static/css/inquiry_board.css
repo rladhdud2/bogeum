@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+.writeForm1 {
+    display: none;
+}
 body {
     font-family: 'Jua', sans-serif !important;
 }
@@ -507,11 +509,19 @@ body {
     select{
         display: none;
     }
-    input#keyword{
+    input#keyword {
         display: none;
     }
-    input#search{
+    input#search {
         display: none;
     }
 
+    .writeForm1{
+        float: right;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .writeForm2 {
+        display: none;
+    }
 }

@@ -42,6 +42,10 @@
         <div class="board_title">
             <strong>자유게시판</strong>
             <p>자유게시판</p>
+            <%--===================글쓰기===================--%>
+            <div class="writeForm1">
+                <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+            </div>
         </div>
         <div class="board_list_wrap">
             <div class="board_list">
@@ -85,19 +89,10 @@
                     <input type="submit" id="search" name="submit" value="">
                 </form>
 
-            <%--===================글쓰기===================--%>
-                <c:choose>
-                    <c:when test="${principal.user.roles == 'USER'}">
-                        <div>
-                            <button type="button" id="btnWrite" onclick="location.href = '/free_board_saveForm'">글쓰기</button>
-                        </div>
-                    </c:when>
-                    <c:otherwise>
-                        <div>
-                            <button type="button" id="btnWrite" onclick="location.href = '/free_board_saveForm'">글쓰기</button>
-                        </div>
-                    </c:otherwise>
-                </c:choose>
+                <%--===================글쓰기===================--%>
+                <div class="writeForm2">
+                    <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                </div>
             </div>
         </div>
     </div>
