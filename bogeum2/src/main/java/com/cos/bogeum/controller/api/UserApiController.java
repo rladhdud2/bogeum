@@ -97,25 +97,16 @@ public class UserApiController {
 
 	// 비밀번호 재발급
 	@PostMapping("/auth/find")
-	public ResponseDto<?> find(@RequestBody SendTmpPwdDto dto) {
-
-		if (!userRepository.existsByUsername(dto.getUsername())
-				|| !Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
-			Map<String, String> validResult = new HashMap<>();
-
-			if (!userRepository.existsByUsername(dto.getUsername())) {
-				validResult.put("valid_username", "존재하지 않는 사용자 이름입니다.");
-			}
-			if (!Pattern.matches("^[a-zA-Z0-9+-\\_.]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", dto.getEmail())) {
-				validResult.put("valid_email", "올바르지 않은 이메일 형식입니다.");
-			}
-
-			return new ResponseDto<>(HttpStatus.BAD_REQUEST.value(), validResult);
+	public ResponseDto<Integer> find(@RequestBody SendTmpPwdDto dto) {
+		int i = 0;
+		
+		if(userService.비밀번호재발급(dto.getUsername(), dto.getEmail()) !=null) {			
+			userService.sendTmpPwd(dto);			
+			i=userService.비밀번호재발급(dto.getUsername(), dto.getEmail()).getId();
 		}
-
-		userService.sendTmpPwd(dto);
-
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+		System.out.println(i);		
+		
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), i);
 	}
 
 	// 인증번호 발송
