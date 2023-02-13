@@ -2,6 +2,7 @@ ul {
     list-style: none;
 }
 
+
 body {
     font-family: 'Jua', sans-serif;
 }
@@ -258,11 +259,13 @@ body {
     .menu {
         width: 60px;
     }
+
     .banner1 {
         width: 100%;
         text-align: center;
         height: 12rem;
     }
+
     .normal {
         display: none;
     }
@@ -270,14 +273,50 @@ body {
     .banner1_small {
         display: block;
     }
+
     .small {
         width: 100%;
         height: 100%;
     }
 
+    #content2 {
+        display: block;
+        margin-top: 5px;
+    }
 
+    .board {
+        width: 100%;
+    }
+
+    #content3 {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .swiper-button-next {
+        display: none;
+    }
+
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    .contenttitle {
+        font-size: 1.9rem;
+    }
+
+    .contenttitle2 {
+        font-size: 1.9rem;
+    }
+
+    .contenttitle3 {
+        font-size: 1.9rem;
+    }
 }
-
 @media screen and (max-width: 560px) {
     .menu #expand-menu:not(:checked) ~ ul {
         display: none;
