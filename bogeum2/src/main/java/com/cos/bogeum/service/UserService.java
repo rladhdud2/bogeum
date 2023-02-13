@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cos.bogeum.dto.SendJoinNumberDto;
 import com.cos.bogeum.dto.SendTmpPwdDto;
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;
@@ -95,7 +96,8 @@ public class UserService {
 			return new IllegalArgumentException("아이디 찾기 실패");		
 		
 		});
-	}
+	}	
+	
 	
 	@Transactional(readOnly = true)
 	public Users 회원찾기(String username) {
@@ -157,6 +159,48 @@ public class UserService {
         user.setPassword(encodeer.encode(tmpPwd));
         System.out.println(tmpPwd);
 	}	
+	
+	//인증번호 발송
+		@Transactional
+		public String sendJoinNumber(String email) {
+			
+	        char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+	        String joinNumber = "";
+	        
+	        int idx = 0;
+	        for (int i = 0; i < 6; i++) {
+	            idx = (int) (charSet.length * Math.random());
+	            joinNumber += charSet[idx];
+	        }
+			
+	        try {
+	            SimpleMailMessage message = new SimpleMailMessage();
+	            message.setTo(email);
+	            message.setFrom(sendFrom);
+	            message.setSubject("보금자리에서 발송된 인증번호 입니다.");
+	            message.setText("안녕하세요.\n"
+	            		+ "보금자리 인증번호 안내 관련 이메일 입니다.\n"	            		
+	            		+ "인증번호 : " + joinNumber);
+	            javaMailSender.send(message);
+	        } catch (MailParseException e) {
+	            e.printStackTrace();
+	        } catch (MailAuthenticationException e) {
+	            e.printStackTrace();
+	        } catch (MailSendException e) {
+	            e.printStackTrace();
+	        } catch (MailException e) {
+	            e.printStackTrace();
+	        }	      
+	        
+	        System.out.println(joinNumber);
+	        
+	        return joinNumber;
+		}	
+		
+		
+	
+	
 	@Transactional(readOnly = true)
 	public Users findUser(int id) {
 		Users user = userRepository.findById(id).orElseGet(()->{
@@ -164,4 +208,6 @@ public class UserService {
 		});
 		return user;
 	}
+	
+	
 }
