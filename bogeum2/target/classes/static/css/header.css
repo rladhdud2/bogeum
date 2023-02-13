@@ -22,13 +22,15 @@ header {
         height: 120px;
         display: flex;
         justify-content: center;
-        align-items:center; 
+        align-items:center;        
             
     }
 
         #logo {            
-            width : 250px;
+            width : 300px;
             height : 100px; 
+            margin-left : 50px;          
+           
         }
         #logo img {
             height: 100%;
@@ -38,7 +40,7 @@ header {
         list-style: none;
         display: flex;
         justify-content: space-between;
-        
+        margin-right : 250px;
         
         }
         .nav li {
@@ -47,7 +49,7 @@ header {
             line-height: 120px;            
             text-align: center;
             font-size: 35px;              
-            margin-left : 40px;	    
+            margin-left : 100px;	    
             border-bottom : 3px solid white;        	
                                    
         }
