@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ChatContrller {
 
     @GetMapping("/auth/chat")
-    public String chatGET() {
+    public String chatGET(Model model) {
         log.info("@ChatController, chat GET()");
+        model.addAttribute("name", "Rooney");
         return "th/chat";
     }
 
