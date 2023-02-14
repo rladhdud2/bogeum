@@ -38,7 +38,10 @@
 		<button class="bannerbutton" id="button4"></button>
 
 	</div>
-
+	
+	
+	
+	
 
 	<div class="container" id="maincontent1">
 		<div class="main">
@@ -56,7 +59,10 @@
 			</div>
 
 		</div>
-	</div>
+	</div>	
+	
+	
+	
 
 	<div class="banner2">
 		<div class="bannercontainer2">
@@ -65,11 +71,10 @@
 			</div>
 		</div>
 	</div>
+	
 
 	<div class="container" id="maincontent2">
 		<div id="content2">
-
-
 			<div class="board">
 				<div class="contenttitle2">공지사항</div>
 				<c:forEach var="notice" items="${notice.content}">
@@ -150,32 +155,56 @@
 		}
 
 		//배너 버튼
-		document.querySelector('#button1').addEventListener('click',function() {
-							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0)+ '%';
+		document
+				.querySelector('#button1')
+				.addEventListener(
+						'click',
+						function() {
+							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 0)
+									+ '%';
 							slideIndex = 0;
 							time = 20000;
 						})
-		document.querySelector('#button2').addEventListener('click',function() {
-							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1)+ '%';
+		document
+				.querySelector('#button2')
+				.addEventListener(
+						'click',
+						function() {
+							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 1)
+									+ '%';
 							slideIndex = 1;
 							time = 20000;
 						})
-		document.querySelector('#button3').addEventListener('click',function() {
-							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2)+ '%';
+		document
+				.querySelector('#button3')
+				.addEventListener(
+						'click',
+						function() {
+							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 2)
+									+ '%';
 							slideIndex = 2;
 							time = 20000;
 						})
-		document.querySelector('#button4').addEventListener('click',function() {
-							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3)+ '%';
+		document
+				.querySelector('#button4')
+				.addEventListener(
+						'click',
+						function() {
+							document.querySelector('.bannercontainer').style.left = -(sliderWidth * 3)
+									+ '%';
 							slideIndex = 3;
 							time = 20000;
 						})
-		document.querySelector('.bannercontainer').addEventListener('mouseleave', function() {
+		document.querySelector('.bannercontainer').addEventListener(
+				'mouseleave', function() {
 					time = 3000;
 				})
-		document.querySelector('.bannercontainer').addEventListener('mouseover', function() {
+		document.querySelector('.bannercontainer').addEventListener(
+				'mouseover', function() {
 					time = 20000;
 				})
+
+		
 	</script>
 
 

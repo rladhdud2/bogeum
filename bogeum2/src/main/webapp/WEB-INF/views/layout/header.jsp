@@ -42,7 +42,39 @@
 
 </head>
 <body>
-	<header>
+
+
+	<!--모바일헤더  -->
+	<div id="mobilenavbox">
+		<button onclick="off()">x</button>
+		<div id="mobileheadernav">
+			<ul class="mobilenav">
+				<li><a href="/auth/shelter">보호소</a></li>
+				<li><a href="/auth/board">커뮤니티</a></li>
+				<li><a href="/auth/shop">쇼핑몰</a></li>
+				<li></li>
+				<li></li>
+				<li><a href="/auth/loginForm">로그인</a></li>
+				<li><a href="/auth/joinForm">회원가입</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div id="mobilelogo">
+		<div id="mobilelogobox">
+			<a href="/"><img src="/img/footerlogo.png"></a>
+		</div>
+
+		<div id="mobilenavbtn">
+			<button>
+				<img src="/img/mobilenavicon.png" onclick="dd()">
+			</button>
+		</div>
+	</div>
+	<!--  -->
+
+	<header id="pcheader">	
 
 		<c:choose>
 			<c:when test="${empty principal}">
@@ -82,5 +114,17 @@
 				</ul>
 			</div>
 		</div>
+		
+		
+		<script>
+		function dd() {
+			document.querySelector('#mobilenavbox').style.display = 'block';			
+			
+		}
+		function off() {
+			document.querySelector('#mobilenavbox').style.display = 'none';
+			
+		}
+		</script>
 		
 	</header>
