@@ -21,8 +21,11 @@ let index2 = {
 				});
 				return false;
 			};
-			alert("회원정보를 확인하고 있습니다");
-			this.find();
+			Swal.fire({
+				html: "회원정보를 확인하고 있습니다",
+				icon: "info",
+			}).then(result =>{ this.find();})
+
 		});
 
 	},
@@ -42,13 +45,17 @@ let index2 = {
 		}).done(function(resp) {
 
 			if (resp.data !== 0) {
-				alert("임시비밀번호가 전송되었습니다");
+				Swal.fire({
+					html: "임시 비밀번호가 발송되었습니다",
+					icon: "success"
+				});
 
 			} else {
-				alert("회원정보를 찾을 수 없습니다");
+				Swal.fire({
+					html: "회원정보를 찾을 수 없습니다",
+					icon: "error"
+				});
 			}
-
-			location.href = "/auth/loginForm";
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
