@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>보금자리>분실/습득</title>
+<title>보금자리>자유게시판</title>
 <%--Font--%>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

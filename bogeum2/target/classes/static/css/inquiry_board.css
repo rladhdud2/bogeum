@@ -9,11 +9,6 @@ body {
     font-family: 'Jua', sans-serif !important;
 }
 
-html {
-    font-size: 10px;
-
-}
-
 ul, li {
     list-style: none;
 }
@@ -32,16 +27,16 @@ a {
 }
 
 .board_title {
-    margin-bottom: 3.75rem;
+    margin-bottom: 2.5rem;
 }
 
 .board_title strong {
-    font-size: 6rem;
+    font-size: 3rem;
 }
 
 .board_title p {
     margin-top: 5px;
-    font-size: 2.8rem;
+    font-size: 1.4rem;
 }
 
 .bt_wrap {
@@ -60,7 +55,7 @@ a {
     padding: 10px;
     border: 1px solid #ffebb6;
     border-radius: 2px;
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 .bt_wrap a:first-child {
@@ -94,7 +89,7 @@ a {
     display: inline-block;
     padding: 15px 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .board_list > div.top > div {
@@ -145,13 +140,13 @@ a {
 
 .board_page a.bt {
     padding-top: 10px;
-    font-size: 1.2rem;
+    font-size: 0.6rem;
     letter-spacing: -1px;
 }
 
 .board_page a.num {
     padding-top: 9px;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .board_page a.num.on {
@@ -172,7 +167,7 @@ a {
 .board_view .title {
     padding: 20px 15px;
     border-bottom: 1px dashed #ddd;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .board_view .info {
@@ -209,7 +204,7 @@ a {
 .board_view .info dl dt,
 .board_view .info dl dd {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 0.7rem;
 }
 
 .board_view .info dl dt {
@@ -225,7 +220,7 @@ a {
     padding: 15px;
     border-bottom: 1px solid #000;
     line-height: 160%;
-    font-size: 1.4rem;
+    font-size: 0.7rem;
 }
 
 .board_write {
@@ -260,7 +255,7 @@ a {
 .board_write .info dd {
     display: inline-block;
     vertical-align: middle;
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 .board_write .title dt,
@@ -332,7 +327,7 @@ button#btnWrite {
     background-color: #ffebb6;
     margin-left: 10px;
     font-family: 'Jua', sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
 
 }
 
@@ -395,7 +390,7 @@ body {
     padding: 10px;
     border: 1px solid #ffebb6;
     border-radius: 2px;
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 #btn_save {
