@@ -1,6 +1,5 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ include file="../layout/header.jsp" %>
 <head>
     <meta charset="UTF-8">
@@ -11,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-      <!--Swiper-->
+    <!--Swiper-->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -32,25 +31,31 @@
 </head>
 <body>
 
-<div class="banner1"><img src="/img/BoardBanner1.png"></div>
-<div class="banner1_small"><img src="/img/BoardBanner1_phone.png"></div>
+<div class="banner1"><img class="normal" src="/img/BoardBanner1.png">
+    <div class="banner1_small"><img class="small" src="/img/BoardBanner1_phone.png"></div>
+</div>
+
 <div class="container">
     <div id="content2">
         <div class="board">
-            <div class="contenttitle2"><a href=/auth/notice> 공지사항</a></div>
+            <div class="contenttitle2"><a href=/auth/notice> 공지사항<span class="titleimg"><i class="fa-solid fa-plus"></i></span></a>
+            </div>
             <div class="content2">
                 <c:forEach var="notice" items="${notice.content}">
-                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/notice/${notice.id}';"><a
+                    <div class="content2title" style=" cursor: pointer;"
+                         onclick="location.href='/notice/${notice.id}';"><a
                             href="/notice/${notice.id}">${notice.title} <span style="float: right"> <fmt:formatDate
                             pattern="yyyy-MM-dd" value="${notice.createDate}"/></span></a></div>
                 </c:forEach>
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/inquiry"> 문의사항</a></div>
-            <div class="content2" >
+            <div class="contenttitle2"><a href="/auth/inquiry"> 문의사항<span class="titleimg"><i
+                    class="fa-solid fa-plus"></i></span></a></div>
+            <div class="content2">
                 <c:forEach var="inquirys" items="${inquirys.content}">
-                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/inquiry/${inquirys.id}';"><a
+                    <div class="content2title" style=" cursor: pointer;"
+                         onclick="location.href='/inquiry/${inquirys.id}';"><a
                             href="/inquiry/${inquirys.id}">${inquirys.title} <span style="float: right"> <fmt:formatDate
                             pattern="yyyy-MM-dd" value="${inquirys.createDate}"/></span></a></div>
                 </c:forEach>
@@ -59,17 +64,20 @@
     </div>
     <div id="content3">
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/findboard"> 분실/습득</a></div>
+            <div class="contenttitle2"><a href="/auth/findboard"> 분실/습득<span class="titleimg"><i
+                    class="fa-solid fa-plus"></i></span></a></div>
             <div class="content2">
                 <c:forEach var="finds" items="${finds.content}">
-                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/finds/${finds.id}';"><a
-                            href="/finds/${finds.id}">${finds.title}  <span style="float: right"> <fmt:formatDate
-                            pattern="yyyy-MM-dd" value="${finds.createDate}"/></span></a></div>
+                    <div class="content2title" style=" cursor: pointer;" onclick="location.href='/finds/${finds.id}';">
+                        <a
+                                href="/finds/${finds.id}">${finds.title} <span style="float: right"> <fmt:formatDate
+                                pattern="yyyy-MM-dd" value="${finds.createDate}"/></span></a></div>
                 </c:forEach>
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/free"> 자유게시판</a></div>
+            <div class="contenttitle2"><a href="/auth/free"> 자유게시판<span class="titleimg"><i
+                    class="fa-solid fa-plus"></i></span></a></div>
             <div class="content2">
                 <c:forEach var="free" items="${free.content}">
                     <div class="content2title" style=" cursor: pointer;" onclick="location.href='/free/${free.id}';"><a
@@ -80,19 +88,19 @@
         </div>
     </div>
     <div id="content4">
-        <div class="contenttitle2"> 입양 지원 / 안내</div>
+        <div class="contenttitle3"> 입양 지원 / 안내</div>
     </div>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide "><img src="/img/BoardBanner_2.png"></div>
-                <div class="swiper-slide "><img src="/img/BoardBanner_3.png"></div>
-                <div class="swiper-slide "><img src="/img/BoardBanner_4.png"></div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide "><img src="/img/BoardBanner_2.png"></div>
+            <div class="swiper-slide "><img src="/img/BoardBanner_3.png"></div>
+            <div class="swiper-slide "><img src="/img/BoardBanner_4.png"></div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
 </div>
 <!-- Initialize Swiper -->
@@ -115,4 +123,4 @@
     });
 </script>
 </body>
-<%@ include file="../layout/footer.jsp"%>
+<%@ include file="../layout/footer.jsp" %>

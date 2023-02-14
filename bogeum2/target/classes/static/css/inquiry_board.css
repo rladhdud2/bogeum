@@ -2,92 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
+.writeForm1 {
+    display: none;
+}
 body {
     font-family: 'Jua', sans-serif !important;
-}
-
-@media (max-width: 1000px) {
-    .board_wrap {
-        width: 100%;
-        min-width: 320px;
-        padding: 0 30px;
-        box-sizing: border-box;
-        position: relative;
-    }
-
-    .board_list .num,
-    .board_list .writer,
-    .board_list .count {
-        display: none;
-    }
-
-    .board_list .date {
-        width: 40%;
-    }
-
-    .board_list .title {
-        text-indent: 10px;
-    }
-
-    .board_list .top .title {
-        text-indent: 0;
-    }
-
-    .board_page a {
-        width: 26px;
-        height: 26px;
-    }
-
-    .board_page a.bt {
-        padding-top: 7px;
-    }
-
-    .board_page a.num {
-        padding-top: 6px;
-    }
-
-    .board_view .info dl {
-        width: 50%;
-        padding: 0;
-    }
-
-    .board_view .info dl:nth-child(-n+2) {
-        margin-bottom: 5px;
-    }
-
-    .board_view .info dl::before {
-        display: none;
-    }
-
-    .board_view .info dl dt,
-    .board_view .info dl dd {
-        font-size: 1.2rem;
-    }
-
-    .board_write .info dl {
-        width: 49%;
-    }
-
-    .board_write .info dl:first-child {
-        margin-right: 2%;
-    }
-
-    .board_write .title dt,
-    .board_write .info dt {
-        display: none;
-    }
-
-    .board_write .title dd,
-    .board_write .info dd {
-        width: 100%;
-    }
-
-    .board_write .title input[type="text"],
-    .board_write .info input[type="text"],
-    .board_write .info input[type="password"] {
-        width: 100%;
-    }
 }
 
 html {
@@ -187,7 +106,7 @@ a {
 }
 
 .board_list .title {
-    width: 50%;
+    width: 40%;
     text-align: left;
 }
 
@@ -196,7 +115,7 @@ a {
 }
 
 .board_list .writer {
-    width: 10%;
+    width: 20%;
 }
 
 .board_list .date {
@@ -394,7 +313,7 @@ input#search {
 }
 
 input#keyword {
-    width: 360px;
+    width: 330px;
     height: 30px;
     border: 1px solid #ffebb6;
 }
@@ -488,4 +407,121 @@ body {
 }
 .swal2-popup{
     font-size: 2rem !important;
+}
+
+
+@media (max-width: 1024px) {
+    .board_menu {
+        display: none;
+    }
+
+    .board_wrap2 {
+        width: 80%;
+        justify-content: center;
+        margin: 6.25rem auto;
+        margin-right: 10%;
+
+    }
+
+    .board_wrap {
+        width: 100%;
+        min-width: 320px;
+        padding: 0 30px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .board_list .title{
+        width: 70%;
+    }
+
+    .board_list .num,
+    .board_list .date,
+    .board_list .count {
+        display: none;
+    }
+
+    .board_list .writer {
+        width: 30%;
+    }
+
+    .board_list .title {
+        text-indent: 10px;
+    }
+
+    .board_list .top .title {
+        text-indent: 0;
+    }
+
+    .board_page a {
+        width: 26px;
+        height: 26px;
+    }
+
+    .board_page a.bt {
+        padding-top: 7px;
+    }
+
+    .board_page a.num {
+        padding-top: 6px;
+    }
+
+    .board_view .info dl {
+        width: 50%;
+        padding: 0;
+    }
+
+    .board_view .info dl:nth-child(-n+2) {
+        margin-bottom: 5px;
+    }
+
+    .board_view .info dl::before {
+        display: none;
+    }
+
+    .board_view .info dl dt,
+    .board_view .info dl dd {
+        font-size: 1.2rem;
+    }
+
+    .board_write .info dl {
+        width: 49%;
+    }
+
+    .board_write .info dl:first-child {
+        margin-right: 2%;
+    }
+
+    .board_write .title dt,
+    .board_write .info dt {
+        display: none;
+    }
+
+    .board_write .title dd,
+    .board_write .info dd {
+        width: 100%;
+    }
+
+    .board_write .title input[type="text"],
+    .board_write .info input[type="text"],
+    .board_write .info input[type="password"] {
+        width: 100%;
+    }
+    select{
+        display: none;
+    }
+    input#keyword {
+        display: none;
+    }
+    input#search {
+        display: none;
+    }
+
+    .writeForm1{
+        float: right;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .writeForm2 {
+        display: none;
+    }
 }

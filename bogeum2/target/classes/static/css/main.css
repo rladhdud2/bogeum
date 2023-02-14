@@ -9,9 +9,7 @@ body {
 
 .container {    
   width: 1200px;
-  margin : auto;
-  margin-top: 100px;
-  
+  margin : auto;  
 }
 #content1 {
     margin-bottom : 50px;
@@ -143,7 +141,6 @@ body {
   
   
 }
-
 .bannercontainer {
     width : 300%;
     height : 100%;
@@ -181,8 +178,7 @@ body {
 
 
 .buttonbox {
-    margin : auto;
-    margin-top : 10px;
+    margin : auto;    
     display: flex;
     justify-content: center;
     width : 500px;  
@@ -209,7 +205,9 @@ body {
 }
 
 #maincontent2 {	
-	margin-top : 120px;
+	margin-top : 100px;
 	height : 800px;
 }
-
+.main {
+	margin-top : -50px;
+}
