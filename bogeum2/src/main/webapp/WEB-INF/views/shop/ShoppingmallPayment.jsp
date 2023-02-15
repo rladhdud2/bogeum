@@ -8,8 +8,8 @@
 	<div id="Shop_pay_wrap">
         <div id="pay_bigbox1">
             <div class="pay_font">
-                <p>주문/결제</p>
-                <p><fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</p>
+            	<div class="font1"><p>주문/결제</p></div>
+                <div class="font2"><p>총 결제금액: <fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</p></div>
             </div>
             <div class="pay_table">
                 <div class="table_info">
@@ -61,7 +61,7 @@
                 <div class="address_content">
                 	<label for="name">이름</label>
                     <input type="text" id="name" value="${principal.user.username2}" required="required">
-                    
+ 					<br>                   
                     <label for="user_id">아이디</label>
                     <input type="text" id="user_id" value="${principal.user.username}" required="required">
                     <br>

@@ -66,6 +66,8 @@ public class items {
 	@OneToMany (mappedBy="items", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
 	private List<Review> reviewList;
 	
+	@OneToMany(mappedBy = "item")
+	private List<CartItem> cartItem = new ArrayList<>();
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="sellerId")

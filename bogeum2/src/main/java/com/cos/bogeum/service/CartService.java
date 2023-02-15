@@ -86,4 +86,26 @@ public class CartService {
             }
         }
 	}
+	@Transactional
+	public void plusCartCount(int userId) {
+		Cart cart = cartRepository.findByUserId(userId);
+		int count = cart.getCount();
+		cart.setCount(count+1);
+	}
+	@Transactional
+	public void minusCartCount(int userId) {
+		Cart cart = cartRepository.findByUserId(userId);
+		int count = cart.getCount();
+		int cnt = count-1;
+		if(cnt >= 1) {
+			cart.setCount(cnt);
+		} else {
+			cart.setCount(1);
+		}
+	}
+	@Transactional 
+	public void minusCount(int id, int cnt) {
+		Cart cart = cartRepository.findByUserId(id);
+		cart.setCount(cnt);
+	}
 }
