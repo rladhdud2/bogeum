@@ -9,7 +9,7 @@
 		<li><a href="/user/mypage">마이페이지</a></li>		
 		<li onclick="open1()">주문내역 	
 			<ul class="submenu" id="submenu1">
-				<li>주문/배송조회</li>
+				<li><a href="/user/mypage/${principal.user.id}">주문/배송조회</a></li>
 				<li>교환/반품신청</li>
 				<li>관심상품</li>
 			</ul>	
