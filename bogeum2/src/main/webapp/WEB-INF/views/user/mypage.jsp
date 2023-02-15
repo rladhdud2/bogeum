@@ -4,11 +4,17 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <body>
 <%@ include file="../layout/header.jsp"%>
-
+<!-- 모바일네비 -->
+<%@ include file="../layout/mobilesidenav.jsp" %>
 
 
 <div class="container">     
+
 <%@ include file="../layout/sidenav.jsp"%>
+
+
+
+
         <div class="mypagecontentbox">
             <div class="mypagecontent">
                 <div class="mypagecontenttitle">주문/배송 조회</div>

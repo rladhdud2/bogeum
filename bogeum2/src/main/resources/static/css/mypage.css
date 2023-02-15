@@ -104,6 +104,7 @@
         justify-content: space-around;
         font-size: 20px;
         margin-bottom: 10px;
+        border-top: 1px solid gray;
         border-bottom: 1px solid gray;
         height: 30px;  
         text-align: center;           
@@ -164,6 +165,40 @@
         .confirm button:hover {
         cursor : pointer;
         }
+#mobilesidenavbox {
+	display : none;
+}
+/*모바일페이지*/
+@media ( min-width : 0px) and (max-width: 1050px) {
+	#mobilesidenavbox {
+	display : block;
+}
+		
+	.container {
+		width : 90%;			
+		margin : auto;
+	}
+	.mypagenav {
+		display : none;
+	}
+	.mypagecontentbox {
+		width : 100%;		
+		margin : auto;
+		margin-left : 0px; 		
+	}	
+	#orderprocess ul {
+		width : 100%;		
+	}
+	.ordercount {
+		font-size : 60px;
+	}
+	.myorder2nav {
+		font-size : 15px;
+		height : 30px;			
+		border-top : 1px solid black;
+	}
+	
+}
 
 
 

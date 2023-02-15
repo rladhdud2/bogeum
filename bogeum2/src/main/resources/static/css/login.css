@@ -108,3 +108,22 @@
         margin-bottom: 10px;
         font-size: 20px;
     }
+    
+/*모바일화면*/
+@media ( min-width : 0px) and (max-width: 1050px) {
+
+	#loginbox {  
+	width : 400px;      
+    margin: auto;
+    margin-top: 200px;  
+}
+		
+	#loginpart1 {
+		display : none;
+	}
+	#loginpart2 {
+		border : 5px rgb(253, 232, 175) solid; 
+		border-radius : 20px;
+	}
+	
+}    

@@ -116,4 +116,23 @@
     cursor : pointer;
     }
     
+/*모바일화면*/
+@media ( min-width : 0px) and (max-width: 1050px) {
+
+	#findIdbox {  
+	width : 400px;      
+    margin: auto;
+    margin-top: 200px;  
+}
+		
+	#loginpart1 {
+		display : none;
+	}
+	#findIdpart {
+		border : 5px rgb(253, 232, 175) solid; 
+		border-radius : 20px;
+	}
+	
+}    
+    
     

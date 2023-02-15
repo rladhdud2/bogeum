@@ -4,7 +4,7 @@
 
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
@@ -16,8 +16,10 @@
 	rel="stylesheet">
 
 <!-- SweetAlert -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 
 <script src="https://kit.fontawesome.com/462a97624e.js"
 	crossorigin="anonymous"></script>
@@ -54,8 +56,32 @@
 				<li><a href="/auth/shop">쇼핑몰</a></li>
 				<li></li>
 				<li></li>
-				<li><a href="/auth/loginForm">로그인</a></li>
-				<li><a href="/auth/joinForm">회원가입</a></li>
+				
+				<c:choose>
+					<c:when test="${empty principal}">		
+						<li></li>				
+						<li><a href="/auth/loginForm">로그인</a></li>
+						<li><a href="/auth/joinForm">회원가입</a></li>						
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+							<c:when test="${principal.user.roles=='ADMIN'}">								
+								<li><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+								<li><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+								<li><a href="/admin">관리자페이지</a></li>
+								<li><a href="/logout">로그아웃</a></li>								
+							</c:when>
+							<c:otherwise>								
+								<li><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+								<li><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+								<li><a href="/logout">로그아웃</a></li>								
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
+
+
+
 			</ul>
 		</div>
 	</div>
@@ -68,13 +94,14 @@
 
 		<div id="mobilenavbtn">
 			<button>
-				<img src="/img/mobilenavicon.png" onclick="dd()">
+				<img src="/img/mobilenavicon.png" onclick="on()">
 			</button>
 		</div>
 	</div>
-	<!--  -->
-
-	<header id="pcheader">	
+	
+	
+	<!-- pc헤더  -->
+	<header id="pcheader">
 
 		<c:choose>
 			<c:when test="${empty principal}">
@@ -87,20 +114,23 @@
 				<c:choose>
 					<c:when test="${principal.user.roles=='ADMIN'}">
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니 |</a>&nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							<a href="/user/cart/${principal.user.id}">장바구니 |</a>&nbsp;<a
+								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; |
+							&nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a
+								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; |
+							&nbsp;<a href="/logout">로그아웃</a> &nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>
 				</c:choose>
 			</c:otherwise>
 		</c:choose>
-		
+
 
 		<div id="header2">
 			<div id="logo">
@@ -114,17 +144,17 @@
 				</ul>
 			</div>
 		</div>
-		
-		
+
+
 		<script>
-		function dd() {
-			document.querySelector('#mobilenavbox').style.display = 'block';			
-			
-		}
-		function off() {
-			document.querySelector('#mobilenavbox').style.display = 'none';
-			
-		}
+			function on() {
+				document.querySelector('#mobilenavbox').style.display = 'block';
+
+			}
+			function off() {
+				document.querySelector('#mobilenavbox').style.display = 'none';
+
+			}
 		</script>
-		
+
 	</header>
