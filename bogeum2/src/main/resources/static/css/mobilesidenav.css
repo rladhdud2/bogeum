@@ -1,8 +1,9 @@
 
 #mobilesidenavbox {
 	margin-top : -50px;
-	margin-bottom : 50px;
+	margin-bottom : 100px;
 	background-color : rgb(253, 232, 175);
+	color : gray;
 }
 
 #mobilesidenavli {
@@ -15,14 +16,19 @@
 }
 
 #mobilesidenavli li {
-	width : 100%;
+	width : 100%;	
+}
+
+#mobilesidenavli li a {
+	color : gray;
 }
 
 .submenu {
 	background-color : rgb(253, 232, 175);
-	opacity : 0.8;	
 	display : none;
+	opacity : 0.8;	
 }
+
 
 
 
