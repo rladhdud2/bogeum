@@ -57,6 +57,31 @@ function shelterSearch() {
                 html += '<p>지역: ' + item.orgNm + '</p></div>';
             }
             document.getElementById('pic-wrap').innerHTML = html;
+
+            // 서버 측에서 총 데이터 건수를 조회한 후, 다음 변수에 저장합니다.
+            var totalDataCount = dat.response.body.totalCount;
+
+            // 페이지당 보여줄 데이터 건수와 현재 페이지 번호를 파라미터로 전달받습니다.
+            var pageSize = dat.response.body.numOfRows;
+            var currentPage = dat.response.body.pageNo;
+
+            // 총 페이지 수를 계산합니다.
+            var totalPageCount = Math.ceil(totalDataCount / pageSize);
+
+            // 페이지 링크를 생성합니다.
+            var pageLinkHtml = '';
+            for (var i = 1; i <= totalPageCount; i++) {
+                var activeClass = (i === currentPage) ? 'active' : '';
+                pageLinkHtml += '<a href="#" class="' + activeClass + '">' + i + '</a>';
+            }
+
+            // 페이지 링크를 페이지 네이션에 추가합니다.
+            var pageNationElem = document.querySelector('.page_nation');
+            pageNationElem.innerHTML = pageLinkHtml;
+
+
+
+
             for (var i in dat.response.body.items.item) {
                 let itemnn = dat.response.body.items.item[i];
 
@@ -130,43 +155,122 @@ function shelterSearch() {
             }
             document.getElementById('pic-wrap').innerHTML = html;
 
-            for (var i in dat.response.body.items.item) {
-                let itemnn = dat.response.body.items.item[i];
+            // // 서버 측에서 총 데이터 건수를 조회한 후, 다음 변수에 저장합니다.
+            // var totalDataCount = dat.response.body.totalCount;
+            //
+            // // 페이지당 보여줄 데이터 건수와 현재 페이지 번호를 파라미터로 전달받습니다.
+            // var pageSize = dat.response.body.numOfRows;
+            // var currentPage = dat.response.body.pageNo;
+            //
+            // // 총 페이지 수를 계산합니다.
+            // var totalPageCount = Math.ceil(totalDataCount / pageSize);
+            //
+            // // 페이지 링크를 생성합니다.
+            // var pageLinkHtml = '';
+            // for (var i = 1; i <= totalPageCount; i++) {
+            //     var activeClass = (i === currentPage) ? 'active' : '';
+            //     pageLinkHtml += '<a href="#" class="' + activeClass + '">' + i + '</a>';
+            // }
+            //
+            // // 페이지 링크를 페이지 네이션에 추가합니다.
+            // var pageNationElem = document.querySelector('.page_nation');
+            // pageNationElem.innerHTML = pageLinkHtml;
 
-                let data = {
-                    desertionNo: itemnn.desertionNo,
-                    kindCd: itemnn.kindCd,
-                    colorCd: itemnn.colorCd,
-                    age: itemnn.age,
-                    weight: itemnn.weight,
-                    noticeSdt: itemnn.noticeSdt,
-                    noticeEdt: itemnn.noticeEdt,
-                    popfile: itemnn.popfile,
-                    sexCd: itemnn.sexCd,
-                    neuterYn: itemnn.neuterYn,
-                    specialMark: itemnn.specialMark,
-                    careNm: itemnn.careNm,
-                    careTel: itemnn.careTel,
-                    careAddr: itemnn.careAddr,
-                    processState: itemnn.processState,
-                };
-                console.log(data)
-                $.ajax({
-                    type: "POST",
-                    url: "/auth/shelter",
-                    data: JSON.stringify(data),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json"
-                }).done(function (resp) {
-                    // alert("테스트")
-                    // location.href = "/auth/shelter";
-                }).fail(function (error) {
-                    // alert(JSON.stringify(error));
-                });
+
+            // 현재 페이지 번호
+            var currentPage = 1;
+
+            // 한 페이지에 보여줄 아이템 수
+            var itemsPerPage = 9;
+
+            // 총 아이템 수
+            var totalItems = 100;
+
+            // 총 페이지 수
+            var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+            // 페이지 번호를 클릭했을 때 실행될 함수
+            function onPageClick(pageNumber) {
+                // 클릭한 페이지 번호를 현재 페이지 번호로 설정
+                currentPage = pageNumber;
+
+                // 페이지 번호 UI 업데이트
+                updatePageNumbers();
+
+                // 해당 페이지의 데이터 가져오기
+                fetchDataForPage(currentPage);
             }
+
+            // 페이지 번호 UI 업데이트 함수
+            function updatePageNumbers() {
+                // 페이지 번호 UI 엘리먼트 가져오기
+                var pageNationEl = document.querySelector('.page_nation');
+
+                // 페이지 번호 UI 초기화
+                pageNationEl.innerHTML = '';
+
+                // 이전 페이지 화살표 UI 추가
+                if (currentPage > 1) {
+                    pageNationEl.innerHTML += '<a class="arrow pprev" href="#" onclick="onPageClick(' + (currentPage - 1) + ')"></a>';
+                    pageNationEl.innerHTML += '<a class="arrow prev" href="#" onclick="onPageClick(' + (currentPage - 1) + ')"></a>';
+                }
+
+                // 중간 페이지 번호 UI 추가
+                var firstPageNumber = Math.max(1, currentPage - 5);
+                var lastPageNumber = Math.min(totalPages, currentPage + 5);
+                for (var i = firstPageNumber; i <= lastPageNumber; i++) {
+                    if (i === currentPage) {
+                        pageNationEl.innerHTML += '<a href="#" class="active">' + i + '</a>';
+                    } else {
+                        pageNationEl.innerHTML += '<a href="#" onclick="onPageClick(' + i + ')">' + i + '</a>';
+                    }
+                }
+
+                // 다음 페이지 화살표 UI 추가
+                if (currentPage < totalPages) {
+                    pageNationEl.innerHTML += '<a class="arrow next" href="#" onclick="onPageClick(' + (currentPage + 1) + ')"></a>';
+                    pageNationEl.innerHTML += '<a class="arrow nnext" href="#" onclick="onPageClick(' + (currentPage + 1) + ')"></a>';
+
+
+                    for (var i in dat.response.body.items.item) {
+                        let itemnn = dat.response.body.items.item[i];
+
+                        let data = {
+                            desertionNo: itemnn.desertionNo,
+                            kindCd: itemnn.kindCd,
+                            colorCd: itemnn.colorCd,
+                            age: itemnn.age,
+                            weight: itemnn.weight,
+                            noticeSdt: itemnn.noticeSdt,
+                            noticeEdt: itemnn.noticeEdt,
+                            popfile: itemnn.popfile,
+                            sexCd: itemnn.sexCd,
+                            neuterYn: itemnn.neuterYn,
+                            specialMark: itemnn.specialMark,
+                            careNm: itemnn.careNm,
+                            careTel: itemnn.careTel,
+                            careAddr: itemnn.careAddr,
+                            processState: itemnn.processState,
+                        };
+                        console.log(data)
+                        $.ajax({
+                            type: "POST",
+                            url: "/auth/shelter",
+                            data: JSON.stringify(data),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json"
+                        }).done(function (resp) {
+                            // alert("테스트")
+                            // location.href = "/auth/shelter";
+                        }).fail(function (error) {
+                            // alert(JSON.stringify(error));
+                        });
+                    }
+                }
+            };
+            xhr.send('');
         }
-    };
-    xhr.send('');
+    }
 
 
 
