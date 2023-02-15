@@ -49,7 +49,7 @@
 				<div class="content_flex">
 					<div class="contenttitle">&nbsp;보호소</div>
 					<div class="contenttitle">
-						<a href="/auth/shelter"><i class="fa-solid fa-plus"></i></a>
+						<a href="/auth/shelter"><i class="fa-solid fa-plus"></i></a>&nbsp;
 					</div>
 				</div>
 
