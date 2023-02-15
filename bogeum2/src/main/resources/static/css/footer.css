@@ -110,4 +110,7 @@ footer {
     #footerlogo img{
         display: none;
     }
+    footer {
+        margin-top: 50px;
+    }
 }
