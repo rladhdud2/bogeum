@@ -332,5 +332,9 @@ input[type="date"] {
     /* justify-content: center; */
     /* flex-wrap: wrap; */
   }
+  .picpic {
+    width: 47%;
+  }
+
 
 }

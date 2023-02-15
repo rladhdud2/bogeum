@@ -81,35 +81,24 @@
     </div>
       <div id="search-rst" style="padding-left: 350px"></div>
       <div id="pic-wrap" style="display: flex; flex-wrap: wrap; padding-left: 50px; border-radius:10px;"></div>
-<%--    <div class="pic-wrap">--%>
-<%--      <ul class="pic-section">--%>
-<%--          <li><a href="#">--%>
-<%--              <div class="pic"><img class="shelter-pic" src="/img/cat1.jpg"></div><br>--%>
-<%--              <div class=""><span class="pic-detail">공고날짜 : 2023년 1월 25일--%>
-<%--                  <br>발견장소 : 수원역</span></div>--%>
-<%--              </a>--%>
-<%--          </li>--%>
-<%--        </ul>--%>
-<%--      </div>--%>
-
-     <div class="page_wrap">
-      <div class="page_nation">
-          <a class="arrow pprev" href="#"></a>
-          <a class="arrow prev" href="#"></a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">7</a>
-          <a href="#">8</a>
-          <a href="#">9</a>
-          <a href="#">10</a>
-          <a class="arrow next" href="#"></a>
-          <a class="arrow nnext" href="#"></a>
+      <div class="page_wrap">
+          <div class="page_nation">
+              <a class="arrow pprev" href="#"></a>
+              <a class="arrow prev" href="#"></a>
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a class="arrow next" href="#"></a>
+              <a class="arrow nnext" href="#"></a>
+           </div>
        </div>
-      </div>
     </div>
   </div>
 <script type="text/javascript" src="/js/shelter.js"></script>
