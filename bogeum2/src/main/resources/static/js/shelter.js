@@ -177,61 +177,6 @@ function shelterSearch() {
             // pageNationElem.innerHTML = pageLinkHtml;
 
 
-            // 현재 페이지 번호
-            var currentPage = 1;
-
-            // 한 페이지에 보여줄 아이템 수
-            var itemsPerPage = 9;
-
-            // 총 아이템 수
-            var totalItems = 100;
-
-            // 총 페이지 수
-            var totalPages = Math.ceil(totalItems / itemsPerPage);
-
-            // 페이지 번호를 클릭했을 때 실행될 함수
-            function onPageClick(pageNumber) {
-                // 클릭한 페이지 번호를 현재 페이지 번호로 설정
-                currentPage = pageNumber;
-
-                // 페이지 번호 UI 업데이트
-                updatePageNumbers();
-
-                // 해당 페이지의 데이터 가져오기
-                fetchDataForPage(currentPage);
-            }
-
-            // 페이지 번호 UI 업데이트 함수
-            function updatePageNumbers() {
-                // 페이지 번호 UI 엘리먼트 가져오기
-                var pageNationEl = document.querySelector('.page_nation');
-
-                // 페이지 번호 UI 초기화
-                pageNationEl.innerHTML = '';
-
-                // 이전 페이지 화살표 UI 추가
-                if (currentPage > 1) {
-                    pageNationEl.innerHTML += '<a class="arrow pprev" href="#" onclick="onPageClick(' + (currentPage - 1) + ')"></a>';
-                    pageNationEl.innerHTML += '<a class="arrow prev" href="#" onclick="onPageClick(' + (currentPage - 1) + ')"></a>';
-                }
-
-                // 중간 페이지 번호 UI 추가
-                var firstPageNumber = Math.max(1, currentPage - 5);
-                var lastPageNumber = Math.min(totalPages, currentPage + 5);
-                for (var i = firstPageNumber; i <= lastPageNumber; i++) {
-                    if (i === currentPage) {
-                        pageNationEl.innerHTML += '<a href="#" class="active">' + i + '</a>';
-                    } else {
-                        pageNationEl.innerHTML += '<a href="#" onclick="onPageClick(' + i + ')">' + i + '</a>';
-                    }
-                }
-
-                // 다음 페이지 화살표 UI 추가
-                if (currentPage < totalPages) {
-                    pageNationEl.innerHTML += '<a class="arrow next" href="#" onclick="onPageClick(' + (currentPage + 1) + ')"></a>';
-                    pageNationEl.innerHTML += '<a class="arrow nnext" href="#" onclick="onPageClick(' + (currentPage + 1) + ')"></a>';
-
-
                     for (var i in dat.response.body.items.item) {
                         let itemnn = dat.response.body.items.item[i];
 
@@ -269,8 +214,7 @@ function shelterSearch() {
                 }
             };
             xhr.send('');
-        }
-    }
+
 
 
 
