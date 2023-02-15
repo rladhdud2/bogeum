@@ -124,7 +124,8 @@ function shelterSearch() {
                 let item = dat.response.body.items.item[i];
 
                 html += `<div class="picpic"><a href="/auth/shelterDetail/${item.desertionNo}" target="_blank"><img class="shelter-pic" src="${item.popfile}"></a>`;
-                html += '<p>' + item.kindCd + '&nbsp' + '<span style="color: #b8dff8">(' + item.age + ')</span></p>';
+                html += '<p>' + item.kindCd + '</p>';
+                html += '<p><span style="color: #b8dff8">나이: (' + item.age + ')</span></p>';
                 html += '<p>공고날짜: ' + item.noticeSdt + '</p>';
                 html += '<p>지역: ' + item.orgNm + '</p></div>';
             }
