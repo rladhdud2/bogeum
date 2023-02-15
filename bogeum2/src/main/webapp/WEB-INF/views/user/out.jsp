@@ -4,7 +4,8 @@
 
 <body>
 	<%@ include file="../layout/header.jsp"%>
-	
+	<!-- 모바일네비 -->
+<%@ include file="../layout/mobilesidenav.jsp" %>
 	
 	<div class="container">
 		<%@ include file="../layout/sidenav.jsp"%>
