@@ -37,8 +37,6 @@
 	}
 </script>
 
-
-<link rel="stylesheet" href="/css/infoupdate.css">
 <body>
 	<%@ include file="../layout/header.jsp"%>
 

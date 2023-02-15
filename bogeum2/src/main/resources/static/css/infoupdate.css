@@ -117,3 +117,39 @@ input {
 #kakaomap {
 	display: none;
 }
+
+/*모바일페이지*/
+@media ( min-width : 0px) and (max-width: 1050px) {
+		
+	
+	.mypagenav {
+		display : none;
+	}	
+	.mypagecontentbox {
+		width : 100%;
+		
+	}
+	input {
+		width: 90%;	
+		margin : auto;
+	}
+	#joinbox div {
+		width: 100%;	
+	}
+	#joinbox .title {
+		width: 80%;	
+	}
+	#joinbox {
+		width : 100%;	
+		
+	}
+	#detailaddress {
+		width: 90%;	
+	}
+	#joinbox div {
+		width : 90%;	
+		margin-left : 40px;
+	}
+		
+}
+
