@@ -34,16 +34,18 @@
             justify-content: space-between;
             align-items: center;
             z-index: 999
-
         }
     </style>
 </head>
 <body style="margin: 100px;font-family: 'Jua', sans-serif;">
 <div class="container">
     <div class="top-fixed" >
-        <div onclick="history.back()" style="cursor: pointer"><i class="fa-solid fa-reply" style="width: 24px"></i></div>
-
-        <div class="col"><h1><c:out value="${room.name}" /></h1></div>
+        <div onclick="history.back()" style="cursor: pointer">
+            <i class="fa-solid fa-reply" style="width: 24px"></i>
+        </div>
+        <div class="col" style="text-align: center;">
+            <h1 style="height: 25px"><c:out value="${room.name}" /></h1>
+        </div>
     </div>
 
 
