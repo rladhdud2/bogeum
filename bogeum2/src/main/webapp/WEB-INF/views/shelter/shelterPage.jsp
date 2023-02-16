@@ -98,8 +98,10 @@
               <a class="arrow next" href="#"></a>
               <a class="arrow nnext" href="#"></a>
            </div>
-       </div>
-      <div class="page_wrap">
+      </div>
+      <div onclick="sendNo()">테스트</div>
+
+<%--      <div class="page_wrap">--%>
 <%--          <div class="page_nation">--%>
 <%--              <c:if test="${totalPages > 10}">--%>
 <%--                  <c:if test="${pageNo > 1}">--%>
