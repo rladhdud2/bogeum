@@ -77,19 +77,30 @@ li {
     margin-bottom: 100px;
 }
 
-/*.picpic img {*/
-/*  transition: all 0.2s ease-in-out;*/
-/*}*/
+.picpic img {
+  transition: all 0.2s ease-in-out;
+}
 
-/*.picpic img:hover {*/
-/*  !*border: 1px solid #ccc;*!*/
-/*  transform: translateY(-10px);*/
-/*  box-shadow: 0 10px 20px #ccc;*/
-/*}*/
+.picpic img:hover {
+  /*border: 1px solid #ccc;*/
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px #ccc;
+}
+#search-rst{
+  padding-left: 350px;
+}
+#pic-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  border-radius: 10px;
+}
 
 
 /* !!!필터검색!!! */
-
+#notice-date {
+  width: 220px;
+}
 .filter_wrap {
   float: left;
   margin-left: 0px;
@@ -255,10 +266,10 @@ input[type="date"] {
 
 /* !!!페이징!!!*/
 .page_wrap {
-  margin-top: 20px;
+  margin-top: 50px;
 	text-align:center;
 	font-size:0;
-  padding-right: 110px;
+  padding-left: 330px;
  }
 .page_nation {
 	display:inline-block;
@@ -312,6 +323,11 @@ input[type="date"] {
   body {
     width: 100%;
   }
+  .control-group {
+    float: left;
+    width: 90%;
+    height: 180px;
+  }
   .container {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -330,9 +346,9 @@ input[type="date"] {
   }
   #pic-wrap {
   width : 92%;  
-  margin-top : 100px;
+  /*margin-top : 100px;*/
   margin-left : 0px;  
-  padding-left : 0px;
+  padding-left : 30px;
   
   }
   .picpic {
@@ -346,15 +362,22 @@ input[type="date"] {
   	height : 80%;
   	
   }
+  #search-rst{
+    padding-left: 30px;
+  }
   
   .adopt-search {
-  width : 300px;
+  width : 100%;
+  margin-left: 0px;
   }
-	.page_wrap {
-	width : 80%;	
-	}
 	.page_nation {
 		margin : auto;
 		
 	}
+    #notice-date {
+      width: 100%;
+    }
+  .page_wrap{
+    padding-left: 0px;
+  }
 }

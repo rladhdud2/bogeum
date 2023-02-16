@@ -121,9 +121,8 @@
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; ㅣ &nbsp;<a
-								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; ㅣ
-							&nbsp;<a href="/logout">로그아웃</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=600,height=600,resizable=no')">채팅 테스트</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>
 				</c:choose>

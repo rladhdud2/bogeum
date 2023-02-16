@@ -1,4 +1,4 @@
-const count = document.getElementsByName('count'),
+let count = document.getElementsByName('count'),
     sell_price = document.count.sell_price,
     amount = document.count.amount,
     add = document.count.add,
