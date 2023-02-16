@@ -41,10 +41,9 @@ public class ShopController {
 	
 	/*쇼핑몰 메인페이지*/
 	@GetMapping("/auth/shop")
-	public String Shoppingmall(Model model, @PageableDefault(size=12, sort = "id", 
+	public String Shoppingmall(Model model, @PageableDefault(size=9, sort = "id", 
 			direction = Sort.Direction.DESC)Pageable pageable) {
-		model.addAttribute("shop", shopService.상품목록(pageable));
-		model.addAttribute("item", shopService.아이템갯수());
+		model.addAttribute("shop", shopService.상품목록(pageable));		
 		return "shop/Shoppingmall";
 	}
 	/*쇼핑몰 상세페이지*/

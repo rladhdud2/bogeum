@@ -8,6 +8,7 @@
 	<div id="Shop_Detail_wrap">
         <div class="Shop_Detail_right">
             <div class="detail_goods_firstbox">
+            	<div class="product_img_mobile"><img src="/auth/images?filename=${item.filename}"></div>
                 <div class="detail_goods_name">
                     <p>${item.name}</p>
                 </div>
@@ -36,15 +37,17 @@
                         <div class="total_font"><p>총 상품금액</p></div>
                         <div class="total_price"><input type="text" name="sum" id="sum" readonly></div>    
                     </div>
-                <div class="detail_payment">
-                    <input type="button" onclick="alert('장바구니에 등록되었습니다.')">장바구니
-                </div>
-                </form>
-                <div class="goods_payment_now">
-                    <input type="button" onclick="Go_Pay()">바로구매
-                </div>
+	                <div class="detail_payment">
+	                    <input type="submit" onclick="alert('장바구니에 등록되었습니다.')" value="장바구니">
+	                </div>
+	                </form>
+	                <div class="goods_payment_now">
+	                    <input type="button" onclick="Go_Pay()" value="바로구매">
+	                </div>
             </div>
         </div>
+        
+        
         <div class="Shop_Detail_left">
             <div class="goods_img_box">
                 <div class="product_img"><img src="/auth/images?filename=${item.filename}"></div>
@@ -53,7 +56,7 @@
                 <div class="info_list">
                     <ul class="info_list_ul">
                         <li class="info_list_li"><a href="#info_1" class="list_aBox"><p>상세 정보</p></a></li>
-                        <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송/교환/반품 안내</p></a></li>
+                        <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송 안내</p></a></li>
                         <li class="info_list_li"><a href="#info_3" class="list_aBox"><p>상품 후기(0)</p></a></li>
                     </ul>
                 </div>
