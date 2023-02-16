@@ -15,7 +15,6 @@
                 <div class="table_info">
                     <div class="items_name"><p>상품 정보</p></div>
                     <div class="items_count"><p>수량</p></div>
-                    <div class="items_delivery"><p>배송비</p></div>
                     <div class="items_price"><p>상품 금액</p></div>
                 </div>
                 <div class="table_content">
@@ -29,7 +28,6 @@
                                 <div class="items_naming_box"><p>${cartItem.item.name}<p></div>
                             </div>
                             <div class="items_count_box"><p>${cartItem.count}개</p></div>
-                            <div class="items_delivery_box"><p>무료</p></div>
                             <div class="items_price_box"><p><fmt:formatNumber type="number" maxFractionDigits="3" value="${(cartItem.count)*(cartItem.item.price)}" />원</p></div>
                         </li>
                     </c:forEach>
@@ -41,7 +39,7 @@
                                 <div class="items_naming_box"><p>${item.name}<p></div>
                             </div>
                             <div class="items_count_box"><p>${count}개</p></div>
-                            <div class="items_delivery_box"><p>무료</p></div>
+
                             <div class="items_price_box"><p><fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</p></div>
                         </li>
                     </c:otherwise>
@@ -56,23 +54,36 @@
         	<!-- 주문자 정보 --> 
             <div class="address_box">
                 <div class="address_font">
-                    <p>배송지 정보</p>
+                    <p>배송 정보</p>
+                </div>
+                <div class="chk_address">
+                	<div class="left_radio_box">
+                		<input type="radio" id="exist" name="chkadress" checked="checked" onchange="setDisplay()"><label for="exist">기본배송지</label>
+                	</div>
+                	<div class="right_radio_box">
+                		<input type="radio" id="new" name="chkadress" onchange="setDisplay2()"><label for="new">직접입력</label>
+                	</div>
                 </div>
                 <div class="address_content">
-                	<label for="name">이름</label>
-                    <input type="text" id="name" value="${principal.user.username2}" required="required">
- 					<br>                   
-                    <label for="user_id">아이디</label>
-                    <input type="text" id="user_id" value="${principal.user.username}" required="required">
-                    <br>
-                    <label for="user_tel">전화번호</label>
-                    <input type="text" id="user_tel" value="${principal.user.tel}" required="required">
-                    <br>
-                    <label for="user_adress">주소</label>
-                    <input type="text" value="${principal.user.address}" id="address_kakao" >
-                    <br>
-                    <label for="user_adressDetail">상세 주소</label>
-                    <input type="text" name="address_detail" >
+                	<p>${principal.user.username2}</p>
+                	<p id="hyphen">${principal.user.tel}</p>               
+					<p>${principal.user.address}</p>                  
+                </div>
+                <div class="address_content2" style="display: none;">
+                	<table style="width: 100%">
+                		<tr>
+                			<td><input type="text" placeholder="받는 사람">
+                		</tr>
+                		<tr>
+                			<td><input type="text" placeholder="-없이 휴대폰번호 입력"></td>
+                		</tr>
+                		<tr>
+                			<td><input type="text" placeholder="기본 주소" id="address_kakao"></td>
+                		</tr>
+                		<tr>
+                			<td><input type="text" name="address_detail" placeholder="상세 주소"></td>
+                		</tr>
+                	</table>
                 </div>
             </div>
             <!-- 주문자 정보 끝! --> 
@@ -93,7 +104,9 @@
                     <p>결제수단</p>
                 </div>
                 <div class="payment_content">
-                    <div class="cacaopay_box"></div>
+                    <div class="cacaopay_box">
+                    	<img src="/img/kakaopay.png">
+                    </div>
                     <div class="paybox">
                     	<c:choose>
 	                    	<c:when test="${count != null}">

@@ -122,3 +122,13 @@ let index = {
 	
 }
 index.init();
+
+  function setDisplay() {
+    document.querySelector('.address_content').style.display = 'block';
+    document.querySelector('.address_content2').style.display = 'none';
+  }
+
+  function setDisplay2() {
+    document.querySelector('.address_content').style.display = 'none';
+    document.querySelector('.address_content2').style.display = 'block';
+  }
