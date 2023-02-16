@@ -1,3 +1,4 @@
+
 li {
   list-style: none;
 }
@@ -53,6 +54,7 @@ li {
   /* box-shadow: rgba(0, 0, 0, 0.35) 2px 5px 5px; */
   /* border: 1px solid #ccc(209, 33, 194); */
   overflow: hidden;
+  
 }
 
 .shelter-pic {
@@ -65,6 +67,7 @@ li {
 .picpic {
   margin: 5px;
   position: relative;
+  
 }
 
 .container {

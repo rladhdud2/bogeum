@@ -62,7 +62,7 @@ public class CartController {
 		Users user = userService.findUser(id);
 		items item = shopService.itemView(itemId);
 		cartService.addCart(user, item, amount);
-		return "redirect:/auth/shop/{id}";
+		return "redirect:/user/cart/{id}";
 	}
 	/*장바구니 상품 삭제*/
 	@GetMapping("/user/cart/{userid}/{cartItemId}/delete")
@@ -92,7 +92,7 @@ public class CartController {
 		        return "redirect:/user/cart/"+id;
 			}
 			else {
-				return "redirect:/";
+				return "redirect:/user/cart/{id}";
 			}
 			
 	}

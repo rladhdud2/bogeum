@@ -3,6 +3,7 @@
 <%@ include file="../layout/link.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<script src="https://kit.fontawesome.com/462a97624e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/ShoppingmallMain.css">
 <%@ include file="../layout/header.jsp" %>
 	<div id="Shop_main_wrap">
@@ -14,18 +15,16 @@
                 <li class="nav_list"><a onclick="hide4();" return false;><span class="sub_items">매거진</span></a></li>
             </ul>
         </div>
-        <div class="Shop_main_left">
-            <div class="item_info_box">
-                <div class="item_num">
-                
-                    <p>총 <strong><c:out value="${item.itemCount}"/></strong>개의 상품이 있습니다.</p>
-                </div>
-                <div class="itema_array_method">
-                	<a href="#"><span>최신순 ㅣ</span></a>
-                    <a href="#"><span>낮은 가격순 ㅣ</span></a>
-                    <a href="#"><span>높은 가격순</span></a>
-                </div>
-            </div>
+        <div class="mobile_main_right">
+        	<ul class="moblie_ul">
+                <li class="moblie_nav_list1"><a onclick="hide1();" return false;><p class="all_items1">전체상품</p></a></li>
+                <li class="moblie_nav_list2"><a onclick="hide2();" return false;><p class="sub_items1">굿즈</p></a></li>
+                <li class="moblie_nav_list3"><a onclick="hide3();" return false;><p class="sub_items2">반려용품</p></a></li>
+                <li class="moblie_nav_list4"><a onclick="hide4();" return false;><p class="sub_items3">매거진</p></a></li>
+            </ul>
+        </div>
+        
+        <div class="Shop_main_left">          
 
             <div class="goods_list list1" >
                 <ul class="list_ul">
@@ -41,6 +40,7 @@
                                 </div>
                                 <div class="goods_price">
                                     <p><fmt:formatNumber type="number" maxFractionDigits="3" value="${item.price}" />원</p>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -120,9 +120,37 @@
 					</c:forEach>
                 </ul>
             </div>
-            
+          	<div class="page_wrap">
+		    	<div class="page_nation">
+		    		<c:choose>
+		    			<c:when test="${shop.first}">
+					  		<a class="arrow prev" href="?page=${shop.number-1}"></a>
+					  	</c:when>
+					  	<c:otherwise>
+					  		<a class="arrow prev" href="?page=${shop.number-1}"></a>
+					  	</c:otherwise>
+		          	</c:choose>
+		          	<a href="/auth/shop" class="active">1</a>
+		          	<a href="/auth/shop?page=1">2</a>
+		          	<a href="/auth/shop?page=2">3</a>
+		          	<c:choose>
+		    			<c:when test="${shop.last}">
+					  		<a class="arrow next" href="?page=${shop.number+1}"></a>
+					  	</c:when>
+					  	<c:otherwise>
+					  		<a class="arrow next" href="?page=${shop.number+1}"></a>
+					  	</c:otherwise>
+		          	</c:choose>		         	
+		       	</div>
+		    </div>
             
         </div>
     </div>
+    <script>
+    const div = document.getElementsByClassName('sub_items');
+    div.addEventListener('click', (event) => {
+      result.innerHTML+= '<i class="fa-solid fa-check"></i>';
+    });
+    </script>
 <script type="text/javascript" src="/js/Shoppingmall.js"></script>
 <%@ include file="../layout/footer.jsp" %>
