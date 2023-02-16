@@ -81,16 +81,6 @@ li {
 	margin-left: 10px;
 }
 
-.picpic:hover {
-	border: 2px black solid;
-	border-radius: 10px;
-	background-color: rgb(255, 240, 197);
-}
-
-.picpic:hover .shelter-pic {
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-}
 
 .container {
 	width: 1200px;

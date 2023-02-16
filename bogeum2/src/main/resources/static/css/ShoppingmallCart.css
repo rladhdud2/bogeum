@@ -1,20 +1,26 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 #Shop_Basket_wrap{
     width: 80%;
     height: auto;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 150px;
-    font-family: 'Jua', sans-serif;
 }
 /* 장바구니 비었을때*/
 .empty_cart{
 	 width: 100%;
 	 height: 150px;
 	 text-align: center;
+	 font-family: 'GmarketSansMedium';
 }
 .empty_cart>p:first-child{
-	font-size: 30px;
+	font-size: 18px;
 	margin-bottom: 10px;
 }
 .empty_cart>p:nth-child(2){
@@ -26,8 +32,9 @@
 	height: 40px;
 	background-color: #FF8868;
 	border-radius:10px;
-	font-size: 25px;
+	font-size: 24px;
 	color: white;
+	font-family: 'Jua', sans-serif;
 }
 /* 장바구니 아이템 리스트*/
 .basket_list_box{
@@ -42,6 +49,7 @@
     width: 100%;
     height: 150px;
     display: flex;
+    font-family: 'GmarketSansMedium';
 }
 .basketAbox{	/*a태그*/
     display: inline-block;
@@ -159,6 +167,7 @@
 .payment_price_box>p{
 	margin-top: 15px;
     font-size: 40px; 
+    font-family: 'GmarketSansMedium';
 }
 .pay_now{
     width: 30%;
@@ -172,6 +181,7 @@
 	border-radius:10px;
 	font-size: 25px;
 	color: white;
+	
 }
 .pay_now>a>button{
     width: 100%;
@@ -181,6 +191,7 @@
 	border-radius:10px;
 	font-size: 35px;
 	color: white;
+	font-family: 'Jua', sans-serif;
 }
 @media all and (max-width:1024px){
 	#Shop_Basket_wrap{
@@ -260,7 +271,7 @@
 	}
 	.payment_price_box>p{
 		margin-top: 0;
-	    font-size: 40px; 
+	    font-size: 30px; 
 	}
 	.pay_now>a{	
 		font-size: 30px;

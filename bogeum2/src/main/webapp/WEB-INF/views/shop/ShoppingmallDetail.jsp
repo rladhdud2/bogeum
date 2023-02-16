@@ -57,7 +57,6 @@
                     <ul class="info_list_ul">
                         <li class="info_list_li"><a href="#info_1" class="list_aBox"><p>상세 정보</p></a></li>
                         <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송 안내</p></a></li>
-                        <li class="info_list_li"><a href="#info_3" class="list_aBox"><p>상품 후기(0)</p></a></li>
                     </ul>
                 </div>
                 <div id="info_1"><p><pre>${item.content}</pre></p></div>
@@ -80,14 +79,7 @@
                 	<p>- 배송 완료 후 구매확정 처리를 하지 않는 경우 7일 후 자동으로 구매 확정으로 처리됩니다.</p>
                 	<p>- 구매 확정 후 환불은 고객 센터를 통해 진행 가능합니다.</p>
                 </div>
-                <div id="info_3">
-                	<div class="review_write_box">
-	                	<p class="review_label">한줄평</p>
-	            		<input type="hidden" id="itemID" value="${item.id}">
-		           	 	<input type="text" placeholder="한줄평을 입력해주세요!" id="comment"name="comment">
-		            	<button id="review-btn-save" class="btn_comment" onclick="replySave()">등록</button>
-	                </div> 
-                </div>
+                
             </div>
         </div>
   </div>

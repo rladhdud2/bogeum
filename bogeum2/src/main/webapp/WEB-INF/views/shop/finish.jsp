@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="/css/ShoppingmallPayment.css">
 <%@ include file="../layout/header.jsp" %>
 <style>
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 #finish_wrap{
 	width: 80%;
 	height:500px;
@@ -15,6 +21,7 @@ p{
 	font-size: 30px;
 	text-align: center;
 	margin-top: 100px;
+	font-family: 'GmarketSansMedium';
 }
 .abox{
 text-align: center;
@@ -34,6 +41,7 @@ button{
 	border-radius: 10px;
 	background-color: #FF8868;
     color: white;
+    font-family: 'Jua', sans-serif;
 }
 </style>
 	<div id="finish_wrap">

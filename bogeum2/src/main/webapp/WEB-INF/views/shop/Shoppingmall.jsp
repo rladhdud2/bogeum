@@ -122,20 +122,25 @@
             </div>
           	<div class="page_wrap">
 		    	<div class="page_nation">
-		          	<a class="arrow pprev" href="#"></a>
-		          	<a class="arrow prev" href="#"></a>
-		          	<a href="#" class="active">1</a>
-		          	<a href="#">2</a>
-		          	<a href="#">3</a>
-		         	<a href="#">4</a>
-		          	<a href="#">5</a>
-		          	<a href="#">6</a>
-		          	<a href="#">7</a>
-		          	<a href="#">8</a>
-		          	<a href="#">9</a>
-		          	<a href="#">10</a>
-		          	<a class="arrow next" href="#"></a>
-		          	<a class="arrow nnext" href="#"></a>
+		    		<c:choose>
+		    			<c:when test="${shop.first}">
+					  		<a class="arrow prev" href="?page=${shop.number-1}"></a>
+					  	</c:when>
+					  	<c:otherwise>
+					  		<a class="arrow prev" href="?page=${shop.number-1}"></a>
+					  	</c:otherwise>
+		          	</c:choose>
+		          	<a href="/auth/shop" class="active">1</a>
+		          	<a href="/auth/shop?page=1">2</a>
+		          	<a href="/auth/shop?page=2">3</a>
+		          	<c:choose>
+		    			<c:when test="${shop.last}">
+					  		<a class="arrow next" href="?page=${shop.number+1}"></a>
+					  	</c:when>
+					  	<c:otherwise>
+					  		<a class="arrow next" href="?page=${shop.number+1}"></a>
+					  	</c:otherwise>
+		          	</c:choose>		         	
 		       	</div>
 		    </div>
             
