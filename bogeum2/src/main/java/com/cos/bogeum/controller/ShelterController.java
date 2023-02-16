@@ -17,7 +17,7 @@ public class ShelterController {
 
 		return "shelter/shelterPage";
 	}
-	
+
 
 	/**
 	 * 상세페이지
