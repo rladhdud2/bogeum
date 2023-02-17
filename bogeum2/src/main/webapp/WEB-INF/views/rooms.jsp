@@ -29,7 +29,7 @@
 <body style="margin: 50px;font-family: 'Jua', sans-serif;" >
 <div class="container">
     <div class="top-fixed" >
-        <h3 style="text-align: center">제목제목제목</h3>
+        <h3 style="text-align: center">정보공유</h3>
     </div>
     <div class="list-group">
 <%--        <ul class="list-group">--%>
