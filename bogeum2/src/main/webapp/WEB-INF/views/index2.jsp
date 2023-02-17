@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>보금자리</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="/css/shelter2.css">
@@ -44,13 +44,16 @@
 		<div class="main">
 			<div id="content1">
 				<div class="content_flex">
-					<div class="contenttitle">&nbsp;보호소</div>
+					<div class="contenttitle1">
+						<div class="contenttitle">&nbsp;보호소&nbsp;</div>
+						&nbsp;<div id="search-rst"></div>
+					</div>
 					<div class="contenttitle">
 						<a href="/auth/shelter"><i class="fa-solid fa-plus"></i></a>&nbsp;
 					</div>
 				</div>
 
-				<div id="search-rst"></div>
+				
 				<div id="pic-wrap"></div>
 
 			</div>
@@ -62,7 +65,8 @@
 	<div class="banner2">
 		<div class="bannercontainer2">
 			<div class="inner2">
-				<a href="#"><img src="/img/banner/banner2.png"></a>
+				<a href="#" class="bannerBig"><img src="/img/banner/banner2.png"></a>
+				<a href="#" class="bannerSmall"><img src="/img/banner/banner2_small.jpg"></a>
 			</div>
 		</div>
 	</div>

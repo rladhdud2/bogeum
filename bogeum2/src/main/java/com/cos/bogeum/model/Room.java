@@ -1,8 +1,10 @@
 package com.cos.bogeum.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name="room")
 @Data
@@ -22,9 +24,16 @@ public class Room {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CHAT_SEQ_GENERATOR")
     private int id;
 
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "username")
+    private Users username;
+//    private String name;
 
-    private String roomId;
+//    private String roomId;
+
+    @JsonIgnoreProperties({"room"})
+    @OneToMany (mappedBy="room",cascade = CascadeType.REMOVE)
+    private List<Chat> chat;
 
 //    @Builder
 //    public Room(String name) {

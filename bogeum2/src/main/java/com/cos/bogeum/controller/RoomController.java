@@ -2,6 +2,7 @@ package com.cos.bogeum.controller;
 
 import com.cos.bogeum.model.Room;
 import com.cos.bogeum.repository.ChatRoomRepository;
+import com.cos.bogeum.repository.RoomRepository;
 import com.cos.bogeum.service.ChatRoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -22,6 +23,8 @@ import java.util.List;
 public class RoomController {
     private final ChatRoomRepository repository;
 
+    @Autowired
+    private RoomRepository roomRepository;
     @Autowired
     private ChatRoomService chatRoomService;
 

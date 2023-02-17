@@ -22,6 +22,9 @@
 .nav_list{
     margin-bottom: 25px;
 }
+.nav_list:hover{
+    cursor : pointer;
+}
 .nav_list>a{
     color: black;
 }

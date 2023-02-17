@@ -189,6 +189,7 @@ h5{
     width: 100% !important;
     height:80px !important;
     border: #ffebb6 1px solid;
+    font-size: 1.8rem;
 }
 #reply_control{
     margin-top: 3rem;
@@ -203,7 +204,7 @@ h5{
     border-radius: 2px;
     background-color: #ffebb6;
     font-size: 2rem;
-    font-family: 'Jua', sans-serif !important;
+    font-family: 'GmarketSansMedium' !important;;
 }
 .first_col {
     font-size: 1.8rem;

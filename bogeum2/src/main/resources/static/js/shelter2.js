@@ -119,7 +119,7 @@ function shelterSearch() {
 
             // var item = data.response.body.items.item
             count = '<div>전체: ' + dat.response.body.totalCount + ' 개</div>'
-            document.getElementById('search-rst').innerHTML = count;
+            document.getElementById('search-rst').innerHTML = "(&nbsp"+count+"&nbsp)";
             for (var i in dat.response.body.items.item) {
                 let item = dat.response.body.items.item[i];
 

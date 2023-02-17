@@ -34,39 +34,39 @@ public class Chat {
 
     private LocalDateTime createDate;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "roomId")
-//    private Room room;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "roomId")
+    private Room room;
 //
-//    private String sender;
+    private String sender;
 //
 //    @Column
 //    private String message;
 //
-//    @CreatedDate
-//    @Column(updatable = false)
-//    private LocalDateTime sendDate;
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime sendDate;
 //
-//    @Builder
-//    public Chat(Room room, String sender, String message) {
-//        this.room = room;
-//        this.sender = sender;
-//        this.message = message;
-//        this.sendDate = LocalDateTime.now();
-//    }
-//
-//    /**
-//     * 채팅생성
-//     * @param room 채팅방
-//     * @param sender 보낸이
-//     * @param message 내용
-//     * @return Chat Entity
-//     */
-//    public static Chat createChat(Room room, String sender, String message) {
-//        return Chat.builder()
-//                .room(room)
-//                .sender(sender)
-//                .message(message)
-//                .build();
-//    }
+    @Builder
+    public Chat(Room room, String sender, String message) {
+        this.room = room;
+        this.sender = sender;
+        this.message = message;
+        this.sendDate = LocalDateTime.now();
+    }
+
+    /**
+     * 채팅생성
+     * @param room 채팅방
+     * @param sender 보낸이
+     * @param message 내용
+     * @return Chat Entity
+     */
+    public static Chat createChat(Room room, String sender, String message) {
+        return Chat.builder()
+                .room(room)
+                .sender(sender)
+                .message(message)
+                .build();
+    }
 }
