@@ -1,13 +1,17 @@
-* {
-    font-family: 'Jua', sans-serif;
+@charset "UTF-8";
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-    
     
 .container {	
     width : 1200px;
     height: 1000px;    
     margin-left : 350px;
     margin-top: 60px;    
+    margin-bottom : 150px;
     display: flex;
     
    
@@ -38,11 +42,10 @@
 
 
 .mypagecontentbox {
-    width : 950px;
-    height: 100%;   
-    margin-left: 200px;
+    width : 1000px;    
+    height : 1000px;  
+    margin-left: 200px;    
     
-     
 }
 .mypagecontent {
     margin-bottom: 80px;
@@ -54,6 +57,7 @@
         margin-bottom: 20px;
         line-height: 40px;
         height: 40px;       
+          
     }
 
     .myorder1 {
@@ -177,12 +181,13 @@
 	.container {
 		width : 90%;			
 		margin : auto;
+		margin-bottom : 100px;
 	}
 	.mypagenav {
 		display : none;
 	}
 	.mypagecontentbox {	
-		width : 100%;		
+		width : 100%;				
 		margin : auto;
 		margin-left : 0px; 		
 	}	

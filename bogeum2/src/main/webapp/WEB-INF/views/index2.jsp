@@ -44,13 +44,16 @@
 		<div class="main">
 			<div id="content1">
 				<div class="content_flex">
-					<div class="contenttitle">&nbsp;보호소</div>
+					<div class="contenttitle">
+						<div class="contenttitle">&nbsp;보호소&nbsp;</div>
+						&nbsp;<div id="search-rst"></div>
+					</div>
 					<div class="contenttitle">
 						<a href="/auth/shelter"><i class="fa-solid fa-plus"></i></a>&nbsp;
 					</div>
 				</div>
 
-				<div id="search-rst"></div>
+				
 				<div id="pic-wrap"></div>
 
 			</div>
