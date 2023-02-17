@@ -113,8 +113,7 @@
           <tbody>
             <!-- 테이블 데이터 삽입 -->
             <c:forEach var="items" items="${ItemList.content}">
-            <tr>
-              <input type="hidden" id="itemId" value="${items.id}" varStatus="status">
+            <tr>              
               <td style="width: 5%;">${items.id}</td>
               <td style="width: 15%;">${items.category}</td>
               <td style="width: 25%;">${items.name}</td>
