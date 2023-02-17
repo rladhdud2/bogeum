@@ -17,7 +17,6 @@
     <ul class="manage-menu">
       <li><a href="#members" id="members-tab">회원관리</a></li>
       <li><a href="#products" id="products-tab">상품관리</a></li>
-      <li><a href="#orders" id="orders-tab">주문관리</a></li>
       <li><a href="#sales" id="sales-tab">매출표</a></li>
     </ul>
     <div class="tab-content">
@@ -60,13 +59,13 @@
 
               <c:forEach var="user" items="${users.content}">
                 <tr class="line">
-                  <th>${user.id}</th>
-                  <th>${user.username}</th>
-                  <th>${user.username2}</th>
-                  <th>${user.email}</th>
-                  <th>${user.tel}</th>
-                  <th><fmt:formatDate value="${user.createDate}" pattern="YYYY-MM-dd"/></th>
-                  <th><button class="admin-button" onclick="deleteById(${user.id})">회원 삭제</button></th>
+                  <td>${user.id}</td>
+                  <td>${user.username}</td>
+                  <td>${user.username2}</td>
+                  <td>${user.email}</td>
+                  <td>${user.tel}</td>
+                  <td><fmt:formatDate value="${user.createDate}" pattern="YYYY-MM-dd"/></td>
+                  <td><button class="admin-button" onclick="deleteById(${user.id})">회원 삭제</button></td>
                 </tr>
               </c:forEach>
             </tbody>
@@ -108,7 +107,6 @@
               <th>카테고리</th>
               <th>상품명</th>
               <th>가격</th>
-              <th>평점?</th>
               <th>관리</th>
             </tr>
           </thead>
@@ -120,8 +118,7 @@
               <td style="width: 5%;">${items.id}</td>
               <td style="width: 15%;">${items.category}</td>
               <td style="width: 25%;">${items.name}</td>
-              <td style="width: 20%;">${items.price}</td>
-              <td style="width: 10%;">4.5</td>
+              <td style="width: 20%;">${items.price}원</td>
               <td style="width: 25%;">
                 <button class="admin-button" onclick="location.href='/update_item/${items.id}'">수정</button>
                 <button class="admin-button" onclick="Delete_item()">삭제</button>
@@ -151,106 +148,15 @@
         
         
       </div>
-      <div id="orders">
-        <table>
-          <thead>
-            <tr>
-              <th>번호</th>
-              <th>주문일시</th>
-              <th>주문자(ID)</th>
-
-              <th>배송지</th>
-              <th>배송상태</th>
-              <th>관리</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- 테이블 데이터 삽입 -->
-            <tr>
-              <td>1</td>
-              <td>2022.1.1</td>
-              <td>test</td>
-
-              <td>경기도 수원시 장안구 천천로 테스트</td>
-              <td>배송 전</td>
-              <td>
-                <button class="admin-button">배송상태변경</button>
-                <button class="admin-button">주문취소</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2022.1.1</td>
-              <td>test</td>
-
-              <td>경기도 수원시 장안구 천천로 테스트</td>
-              <td>배송 전</td>
-              <td>
-                <button class="admin-button">배송상태변경</button>
-                <button class="admin-button">주문취소</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2022.1.1</td>
-              <td>test</td>
-
-              <td>경기도 수원시 장안구 천천로 테스트</td>
-              <td>배송 전</td>
-              <td>
-                <button class="admin-button">배송상태변경</button>
-                <button class="admin-button">주문취소</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2022.1.1</td>
-              <td>test</td>
-
-              <td>경기도 수원시 장안구 천천로 테스트</td>
-              <td>배송 전</td>
-              <td>
-                <button class="admin-button">배송상태변경</button>
-                <button class="admin-button">주문취소</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2022.1.1</td>
-              <td>test</td>
-
-              <td>경기도 수원시 장안구 천천로 테스트</td>
-              <td>배송 전</td>
-              <td>
-                <button class="admin-button">배송상태변경</button>
-                <button class="admin-button">주문취소</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="page_wrap">
-          <div class="page_nation">
-              <a class="arrow pprev" href="#"></a>
-              <a class="arrow prev" href="#"></a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a class="arrow next" href="#"></a>
-              <a class="arrow nnext" href="#"></a>
-           </div>
-        </div>
-
-      </div>
+      
       <div id="sales" style="text-align:center;">
         <div id="chart_div">
-          내용
+        	<c:set var="totalAll" value="0"/>
+          	<input type="hidden" value="<c:forEach var="orderItemAll" items="${orderItem}" varStatus="status">
+          	${orderItemAll.itemTotalPrice}
+			<c:set var="totalAll" value="${totalAll + orderItemAll.itemTotalPrice}"/> 
+			<c:out value="${totalAll}"/>         
+          	</c:forEach>">
         </div>
       </div>
     </div>
@@ -316,22 +222,16 @@
       data.addColumn('string', 'Topping');
       data.addColumn('number', '매출액');
       data.addRows([
-        ['카테고리', 30000],
-        ['카테고리', 1000],
-        ['카테고리', 5000],
-        ['카테고리', 18000],
-        ['카테고리', 20000],
-        ['카테고리', 20000],
-        ['카테고리', 20000],
-        ['카테고리', 20000],
-        ['카테고리', 20000],
-        ['카테고리', 20000],
+        ['전체상품', ${totalAll}],   
+        ['굿즈', 0], 
+        ['반려용품', 0], 
+        ['매거진', 0], 
       ]);
 
       // Set chart options
-      var options = {'title':'제목',
+      var options = {'title':'보금자리 총 매출액',
                      'width':1200,
-                     'height':500};
+                     'height':700};
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

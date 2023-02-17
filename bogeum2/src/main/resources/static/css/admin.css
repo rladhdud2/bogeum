@@ -9,6 +9,12 @@
 /*  height: 100px;*/
 /*  background-color: rgb(235, 235, 235); */
 /*}*/
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .admin-container {
   width: 1200px;
   margin : auto;
@@ -62,7 +68,9 @@ table td {
 tbody tr:hover {
   background-color: aliceblue;
 }
-
+td{
+	font-family: 'GmarketSansMedium';
+}
 #chart_div {
   /* width: 10%; */
   
@@ -144,4 +152,8 @@ tbody tr:hover {
 	font-size: 25px;
 	background-color: #FF8868;
 	color: white;
+}
+.search-input{
+	width: 80%;
+	margin: 0 auto;
 }
