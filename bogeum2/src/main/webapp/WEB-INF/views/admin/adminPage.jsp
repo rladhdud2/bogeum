@@ -73,26 +73,43 @@
           </table>
 
 
-          <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">
-            <div style="width: 150px;"></div>
-            <div class="page_nation">
-              <a class="arrow pprev" href="#"></a>
-              <a class="arrow prev" href="#"></a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a class="arrow next" href="#"></a>
-              <a class="arrow nnext" href="#"></a>
-            </div>
-            <div style="width: 150px;"></div>
-          </div>
+<%--          <div class="page_wrap"  style="display:flex; justify-content:space-evenly ;">--%>
+<%--            <div style="width: 150px;"></div>--%>
+<%--            <div class="page_nation">--%>
+<%--              <a class="arrow pprev" href="#"></a>--%>
+<%--              <a class="arrow prev" href="#"></a>--%>
+<%--              <a href="#" class="active">1</a>--%>
+<%--              <a href="#">2</a>--%>
+<%--              <a href="#">3</a>--%>
+<%--              <a href="#">4</a>--%>
+<%--              <a href="#">5</a>--%>
+<%--              <a href="#">6</a>--%>
+<%--              <a href="#">7</a>--%>
+<%--              <a href="#">8</a>--%>
+<%--              <a href="#">9</a>--%>
+<%--              <a href="#">10</a>--%>
+<%--              <a class="arrow next" href="#"></a>--%>
+<%--              <a class="arrow nnext" href="#"></a>--%>
+<%--            </div>--%>
+<%--            <div style="width: 150px;"></div>--%>
+<%--          </div>--%>
+
+          <c:set var="startPage" value="${users.number - users.number % 5}" />
+          <ul class="pagination justify-content-center">
+            <li class="page-item <c:if test='${users.number < 5}'>disabled</c:if>">
+              <a class="page-link" href="/admin?category=${param.category}&page=${startPage - 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}"><</a>
+            </li>
+            <c:forEach var="page" begin="1" end="5">
+              <c:if test="${(startPage + page) <= users.totalPages}">
+                <li class="page-item <c:if test='${users.number eq startPage + page - 1}'>active</c:if>">
+                  <a class="page-link" href="/admin?category=${param.category}&page=${startPage + page - 1}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">${startPage + page}</a>
+                </li>
+              </c:if>
+            </c:forEach>
+            <li class="page-item <c:if test='${startPage + 5 > users.totalPages}'>disabled</c:if>">
+              <a class="page-link" href="/admin?category=${param.category}&page=${startPage + 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">></a>
+            </li>
+          </ul>
 
         </div>
 
