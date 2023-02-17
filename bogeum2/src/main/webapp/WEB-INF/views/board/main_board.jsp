@@ -32,7 +32,7 @@
 <body>
 
 <div class="banner1"><img class="normal" src="/img/BoardBanner1.png">
-    <div class="banner1_small"><img class="small" src="/img/BoardBanner1_phone.png"></div>
+<%--    <div class="banner1_small"><img class="small" src="/img/BoardBanner1_phone.png"></div>--%>
 </div>
 
 <div class="container">
