@@ -26,6 +26,10 @@ body {
 	margin-top: 50px;
 	margin-bottom: 10px;
 }
+.contenttitle1 {
+	height : 40px;
+	display : flex;	
+}
 
 #content1items ul {
 	display: flex;
