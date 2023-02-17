@@ -58,9 +58,18 @@
             <div class="payment_price_box">
                 <p>총 결제금액 : <fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</p>
             </div>
-            <div class="pay_now">
-                <a href="/order/cart/${principal.user.id}"><button>결제하기</button></a>
-            </div>
+            <c:choose>
+            	<c:when test="${empty cartItems}">
+		            <div class="pay_now">
+		                <a href="#" onclick="alert('결제 할 상품이 없습니다!')"><button>결제하기</button></a>
+		            </div>
+	            </c:when>
+	            <c:otherwise>
+	            	<div class="pay_now">
+		                <a href="/order/cart/${principal.user.id}"><button>결제하기</button></a>
+		            </div>
+	            </c:otherwise>
+            </c:choose>
         </div>
     </div>
 
