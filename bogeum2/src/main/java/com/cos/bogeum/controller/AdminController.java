@@ -1,12 +1,17 @@
 package com.cos.bogeum.controller;
 
 import com.cos.bogeum.config.auth.PrincipalDetail;
+import com.cos.bogeum.model.OrderItem;
 import com.cos.bogeum.model.RoleType;
 import com.cos.bogeum.model.Users;
+import com.cos.bogeum.repository.OrderItemRepository;
 import com.cos.bogeum.repository.UserRepository;
 import com.cos.bogeum.service.FindsService;
 import com.cos.bogeum.service.ShopService;
 import com.cos.bogeum.specification.AdminSpecification;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -27,10 +32,12 @@ public class AdminController {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
+	private OrderItemRepository orderItemRepository;
+	@Autowired
 	private ShopService shopService;
-
 	@Autowired
 	private FindsService findsService;
+	
 	
 	@GetMapping("/admin") 
 	public String adminPage(Model model,
@@ -58,11 +65,10 @@ public class AdminController {
 			}
 			model.addAttribute("users", userRepository.findAll(spec, pageable));
 		}
+		List<OrderItem> OrderItemAll = orderItemRepository.findAll();
 		model.addAttribute("category", category);
-
-
 		model.addAttribute("ItemList", shopService.상품목록(pageable));
-
+		model.addAttribute("orderItem", OrderItemAll);
 //		model.addAttribute("users", userRepository.findAll(pageable));
 		return "admin/adminPage";
 	}
