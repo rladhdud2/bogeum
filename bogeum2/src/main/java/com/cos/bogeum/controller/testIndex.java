@@ -33,7 +33,7 @@ public class testIndex {
 
 	@GetMapping({ "", "/" })
 	public String index(Model model,
-						@PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+						@PageableDefault(size = 4, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
 
 		model.addAttribute("shop", shopService.상품목록(pageable));
 		model.addAttribute("notice", noticeService.글목록(pageable));
