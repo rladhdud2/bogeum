@@ -81,7 +81,7 @@
             <div class="content2">
                 <c:forEach var="free" items="${free.content}">
                     <div class="content2title" style=" cursor: pointer;" onclick="location.href='/free/${free.id}';"><a
-                            href="/finds/${free.id}">${free.title} <span style="float: right">  <fmt:formatDate
+                            href="/free/${free.id}">${free.title} <span style="float: right">  <fmt:formatDate
                             pattern="yyyy-MM-dd" value="${free.createDate}"/></span></a></div>
                 </c:forEach>
             </div>

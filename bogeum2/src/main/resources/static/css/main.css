@@ -67,7 +67,9 @@ body {
 	height: 400px;
 	margin-right: 50px;
 }
-
+.bannerSmall {
+	display: none;
+}
 .contenttitle2 {
 	font-size: 30px;
 	margin-top: 10px;
@@ -237,6 +239,12 @@ body {
 	.buttonbox {
 		display: none;
 	}
+	.bannerBig{
+		display: none;
+	}
+	.bannerSmall{
+		display: block;
+	}
 	
 	/*보호소*/
 	#maincontent1 {
@@ -305,7 +313,7 @@ body {
 	#products img:hover {
 		transform: none;
 	}
-	#products:nth-last-child() {
+	#products:nth-last-child {
 		display: none;
 	}
 	
