@@ -12,8 +12,8 @@
 <body>
 
 	<%@ include file="layout/header.jsp"%>
-
-
+	
+	<!-- 배너  -->
 	<div class="banner">
 		<div class="bannercontainer">
 			<div class="inner">
@@ -37,12 +37,9 @@
 		<button class="bannerbutton" id="button3"></button>
 		<button class="bannerbutton" id="button4"></button>
 
-	</div>
+	</div>	
 	
-	
-	
-	
-
+	<!-- 보호소  -->
 	<div class="container" id="maincontent1">
 		<div class="main">
 			<div id="content1">
@@ -59,11 +56,9 @@
 			</div>
 
 		</div>
-	</div>	
+	</div>		
 	
-	
-	
-
+	<!-- 배너2  -->
 	<div class="banner2">
 		<div class="bannercontainer2">
 			<div class="inner2">
@@ -74,6 +69,8 @@
 	
 
 	<div class="container" id="maincontent2">
+	
+		<!-- 게시판  -->
 		<div id="content2">
 			<div class="board">
 				<div class="contenttitle2">공지사항</div>
@@ -106,6 +103,8 @@
 
 		</div>
 
+
+		<!-- 쇼핑몰  -->
 		<div id="productbox">
 			<div id="productinfo">
 				<div id="productstitle">추천 상품</div>
