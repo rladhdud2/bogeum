@@ -44,7 +44,7 @@
 		<div class="main">
 			<div id="content1">
 				<div class="content_flex">
-					<div class="contenttitle">
+					<div class="contenttitle1">
 						<div class="contenttitle">&nbsp;보호소&nbsp;</div>
 						&nbsp;<div id="search-rst"></div>
 					</div>
