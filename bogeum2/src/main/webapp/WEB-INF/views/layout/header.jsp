@@ -74,10 +74,13 @@
 									<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
 									<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
 									<li class="loginjoin"><a href="/admin">관리자페이지</a></li>
+
+									<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
 									<li class="loginjoin"><a href="/logout">로그아웃</a></li>
 								</c:when>
 								<c:otherwise>
 									<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+									<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
 									<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
 									<li class="loginjoin"><a href="/logout">로그아웃</a></li>
 								</c:otherwise>
@@ -121,14 +124,14 @@
 					<c:when test="${principal.user.roles=='ADMIN'}">
 						<div id="login">
 							<a href="/user/cart/${principal.user.id}">장바구니 ㅣ</a>&nbsp;<a
-								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; ㅣ
+								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; ㅣ &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a>&nbsp; |
 							&nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=600,height=600,resizable=no')">정보공유방</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>

@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <%@ include file="../layout/header.jsp"%>
+
 <link rel="stylesheet" href="/css/admin.css">
 <%--<link rel="stylesheet" href="/css/reset.css">--%>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <style>
   a {
     text-decoration: none;
@@ -13,7 +15,10 @@
   }
 </style>
   <!-- <div class="header">배너부분</div> -->
-  <div class="admin-container">
+<c:choose>
+    <c:when test="${principal.user.roles eq 'ADMIN'}">
+
+    <div class="admin-container">
     <ul class="manage-menu">
       <li><a href="#members" id="members-tab">회원관리</a></li>
       <li><a href="#products" id="products-tab">상품관리</a></li>
@@ -93,34 +98,9 @@
 <%--            <div style="width: 150px;"></div>--%>
 <%--          </div>--%>
 
-<%--            <c:set var="startPage" value="${users.number - users.number % 5}" />--%>
-<%--            <div class="page_wrap">--%>
-<%--                <div class="page_nation">--%>
-<%--                    <c:choose>--%>
-<%--                        <c:when test="${shop.first}">--%>
-<%--                            <a class="arrow prev" href="?page=${shop.number-1}"></a>--%>
-<%--                        </c:when>--%>
-<%--                        <c:otherwise>--%>
-<%--                            <a class="arrow prev" href="?page=${shop.number-1}"></a>--%>
-<%--                        </c:otherwise>--%>
-<%--                    </c:choose>--%>
-<%--                    <a href="/auth/shop" class="active">1</a>--%>
-<%--                    <a href="/auth/shop?page=1">2</a>--%>
-<%--                    <a href="/auth/shop?page=2">3</a>--%>
-<%--                    <c:choose>--%>
-<%--                        <c:when test="${shop.last}">--%>
-<%--                            <a class="arrow next" href="?page=${shop.number+1}"></a>--%>
-<%--                        </c:when>--%>
-<%--                        <c:otherwise>--%>
-<%--                            <a class="arrow next" href="?page=${shop.number+1}"></a>--%>
-<%--                        </c:otherwise>--%>
-<%--                    </c:choose>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
 
             <c:set var="startPage" value="${users.number - users.number % 5}" />
-            <ul class="page_wrap"  style="display:flex ;>
+            <ul class="page_wrap" >
                 <li class="page_nation <c:if test='${users.number < 5}'>disabled</c:if>">
                     <a class="page-link" href="/admin?category=${param.category}&page=${startPage - 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}"><</a>
                 </li>
@@ -170,25 +150,41 @@
             </c:forEach>
           </tbody>
         </table>
-        <div class="page_wrap">
-          <div class="page_nation">
-              <a class="arrow pprev" href="#"></a>
-              <a class="arrow prev" href="#"></a>
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a class="arrow next" href="#"></a>
-              <a class="arrow nnext" href="#"></a>
-           </div>
-        </div>
-        
+<%--        <div class="page_wrap">--%>
+<%--          <div class="page_nation">--%>
+<%--              <a class="arrow pprev" href="#"></a>--%>
+<%--              <a class="arrow prev" href="#"></a>--%>
+<%--              <a href="#" class="active">1</a>--%>
+<%--              <a href="#">2</a>--%>
+<%--              <a href="#">3</a>--%>
+<%--              <a href="#">4</a>--%>
+<%--              <a href="#">5</a>--%>
+<%--              <a href="#">6</a>--%>
+<%--              <a href="#">7</a>--%>
+<%--              <a href="#">8</a>--%>
+<%--              <a href="#">9</a>--%>
+<%--              <a href="#">10</a>--%>
+<%--              <a class="arrow next" href="#"></a>--%>
+<%--              <a class="arrow nnext" href="#"></a>--%>
+<%--           </div>--%>
+<%--        </div>--%>
+
+          <c:set var="startPage" value="${ItemList.number - ItemList.number % 5}" />
+          <ul class="page_wrap">
+              <li class="page_nation <c:if test='${ItemList.number < 5}'>disabled</c:if>">
+                  <a class="page-link" href="/admin?&page=${startPage - 5}"><</a>
+              </li>
+              <c:forEach var="page" begin="1" end="5">
+                  <c:if test="${(startPage + page) <= ItemList.totalPages}">
+                      <li class="page_nation <c:if test='${users.number eq startPage + page - 1}'>active</c:if>">
+                          <a class="page-link" href="/admin?&page=${startPage + page - 1}">${startPage + page}</a>
+                      </li>
+                  </c:if>
+              </c:forEach>
+              <li class="page_nation <c:if test='${startPage + 5 > ItemList.totalPages}'>disabled</c:if>">
+                  <a class="page-link" href="/admin?&page=${startPage + 5}">></a>
+              </li>
+          </ul>
         
       </div>
       
@@ -208,34 +204,13 @@
   </div>
   <script type="text/javascript" src="/js/Product.js"></script>
 <script type="text/javascript" src="/js/admin.js"></script>
+    </c:when>
+    <c:otherwise> <h4 style="text-align: center">관리자가 아닙니다</h4> </c:otherwise>
+</c:choose>
   <%@ include file="../layout/footer.jsp"%>
  
   <script>
 
-    // const pageLinks = document.querySelectorAll(".page_nation a");
-    // const pages = [];
-    // for (let i = 0; i < pageLinks.length; i++) {
-    //   const pageLink = pageLinks[i];
-    //   if (pageLink.textContent) {
-    //     pages.push(pageLink);
-    //   }
-    // }
-    //
-    // let currentPage = 0;
-    // const displayPage = pageIndex => {
-    //   pages[currentPage].classList.remove("active");
-    //   currentPage = pageIndex;
-    //   pages[currentPage].classList.add("active");
-    //   // 여기에 페이지에 맞는 데이터 로딩 코드를 추가합니다.
-    // };
-    //
-    // for (let i = 0; i < pages.length; i++) {
-    //   pages[i].addEventListener("click", () => {
-    //     displayPage(i);
-    //   });
-    // }
-
-    // displayPage(0);
 
     $(document).ready(function() {
       $('.manage-menu a').click(function(e) {

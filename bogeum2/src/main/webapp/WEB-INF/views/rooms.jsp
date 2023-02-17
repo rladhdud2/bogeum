@@ -23,13 +23,16 @@
         .list-group-item {
             border-radius: 5px;
         }
+        body {
+            background-image: url("/img/background-chat.jpg");
+        }
 
     </style>
 </head>
 <body style="margin: 50px;font-family: 'Jua', sans-serif;" >
 <div class="container">
     <div class="top-fixed" >
-        <h3 style="text-align: center">정보공유방 목록</h3>
+        <h3 style="text-align: center;color: #f8f8f8">정보공유방 목록</h3>
     </div>
     <div class="list-group">
 <%--        <ul class="list-group">--%>
@@ -38,16 +41,18 @@
 
 <%--            </li>--%>
             <c:forEach items="${list}" var="room">
-                <ul><li> <a href="<c:url value='/chat/room?roomId=${room.roomId}'/>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">${room.name}<span class="badge bg-primary rounded-pill">14</span></a></li></ul>
+                 <a href="<c:url value='/chat/room?roomId=${room.roomId}'/>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">${room.name}<span class="badge bg-primary rounded-pill">14</span></a>
             </c:forEach>
 <%--        </ul>--%>
     </div>
     <br>
     <hr>
+    <c:if test="${principal.user.roles eq 'ADMIN'}">
     <form action="/chat/room" method="post" class="d-flex">
         <input type="text" name="name" class="form-control">
         <button class="btn btn-secondary btn-create" >Create</button>
     </form>
+    </c:if>
 </div>
 
 <%--    <input type="text" name="name">--%>
