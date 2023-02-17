@@ -55,7 +55,6 @@
 				<li><a href="/auth/board">커뮤니티</a></li>
 				<li><a href="/auth/shop">쇼핑몰</a></li>
 				<li></li>
-				<li></li>
 				
 				<c:choose>
 					<c:when test="${empty principal}">		
@@ -114,17 +113,16 @@
 				<c:choose>
 					<c:when test="${principal.user.roles=='ADMIN'}">
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니 |</a>&nbsp;<a
-								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; |
+							<a href="/user/cart/${principal.user.id}">장바구니 ㅣ</a>&nbsp;<a
+								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; ㅣ
 							&nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a
-								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; |
-							&nbsp;<a href="/logout">로그아웃</a> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=600,height=600,resizable=no')">채팅 테스트</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</c:otherwise>
 				</c:choose>

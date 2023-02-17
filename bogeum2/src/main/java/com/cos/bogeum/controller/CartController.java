@@ -31,28 +31,29 @@ public class CartController {
 	/*장바구니 페이지*/
 	@GetMapping("/user/cart/{id}")
 	public String cartPage(@PathVariable("id") int id, Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
-		 //로그인이 되어있는 유저의 id와 장바구니에 접속하는 id가 같아야 함
-		if(principalDetail.getUser().getId() == id) {
-			Users user = userService.findUser(id);
-			//로그인 되어 있는 유저에 해당하는 장바구니 가져오기
-			Cart userCart = user.getCart();
-			
-			// 장바구니에 들어있는 아이템 모두 가져오기
-			List<CartItem> cartItemList = cartService.allUserCartView(userCart);
-			
-			// 장바구니에 들어있는 상품들의 총 가격
-	        int totalPrice = 0;
-	        for(CartItem cartitem : cartItemList) {
-	        	totalPrice += cartitem.getCount()*cartitem.getItem().getPrice();
-	        }
-	        model.addAttribute("totalPrice", totalPrice);
-	        model.addAttribute("totalCount", userCart.getCount());
-	        model.addAttribute("cartItems", cartItemList);
-	        model.addAttribute("user", userService.findUser(id));
-	        
-	        return "shop/ShoppingmallCart";
+		Users user = userService.findUser(id);
+		Cart userCart = user.getCart();
+		if(userCart!=null) {
+			if(principalDetail.getUser().getId() == id) {				
+				// 장바구니에 들어있는 아이템 모두 가져오기
+				List<CartItem> cartItemList = cartService.allUserCartView(userCart);
+				
+				// 장바구니에 들어있는 상품들의 총 가격
+		        int totalPrice = 0;
+		        for(CartItem cartitem : cartItemList) {
+		        	totalPrice += cartitem.getCount()*cartitem.getItem().getPrice();
+		        }
+		        model.addAttribute("totalPrice", totalPrice);
+		        model.addAttribute("totalCount", userCart.getCount());
+		        model.addAttribute("cartItems", cartItemList);
+		        model.addAttribute("user", userService.findUser(id));
+		        
+		        return "shop/ShoppingmallCart";
+			}else {
+				return "redirect:/";
+			}
 		}else {
-			return "redirect:/";
+			return "shop/ShoppingmallCart";
 		}
 		
 	}
@@ -62,7 +63,7 @@ public class CartController {
 		Users user = userService.findUser(id);
 		items item = shopService.itemView(itemId);
 		cartService.addCart(user, item, amount);
-		return "redirect:/auth/shop/{id}";
+		return "redirect:/user/cart/{id}";
 	}
 	/*장바구니 상품 삭제*/
 	@GetMapping("/user/cart/{userid}/{cartItemId}/delete")
@@ -92,7 +93,7 @@ public class CartController {
 		        return "redirect:/user/cart/"+id;
 			}
 			else {
-				return "redirect:/";
+				return "redirect:/user/cart/{id}";
 			}
 			
 	}

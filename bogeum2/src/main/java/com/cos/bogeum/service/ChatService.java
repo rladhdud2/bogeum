@@ -1,20 +1,40 @@
 package com.cos.bogeum.service;
 
-import org.springframework.security.core.parameters.P;
+import com.cos.bogeum.model.Chat;
+import com.cos.bogeum.repository.ChatRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
-@ServerEndpoint(value = "/chat")
+@RequiredArgsConstructor
 public class ChatService {
+
+    @Autowired
+    private ChatRepository chatRepository;
+
+
+    /**
+     * 채팅 저장
+     */
+    public void saveMessage(String username, String message) {
+        Chat chat = new Chat();
+        chat.setUsername(username);
+        chat.setMessage(message);
+        chat.setCreateDate(LocalDateTime.now());
+
+        chatRepository.save(chat);
+    }
+
+    /**
+     * 채팅 조회
+     */
+    public List<Chat> findAllMessages() {
+        return chatRepository.findAll();
+    }
 //    private static Set<Session> clients = Collections.synchronizedSet(new
 //            HashSet<Session>());
 //
@@ -45,4 +65,25 @@ public class ChatService {
 //        clients.remove(s);
 //
 //    }
+
+//    @Autowired
+//    private UserRepository userRepository;
+//
+//    @Autowired
+//    private ChatRoomRepository chatRoomRepository;
+
+    /**
+     * 채팅 방 만들기
+     */
+//    public Room createRoom(int id) {
+//        Users user =userRepository.findById(id).orElseThrow();
+//        Room room=new Room();
+//        room.setName(user);
+//
+//        return chatRoomRepository.save(room);
+//    }
+
+
+
+
 }

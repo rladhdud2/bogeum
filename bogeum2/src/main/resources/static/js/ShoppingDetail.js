@@ -1,9 +1,10 @@
-const count = document.getElementsByName('count'),
+let count = document.getElementsByName('count'),
     sell_price = document.count.sell_price,
     amount = document.count.amount,
     add = document.count.add,
     minus = document.count.minus,
     sum = document.count.sum;
+    
 if(count){
     sum.value = sell_price.value;
     let amountval = amount.value,
@@ -57,16 +58,10 @@ function comma(str) {
 	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
 	}
 		
-	var price = $('#sum').val();
+	var price = $('.sum').val();
 	var price2 = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"원";
-	$('#sum').val(price2);
+	$('.sum').val(price2);
+
 	
-function cknum(num){
-	$("#re_name"+num).hide();
-	$("#"+num).hide();
-	$("#de_btn"+num).hide();
-	$("#mo_finish_btn"+num).show();
-	$("#re_modify_box"+num).show();
-}
 
 

@@ -14,7 +14,7 @@
       <div class = "animal-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "${info.popfile}" alt = "캣">
+            <img class="img-shelter-animal" src = "${info.popfile}" alt = "유기동물">
 <%--            <img src = "${info.popfile}" alt = "캣">--%>
 <%--            <img src = "${info.popfile}" alt = "캣">--%>
 <%--            <img src = "${info.popfile}" alt = "캣">--%>

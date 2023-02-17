@@ -1,11 +1,8 @@
 package com.cos.bogeum.controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
+import com.cos.bogeum.model.items;
+import com.cos.bogeum.repository.ShopRepository;
+import com.cos.bogeum.service.ShopService;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +17,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.cos.bogeum.dto.ResponseDto;
-import com.cos.bogeum.model.items;
-import com.cos.bogeum.repository.ShopRepository;
-import com.cos.bogeum.service.ShopService;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class ShopController {	
@@ -41,10 +38,9 @@ public class ShopController {
 	
 	/*쇼핑몰 메인페이지*/
 	@GetMapping("/auth/shop")
-	public String Shoppingmall(Model model, @PageableDefault(size=12, sort = "id", 
+	public String Shoppingmall(Model model, @PageableDefault(size=9, sort = "id", 
 			direction = Sort.Direction.DESC)Pageable pageable) {
-		model.addAttribute("shop", shopService.상품목록(pageable));
-		model.addAttribute("item", shopService.아이템갯수());
+		model.addAttribute("shop", shopService.상품목록(pageable));		
 		return "shop/Shoppingmall";
 	}
 	/*쇼핑몰 상세페이지*/

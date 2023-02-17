@@ -8,6 +8,7 @@
 	<div id="Shop_Detail_wrap">
         <div class="Shop_Detail_right">
             <div class="detail_goods_firstbox">
+            	<div class="product_img_mobile"><img src="/auth/images?filename=${item.filename}"></div>
                 <div class="detail_goods_name">
                     <p>${item.name}</p>
                 </div>
@@ -36,15 +37,17 @@
                         <div class="total_font"><p>총 상품금액</p></div>
                         <div class="total_price"><input type="text" name="sum" id="sum" readonly></div>    
                     </div>
-                <div class="detail_payment">
-                    <input type="button" onclick="alert('장바구니에 등록되었습니다.')">장바구니
-                </div>
-                </form>
-                <div class="goods_payment_now">
-                    <input type="button" onclick="Go_Pay()">바로구매
-                </div>
+	                <div class="detail_payment">
+	                    <input type="submit" onclick="alert('장바구니에 등록되었습니다.')" value="장바구니">
+	                </div>
+	                </form>
+	                <div class="goods_payment_now">
+	                    <input type="button" onclick="Go_Pay()" value="바로구매">
+	                </div>
             </div>
         </div>
+        
+        
         <div class="Shop_Detail_left">
             <div class="goods_img_box">
                 <div class="product_img"><img src="/auth/images?filename=${item.filename}"></div>
@@ -53,8 +56,7 @@
                 <div class="info_list">
                     <ul class="info_list_ul">
                         <li class="info_list_li"><a href="#info_1" class="list_aBox"><p>상세 정보</p></a></li>
-                        <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송/교환/반품 안내</p></a></li>
-                        <li class="info_list_li"><a href="#info_3" class="list_aBox"><p>상품 후기(0)</p></a></li>
+                        <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송 안내</p></a></li>
                     </ul>
                 </div>
                 <div id="info_1"><p><pre>${item.content}</pre></p></div>
@@ -77,14 +79,7 @@
                 	<p>- 배송 완료 후 구매확정 처리를 하지 않는 경우 7일 후 자동으로 구매 확정으로 처리됩니다.</p>
                 	<p>- 구매 확정 후 환불은 고객 센터를 통해 진행 가능합니다.</p>
                 </div>
-                <div id="info_3">
-                	<div class="review_write_box">
-	                	<p class="review_label">한줄평</p>
-	            		<input type="hidden" id="itemID" value="${item.id}">
-		           	 	<input type="text" placeholder="한줄평을 입력해주세요!" id="comment"name="comment">
-		            	<button id="review-btn-save" class="btn_comment" onclick="replySave()">등록</button>
-	                </div> 
-                </div>
+                
             </div>
         </div>
   </div>
