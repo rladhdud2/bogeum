@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <%--Css--%>
-<link rel="stylesheet" href=/css/boardReset.css>
+
 <link rel="stylesheet" href=/css/inquiry_board.css>
 <!--fontawesome-->
 <script src="https://kit.fontawesome.com/7e47ddf105.js" crossorigin="anonymous"></script>
@@ -70,14 +70,29 @@
                     </div>
                 </c:forEach>
             </div>
+<%--pagenation--%>
             <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
+                <c:choose>
+                    <c:when test="${finds.first}">
+                        <a class="bt first" href="?page=${finds.number-1}"><</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt prev" href="?page=${finds.number-1}"><</a>
+                    </c:otherwise>
+                </c:choose>
+                <a href="/auth/findboard" class="num on">1</a>
+                <a href="/auth/findboard?page=1" class="num">2</a>
+                <a href="/auth/findboard?page=2" class="num">3</a>
+                <a href="/auth/findboard?page=4" class="num">4</a>
+                <a href="/auth/findboard?page=5" class="num">5</a>
+                <c:choose>
+                    <c:when test="${finds.last}">
+                        <a class="bt next" href="?page=${finds.number+1}">></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt last" href="?page=${finds.number+1}">></a>
+                    </c:otherwise>
+                </c:choose>
             </div>
 
             <%--===================검색기능===================--%>

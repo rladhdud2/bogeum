@@ -67,16 +67,30 @@
                     </div>
                 </c:forEach>
             </div>
+            <%--pagenation--%>
             <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
-            </div>
-
+                <c:choose>
+                    <c:when test="${inquirys.first}">
+                        <a class="bt first" href="?page=${inquirys.number-1}"><</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt prev" href="?page=${inquirys.number-1}"><</a>
+                    </c:otherwise>
+                </c:choose>
+                <a href="/auth/inquiry" class="num on">1</a>
+                <a href="/auth/inquiry?page=1" class="num">2</a>
+                <a href="/auth/inquiry?page=2" class="num">3</a>
+                <a href="/auth/inquiry?page=4" class="num">4</a>
+                <a href="/auth/inquiry?page=5" class="num">5</a>
+                <c:choose>
+                    <c:when test="${inquirys.last}">
+                        <a class="bt next" href="?page=${inquirys.number+1}">></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt last" href="?page=${inquirys.number+1}">></a>
+                    </c:otherwise>
+                </c:choose>
+                </div>
             <%--===================검색기능===================--%>
             <div class="bt_wrap">
                 <form name="searchForm" method="GET" action="/auth/inquiry/search">
