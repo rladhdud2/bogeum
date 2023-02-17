@@ -6,7 +6,7 @@
 
 <div id="mobilesidenavbox">
 	<ul id="mobilesidenavli">
-		<li><a href="/user/mypage">마이페이지</a></li>		
+		<li><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>		
 		<li onclick="open1()">주문내역 	
 			<ul class="submenu" id="submenu1">
 				<li><a href="/user/mypage/${principal.user.id}">주문/배송조회</a></li>
