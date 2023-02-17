@@ -10,18 +10,22 @@
 }
 
 .container {
-	width: 1200px;
-	height: 1000px;
-	margin-left: 350px;
+	width: 80%;	
+	height : 1000px;
+	margin : auto;
 	margin-top: 60px;
 	margin-bottom: 150px;
-	display: flex;
+	display: flex;	
 }
 
+/*마이페이지 사이드네비*/
 .mypagenav {
+	
 	width: 200px;
 	height: 800px;
 	position: fixed;
+	margin-top : -10px;
+	
 }
 
 .mypagenavmenu {
@@ -43,10 +47,11 @@
 	margin-bottom: 10px;
 }
 
+/* 마이페이지컨텐츠 */
 .mypagecontentbox {
-	width: 1000px;
+	width: 80%;
 	height: 1000px;
-	margin-left: 200px;
+	margin-left: 200px;	
 }
 
 .mypagecontent {
@@ -68,7 +73,7 @@
 }
 
 #orderprocess ul {
-	width: 900px;
+	width: 100%;
 	height: 100px;
 	margin: auto;
 	margin-top: 30px;
@@ -184,6 +189,7 @@
 #mobilesidenavbox {
 	display: none;
 }
+
 /*모바일페이지*/
 @media ( min-width : 0px) and (max-width: 1050px) {
 	#mobilesidenavbox {
