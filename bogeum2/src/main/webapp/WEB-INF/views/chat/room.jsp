@@ -47,8 +47,6 @@
             <h1 style="height: 25px"><c:out value="${room.name}" /></h1>
         </div>
     </div>
-
-
     <div>
         <div id="msgArea" class="col"></div>
         <div class="col">

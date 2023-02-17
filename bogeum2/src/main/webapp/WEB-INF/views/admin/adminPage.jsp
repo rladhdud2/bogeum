@@ -94,22 +94,48 @@
 <%--            <div style="width: 150px;"></div>--%>
 <%--          </div>--%>
 
-          <c:set var="startPage" value="${users.number - users.number % 5}" />
-          <ul class="pagination justify-content-center">
-            <li class="page-item <c:if test='${users.number < 5}'>disabled</c:if>">
-              <a class="page-link" href="/admin?category=${param.category}&page=${startPage - 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}"><</a>
-            </li>
-            <c:forEach var="page" begin="1" end="5">
-              <c:if test="${(startPage + page) <= users.totalPages}">
-                <li class="page-item <c:if test='${users.number eq startPage + page - 1}'>active</c:if>">
-                  <a class="page-link" href="/admin?category=${param.category}&page=${startPage + page - 1}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">${startPage + page}</a>
+<%--            <c:set var="startPage" value="${users.number - users.number % 5}" />--%>
+<%--            <div class="page_wrap">--%>
+<%--                <div class="page_nation">--%>
+<%--                    <c:choose>--%>
+<%--                        <c:when test="${shop.first}">--%>
+<%--                            <a class="arrow prev" href="?page=${shop.number-1}"></a>--%>
+<%--                        </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <a class="arrow prev" href="?page=${shop.number-1}"></a>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+<%--                    <a href="/auth/shop" class="active">1</a>--%>
+<%--                    <a href="/auth/shop?page=1">2</a>--%>
+<%--                    <a href="/auth/shop?page=2">3</a>--%>
+<%--                    <c:choose>--%>
+<%--                        <c:when test="${shop.last}">--%>
+<%--                            <a class="arrow next" href="?page=${shop.number+1}"></a>--%>
+<%--                        </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <a class="arrow next" href="?page=${shop.number+1}"></a>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+
+            <c:set var="startPage" value="${users.number - users.number % 5}" />
+            <ul class="page_wrap"  style="display:flex ;>
+                <li class="page_nation <c:if test='${users.number < 5}'>disabled</c:if>">
+                    <a class="page-link" href="/admin?category=${param.category}&page=${startPage - 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}"><</a>
                 </li>
-              </c:if>
-            </c:forEach>
-            <li class="page-item <c:if test='${startPage + 5 > users.totalPages}'>disabled</c:if>">
-              <a class="page-link" href="/admin?category=${param.category}&page=${startPage + 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">></a>
-            </li>
-          </ul>
+                <c:forEach var="page" begin="1" end="5">
+                    <c:if test="${(startPage + page) <= users.totalPages}">
+                        <li class="page_nation <c:if test='${users.number eq startPage + page - 1}'>active</c:if>">
+                            <a class="page-link" href="/admin?category=${param.category}&page=${startPage + page - 1}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">${startPage + page}</a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+                <li class="page_nation <c:if test='${startPage + 5 > users.totalPages}'>disabled</c:if>">
+                    <a class="page-link" href="/admin?category=${param.category}&page=${startPage + 5}&searchType=${param.searchType}&searchKeyword=${param.searchKeyword}">></a>
+                </li>
+            </ul>
 
         </div>
 

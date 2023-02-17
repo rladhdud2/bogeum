@@ -29,7 +29,7 @@
 <body style="margin: 50px;font-family: 'Jua', sans-serif;" >
 <div class="container">
     <div class="top-fixed" >
-        <h3 style="text-align: center">정보공유</h3>
+        <h3 style="text-align: center">정보공유방 목록</h3>
     </div>
     <div class="list-group">
 <%--        <ul class="list-group">--%>
@@ -38,7 +38,7 @@
 
 <%--            </li>--%>
             <c:forEach items="${list}" var="room">
-                <a href="<c:url value='/chat/room?roomId=${room.roomId}'/>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">${room.name}<span class="badge bg-primary rounded-pill">14</span></a>
+                <ul><li> <a href="<c:url value='/chat/room?roomId=${room.roomId}'/>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">${room.name}<span class="badge bg-primary rounded-pill">14</span></a></li></ul>
             </c:forEach>
 <%--        </ul>--%>
     </div>
