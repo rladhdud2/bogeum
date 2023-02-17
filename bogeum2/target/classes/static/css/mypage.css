@@ -190,6 +190,8 @@
 	display: none;
 }
 
+
+
 /*모바일페이지*/
 @media ( min-width : 0px) and (max-width: 1050px) {
 	#mobilesidenavbox {
