@@ -44,7 +44,7 @@
             <p>공지사항을 안내드립니다</p>
             <%--===================글쓰기===================--%>
             <div class="writeForm1">
-                <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
             </div>
         </div>
         <div class="board_list_wrap">
@@ -89,7 +89,7 @@
                 </form>
                 <%--===================글쓰기===================--%>
                 <div class="writeForm2">
-                    <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                    <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@
             <p>반려동물을 찾아주세요!! 가족들이 기다리고 있습니다</p>
             <%--===================글쓰기===================--%>
             <div class="writeForm1">
-                <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
             </div>
         </div>
         <div class="board_list_wrap">
@@ -94,7 +94,7 @@
 
                 <%--===================글쓰기===================--%>
                 <div class="writeForm2">
-                    <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                    <button type="button" id="btnWrite" onclick="location.href = '/find_board_saveForm'">글쓰기</button>
                 </div>
             </div>
         </div>
