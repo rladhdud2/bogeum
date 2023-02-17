@@ -47,15 +47,19 @@
 	margin-bottom: 10px;
 }
 
+
 /* 마이페이지컨텐츠 */
 .mypagecontentbox {
 	width: 80%;
 	height: 1000px;
 	margin-left: 200px;	
+	
 }
 
 .mypagecontent {
-	margin-bottom: 80px;
+	width : 90%;
+	margin : auto;
+	margin-bottom: 80px;	
 }
 
 .mypagecontenttitle {
