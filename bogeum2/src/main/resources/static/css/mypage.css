@@ -19,22 +19,20 @@
 }
 
 /*마이페이지 사이드네비*/
-.mypagenav {
-	
+.mypagenav {	
 	width: 200px;
 	height: 800px;
 	position: fixed;
-	margin-top : -10px;
-	
+	margin-top : -10px;	
 }
 
 .mypagenavmenu {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
-.mypagenav li {
-	margin-bottom: 10px;
+.mypagenav li {	
 	color: gray;
+	font-size : 18px;
 }
 
 .mypagenav li a {
@@ -44,7 +42,7 @@
 .mypagenavtitle {
 	font-size: 22px;
 	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 
