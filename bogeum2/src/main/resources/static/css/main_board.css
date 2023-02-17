@@ -25,6 +25,7 @@ body {
 .container {
     width: 75%;
     margin: auto;
+    margin-bottom: 200px;
 }
 
 .contenttitle {
@@ -264,6 +265,7 @@ body {
         width: 100%;
         text-align: center;
         height: 12rem;
+        display: none;
     }
 
     .normal {
@@ -315,6 +317,9 @@ body {
 
     .contenttitle3 {
         font-size: 1.9rem;
+    }
+    .container{
+        margin-bottom: 10px;
     }
 }
 @media screen and (max-width: 560px) {

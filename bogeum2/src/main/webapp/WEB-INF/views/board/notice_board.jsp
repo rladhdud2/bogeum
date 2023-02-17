@@ -44,7 +44,7 @@
             <p>공지사항을 안내드립니다</p>
             <%--===================글쓰기===================--%>
             <div class="writeForm1">
-                <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
             </div>
         </div>
         <div class="board_list_wrap">
@@ -67,14 +67,29 @@
                     </div>
                 </c:forEach>
             </div>
+            <%--pagenation--%>
             <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
+                <c:choose>
+                    <c:when test="${notice.first}">
+                        <a class="bt first" href="?page=${notice.number-1}"><</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt prev" href="?page=${notice.number-1}"><</a>
+                    </c:otherwise>
+                </c:choose>
+                <a href="/auth/notice" class="num on">1</a>
+                <a href="/auth/notice?page=1" class="num">2</a>
+                <a href="/auth/notice?page=2" class="num">3</a>
+                <a href="/auth/notice?page=4" class="num">4</a>
+                <a href="/auth/notice?page=5" class="num">5</a>
+                <c:choose>
+                    <c:when test="${finds.last}">
+                        <a class="bt next" href="?page=${notice.number+1}">></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="bt last" href="?page=${notice.number+1}">></a>
+                    </c:otherwise>
+                </c:choose>
             </div>
             <%--===================검색기능===================--%>
             <div class="bt_wrap">
@@ -89,7 +104,7 @@
                 </form>
                 <%--===================글쓰기===================--%>
                 <div class="writeForm2">
-                    <button type="button" id="btnWrite" onclick="location.href = '/inquiry_board_saveForm'">글쓰기</button>
+                    <button type="button" id="btnWrite" onclick="location.href = '/notice_board_saveForm'">글쓰기</button>
                 </div>
             </div>
         </div>

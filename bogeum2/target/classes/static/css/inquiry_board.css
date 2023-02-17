@@ -14,8 +14,8 @@ ul, li {
 }
 
 a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none !important;
+    color: black !important;
 }
 
 .board_wrap {
@@ -400,9 +400,9 @@ body {
 #btn_update {
     background-color: #ffebb6;
 }
-.swal2-popup{
-    font-size: 2rem !important;
-}
+/*.swal2-popup{*/
+/*    font-size: 2rem !important;*/
+/*}*/
 
 
 @media (max-width: 1024px) {

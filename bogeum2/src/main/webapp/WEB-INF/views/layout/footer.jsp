@@ -5,7 +5,7 @@
 	        <div id="footer1">
 	            <div class="footer1item">
 	                <div class="footericon"><img src="/img/footericon1.png"></div>
-	                <div class="footer1itemtitle">운영시간 안내</div>
+	                <div class="footer1itemtitle">운영시간</div>
 	                <div class="footer1itemcontent1">연중무휴</div>
 	                <div class="footer1itemcontent2">평일9:00-18:00(주말,공휴일 휴무)<br>
 	                    입양상담(사전예약제)평일 10:00-16:00<br>
