@@ -38,7 +38,7 @@
 <div class="container">
     <div id="content2">
         <div class="board">
-            <div class="contenttitle2"><a href=/auth/notice> 공지사항<span class="titleimg"><i class="fa-solid fa-plus"></i></span></a>
+            <div class="contenttitle2 mainTitle"><a href=/auth/notice> 공지사항<span class="titleimg"><i class="fa-solid fa-plus"></i></span></a>
             </div>
             <div class="content2">
                 <c:forEach var="notice" items="${notice.content}">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/inquiry"> 문의사항<span class="titleimg"><i
+            <div class="contenttitle2 mainTitle"><a href="/auth/inquiry"> 문의사항<span class="titleimg"><i
                     class="fa-solid fa-plus"></i></span></a></div>
             <div class="content2">
                 <c:forEach var="inquirys" items="${inquirys.content}">
@@ -64,7 +64,7 @@
     </div>
     <div id="content3">
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/findboard"> 분실/습득<span class="titleimg"><i
+            <div class="contenttitle2 mainTitle"><a href="/auth/findboard"> 분실/습득<span class="titleimg"><i
                     class="fa-solid fa-plus"></i></span></a></div>
             <div class="content2">
                 <c:forEach var="finds" items="${finds.content}">
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="board">
-            <div class="contenttitle2"><a href="/auth/free"> 자유게시판<span class="titleimg"><i
+            <div class="contenttitle2 mainTitle"><a href="/auth/free"> 자유게시판<span class="titleimg"><i
                     class="fa-solid fa-plus"></i></span></a></div>
             <div class="content2">
                 <c:forEach var="free" items="${free.content}">

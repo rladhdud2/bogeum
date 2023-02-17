@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.board_list_wrap{
+    font-family: 'GmarketSansMedium'!important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -225,6 +235,7 @@ a {
 
 .board_write {
     border-top: 2px solid #000;
+    font-family: 'GmarketSansMedium'!important;
 }
 
 .board_write .title,
@@ -326,7 +337,7 @@ button#btnWrite {
     border: 1px solid #ffebb6;
     background-color: #ffebb6;
     margin-left: 10px;
-    font-family: 'Jua', sans-serif;
+    font-family: 'GmarketSansMedium'!important;
     font-size: 1rem;
 
 }
@@ -348,7 +359,6 @@ body {
     width: 20%;
     font-size: 24px;
     padding-top: 7rem;
-
 }
 
 .menuList {
@@ -391,6 +401,7 @@ body {
     border: 1px solid #ffebb6;
     border-radius: 2px;
     font-size: 1.5rem;
+    font-family: 'GmarketSansMedium'!important;
 }
 
 #btn_save {
