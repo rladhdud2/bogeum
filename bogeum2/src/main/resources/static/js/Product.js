@@ -1,9 +1,8 @@
-function Delete_item(){
-	var id=$("#id").val();
-	console.log("삭제");
+function Delete_item(itemId){
+	console.log(itemId);
 	$.ajax({
 		type:"DELETE",
-		url:"/deleteItem/"+id,
+		url:"/deleteItem/"+itemId,
 		dataType:"json"
 	}).done(function(resp){
 		alert("상품 삭제가 완료되었습니다");

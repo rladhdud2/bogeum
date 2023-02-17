@@ -114,14 +114,14 @@
             <!-- 테이블 데이터 삽입 -->
             <c:forEach var="items" items="${ItemList.content}">
             <tr>
-              <input type="hidden" id="id" value="${items.id}">
+              <input type="hidden" id="itemId" value="${items.id}" varStatus="status">
               <td style="width: 5%;">${items.id}</td>
               <td style="width: 15%;">${items.category}</td>
               <td style="width: 25%;">${items.name}</td>
               <td style="width: 20%;">${items.price}원</td>
               <td style="width: 25%;">
                 <button class="admin-button" onclick="location.href='/update_item/${items.id}'">수정</button>
-                <button class="admin-button" onclick="Delete_item()">삭제</button>
+                <button class="admin-button" id="de_btn${status.index}" onclick="Delete_item(${items.id})">삭제</button>
               </td>
             </tr>
             </c:forEach>
