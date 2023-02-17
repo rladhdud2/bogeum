@@ -33,6 +33,7 @@
             </div>
             <div class="item_box">
                 <label for="count">수량</label>
+                <br>
                 <input type="text" name="count" id="count">              
             </div>
             <div class="item_box">

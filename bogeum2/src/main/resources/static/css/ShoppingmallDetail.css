@@ -207,6 +207,9 @@
     border-bottom: 1px solid gray;
     font-family: 'GmarketSansMedium';
 }
+#info_1>p>pre{
+	font-family: 'Jua', sans-serif;
+}
 #info_2{
     margin: 0 auto;
     width: 90%;

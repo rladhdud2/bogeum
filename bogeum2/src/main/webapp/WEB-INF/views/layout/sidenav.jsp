@@ -9,7 +9,7 @@
 		<div class="mypagenavtitle">마이페이지</div>
 		<div>
 			<ul>
-				<li><a href="/user/mypage">마이페이지</a></li>
+				<li><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
 			</ul>
 		</div>
 	</div>

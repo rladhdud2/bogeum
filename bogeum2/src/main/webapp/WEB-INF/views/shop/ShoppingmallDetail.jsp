@@ -59,7 +59,7 @@
                         <li class="info_list_li"><a href="#info_2" class="list_aBox"><p>배송 안내</p></a></li>
                     </ul>
                 </div>
-                <div id="info_1"><p><pre>${item.content}</pre></p></div>
+                <div id="info_1"><p><pre style="font-family: 'GmarketSansMedium'; font-size : 24px" >${item.content}</pre></p></div>
                 <div id="info_2">
                 	<br>
                 	<p>배송 방법</p>

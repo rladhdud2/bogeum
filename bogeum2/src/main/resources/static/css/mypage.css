@@ -19,22 +19,20 @@
 }
 
 /*마이페이지 사이드네비*/
-.mypagenav {
-	
+.mypagenav {	
 	width: 200px;
 	height: 800px;
 	position: fixed;
-	margin-top : -10px;
-	
+	margin-top : -10px;	
 }
 
 .mypagenavmenu {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
-.mypagenav li {
-	margin-bottom: 10px;
+.mypagenav li {	
 	color: gray;
+	font-size : 18px;
 }
 
 .mypagenav li a {
@@ -44,18 +42,22 @@
 .mypagenavtitle {
 	font-size: 22px;
 	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
+
 
 /* 마이페이지컨텐츠 */
 .mypagecontentbox {
 	width: 80%;
 	height: 1000px;
 	margin-left: 200px;	
+	
 }
 
 .mypagecontent {
-	margin-bottom: 80px;
+	width : 90%;
+	margin : auto;
+	margin-bottom: 80px;	
 }
 
 .mypagecontenttitle {
@@ -189,6 +191,8 @@
 #mobilesidenavbox {
 	display: none;
 }
+
+
 
 /*모바일페이지*/
 @media ( min-width : 0px) and (max-width: 1050px) {
