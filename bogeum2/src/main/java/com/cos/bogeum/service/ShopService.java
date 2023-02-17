@@ -62,7 +62,7 @@ public class ShopService {
 	}
 	@Transactional
 	public void 상품삭제(int id) {
-		shopRepository.deleteById(id);
+		shopRepository.deleteById(id);		
 	}
 	
 	
