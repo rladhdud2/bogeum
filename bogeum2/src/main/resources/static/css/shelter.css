@@ -277,7 +277,7 @@ input[type="date"] {
 .page_nation .none {
 	display:none;
 }
-.page_nation a {
+.page_nation button {
 	display:block;
 	margin:0 3px;
 	float:left;
@@ -290,6 +290,7 @@ input[type="date"] {
 	font-size:13px;
 	color:#999999;
 	text-decoration:none;
+    cursor: pointer;
 }
 .page_nation .arrow {
 	border:1px solid #ccc;
@@ -310,7 +311,7 @@ input[type="date"] {
 	background:#f8f8f8 url('/img/page_nnext.png') no-repeat center center;
 	margin-right:0;
 }
-.page_nation a.active {
+.page_nation button.active {
 	background-color:#ffebb6;
 	color:#fff;
 	/* border:1px solid #42454c; */
