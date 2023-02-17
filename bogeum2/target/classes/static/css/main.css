@@ -1,12 +1,9 @@
 @font-face {
-	font-family: 'GmarketSansMedium';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
 ul {
 	list-style: none;
 }
@@ -26,6 +23,7 @@ body {
 
 .contenttitle {
 	font-size: 30px;
+	margin-top: 50px;
 	margin-bottom: 10px;
 }
 
@@ -78,30 +76,28 @@ body {
 	border-bottom: 2px black solid;
 	line-height: 60px;
 	font-family: 'Jua', sans-serif;
-	
 }
 
 .content2 {
 	display: flex;
 	border-bottom: 1px solid gray;
 	height: 40px;
-	line-height: 40px;	
-	font-family: 'GmarketSansMedium';
+	line-height: 40px;
 }
 
 .content2 .content2title {
-	width: 70%;
+	width: 80%;
 }
 
 .content2 .content2time {
-	width: 30%;
+	width: 20%;
 	text-align: right;
 }
 
 /*상품*/
 #productbox {
-	width: 100%;
-	display: flex;
+	width: 100%;	
+	display: flex;	
 }
 
 #productinfo {
@@ -135,10 +131,6 @@ body {
 	border-radius: 10px;
 }
 
-.product:nth-child(4) {
-	display : none;	
-}
-
 #products img {
 	width: 100%;
 	height: 100%;
@@ -155,8 +147,7 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	margin: auto;	
-	margin-bottom : 20px;
+	margin: auto;
 	height: 350px;
 }
 
@@ -200,7 +191,7 @@ body {
 	display: flex;
 	justify-content: center;
 	width: 500px;
-	margin-top: -50px;
+	margin-top: -30px;
 }
 
 .buttonbox button {
@@ -221,34 +212,27 @@ body {
 #maincontent1 {
 	width: 1200px;
 	height: 900px;
-	margin-top : 150px;
 }
 
 #maincontent2 {
-	margin-top: 100px;
+	margin-top: 100px;	
 }
 
 .main {
 	margin-top: -50px;
 }
 
-.content_flex {
-	display: flex;
-}
-
-.contenttitle {
-	display: flex;
-}
 
 
 /*모바일페이지*/
 @media ( min-width : 0px) and (max-width: 1050px) {
+			
 	.container {
 		width: 100%;
 		margin: auto;
 		margin-top: 20px;
 		margin-bottom: 100px;
-	}
+	}	
 	.banner {
 		display: none;
 	}
@@ -262,20 +246,26 @@ body {
 		display: block;
 	}
 	
-
 	/*보호소*/
 	#maincontent1 {
-		width: 100%;
-		height: 1800px;
-		margin-top: 100px;
+		width : 100%;
+		height : 1800px;
+		margin-top : 50px;
+	}	
+	
+	
+	
+
+	/*게시판*/
+	
+	#maincontent2 {
+		width : 100%;		
+		
 	}
 	
-	/*게시판*/
-	#maincontent2 {
-		width: 100%;
-	}
 	#content2 {
-		width: 100%;
+	
+		width : 100%;
 		display: block;
 	}
 	.board {
@@ -288,7 +278,8 @@ body {
 	#productbox {
 		display: block;
 		width: 90%;
-		margin: auto;
+		margin : auto;			
+		
 	}
 	#productinfo {
 		display: flex;
@@ -296,13 +287,16 @@ body {
 		height: 30px;
 		margin-bottom: 20px;
 		justify-content: space-between;
+  
 	}
 	#productstitle {
-		margin-right: 50px;
+		margin-right: 50px;	
+			
+		
 	}
 	#productintro {
 		margin-right: 50px;
-		display: none;
+		display : none;
 	}
 	#products {
 		display: flex;
@@ -311,6 +305,7 @@ body {
 		height: 250px;
 		margin-left: 0px;
 		margin: auto;
+		
 	}
 	.product {
 		width: 32%;
@@ -321,7 +316,10 @@ body {
 	#products:nth-last-child {
 		display: none;
 	}
-	#maincontent1 {
-		z-index: 0;
-	}
+	
+	#maincontent1 {	
+	z-index : 0;
+	
+	}	
+	
 }
