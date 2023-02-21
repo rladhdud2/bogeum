@@ -24,8 +24,6 @@
 <script src="https://kit.fontawesome.com/462a97624e.js"
 	crossorigin="anonymous"></script>
 
-
-
 <script
 	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script
@@ -39,130 +37,98 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <link rel="icon" href="/img/pavicon1.png">
 
-
-
-
 </head>
 <body>
 
-
-	<!--모바일헤더  -->
-	<div id="mobilenavbox">
-
-		<div id="mobileheadernav">	
-		
-			<div id="offbuttonbox">
-			<button onclick="off()">x</button>
-			</div>
-			
-			<div>
-				<ul class="mobilenav">
-					<li><a href="/auth/shelter">보호소</a></li>
-					<li><a href="/auth/board">커뮤니티</a></li>
-					<li><a href="/auth/shop">쇼핑몰</a></li>	
-					<li></li>				
-
+<div id="main_container">
+		<div id="header_wrap">
+			<div id="top">
+				<div class="logo2">
+					<a href="/"><img src="/img/footerlogo.png"></a>
+				</div>
+				<div class="sub_package">
 					<c:choose>
-						<c:when test="${empty principal}">			
-							<li></li>				
-							<li class="loginjoin"><a href="/auth/loginForm" >로그인</a></li>
-							<li class="loginjoin"><a href="/auth/joinForm" >회원가입</a></li>
+						<c:when test="${empty principal}">
+							<ul>
+								<li><a href="/auth/loginForm">로그인</a></li>
+								<li><a href="/auth/joinForm">회원가입</a></li>
+							</ul>
+						</c:when>
+						<c:when test="${principal.user.roles == 'ADMIN'}">
+						<ul>
+							<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+							<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+							<li class="loginjoin"><a href="/admin">관리자페이지</a></li>
+
+							<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
+							<li class="loginjoin"><a href="/logout">로그아웃</a></li>
+						</ul>
 						</c:when>
 						<c:otherwise>
-							<c:choose>
-								<c:when test="${principal.user.roles=='ADMIN'}">
-									<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
-									<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
-									<li class="loginjoin"><a href="/admin">관리자페이지</a></li>
-
-									<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
-									<li class="loginjoin"><a href="/logout">로그아웃</a></li>
-								</c:when>
-								<c:otherwise>
-									<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
-									<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
-									<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
-									<li class="loginjoin"><a href="/logout">로그아웃</a></li>
-								</c:otherwise>
-							</c:choose>
+							<ul>
+								<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+								<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
+								<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+								<li class="loginjoin"><a href="/logout">로그아웃</a></li>
+							</ul>
 						</c:otherwise>
 					</c:choose>
-
-
-
-				</ul>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="mobilelogo">
-		<div id="mobilelogobox">
-			<a href="/"><img src="/img/footerlogo.png"></a>
-		</div>
-
-		<div id="mobilenavbtn">
-			<button>
-				<img src="/img/mobilenavicon.png" onclick="on()">
-			</button>
-		</div>
-	</div>
-
-
-	<!-- pc헤더  -->
-	<header id="pcheader">
-
-		<c:choose>
-			<c:when test="${empty principal}">
-				<div id="login">
-					<a href="/auth/loginForm">로그인</a>&nbsp; | &nbsp;<a
-						href="/auth/joinForm">회원가입</a> &nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
-			</c:when>
-			<c:otherwise>
-				<c:choose>
-					<c:when test="${principal.user.roles=='ADMIN'}">
-						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니 ㅣ</a>&nbsp;<a
-								href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; ㅣ &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a>&nbsp; |
-							&nbsp;<a href="/admin">관리자페이지</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="mobile_tap">
+					<input type="checkbox" id="menuicon"> <label for="menuicon">
+						<span></span> <span></span> <span></span>
+					</label>
+					<div class="sidebar">
+						
+						<div class="mobile_login">
+							<c:choose>
+								<c:when test="${empty principal}">
+									<ul>
+										<li><a href="/auth/loginForm">로그인</a></li>
+										<li><a href="/auth/joinForm">회원가입</a></li>
+									</ul>
+								</c:when>
+								<c:when test="${principal.user.roles == 'ADMIN'}">
+									<ul>
+										<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+										<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+										<li class="loginjoin"><a href="/admin">관리자페이지</a></li>
+			
+										<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
+										<li class="loginjoin"><a href="/logout">로그아웃</a></li>
+									</ul>
+									</c:when>
+									<c:otherwise>
+									<ul>
+										<li class="loginjoin"><a href="/user/cart/${principal.user.id}">장바구니</a></li>
+										<li class="loginjoin"><a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a></li>
+										<li class="loginjoin"><a href="/user/mypage/${principal.user.id}">마이페이지</a></li>
+										<li class="loginjoin"><a href="/logout">로그아웃</a></li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
 						</div>
-					</c:when>
-					<c:otherwise>
-						<div id="login">
-							<a href="/user/cart/${principal.user.id}">장바구니</a>&nbsp; | &nbsp;<a href="/user/mypage/${principal.user.id}">마이페이지</a>&nbsp; | &nbsp;<a href="#" onclick="window.open('/chat/rooms','채팅방','width=400,height=550,resizable=no')">정보공유방</a>&nbsp; | &nbsp;<a href="/logout">로그아웃</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="mobile_menu">
+							<ul>
+								<li><a href="/auth/shelter">보호소</a></li>
+								<li><a href="/auth/board">커뮤니티</a></li>
+								<li><a href="/auth/shop">쇼핑몰</a></li>
+							</ul>
 						</div>
-					</c:otherwise>
-				</c:choose>
-			</c:otherwise>
-		</c:choose>
-
-
-		<div id="header2">
-			<div id="logo">
-				<a href="/"><img src="/img/logo.png"></a>
+					</div>
+				</div>
 			</div>
-			<div id="headernav">
-				<ul class="nav">
-					<li><a href="/auth/shelter">보호소</a></li>
-					<li><a href="/auth/board">커뮤니티</a></li>
-					<li><a href="/auth/shop">쇼핑몰</a></li>
-				</ul>
+			<div id="middle">
+				
+				<div class="middle_box middle_box2">
+					<a href="/auth/shelter">보호소</a>
+				</div>
+				<div class="middle_box middle_box3">
+					<a href="/auth/board">커뮤니티</a>
+				</div>
+				<div class="middle_box middle_box4">
+					<a href="/auth/shop">쇼핑몰</a>
+				</div>
 			</div>
 		</div>
-
-
-		<script>
-			function on() {
-				document.querySelector('#mobilenavbox').style.display = 'block';
-
-			}
-			function off() {
-				document.querySelector('#mobilenavbox').style.display = 'none';
-
-			}
-		</script>
-
-	</header>
+	</div>

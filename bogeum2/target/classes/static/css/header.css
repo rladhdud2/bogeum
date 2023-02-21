@@ -4,177 +4,225 @@
     font-weight: normal;
     font-style: normal;
 }
-ul {
-	list-style: none;
+#main_container{
+    width: 100%;
+    height:auto;
+     background: white;
 }
 
-body {
-	font-family: 'Jua', sans-serif;
+a{
+    text-decoration: none;
 }
-
-header {
+.logo2>a{
+	display: inline-block;
 	width: 100%;
-	height: 150px;
-}
-
-#login {
-	width: 100%;
-	text-align: right;
-	height: 30px;
-	line-height: 30px;
-	font-family: 'GmarketSansMedium';
-	font-size: 14px;
-}
-
-#header2 {
-	height: 120px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#logo {
-	width: 300px;
-	height: 100px;
-	margin-left: 50px;
-}
-
-#logo img {
 	height: 100%;
+}
+a>img{
 	width: 100%;
+	height: 100%;
+}
+.sub_package>ul{
+    display: flex;
+}
+.sub_package>ul>li{
+    padding-left: 30px;
+    color: black;
+    font-family: 'GmarketSansMedium';
+    font-size: 12px;
+}
+.sub_package>ul>li>a:visited{
+    color: black;
+}
+#middle {   /*중간 큰박스*/
+    width: 80%;
+    height: 50px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding-bottom:20px;   
+}
+.middle_box{
+	margin-top:10px;
+    width: 13%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+  	margin-right:5px;
+    transition: all 0.3s;
+    border-radius: 10px;
+  
+}
+.middle_box>a{
+    color: black;
+    display: inline-block;
+    height: 100%;
+    padding-top: 25px;
+    transition: all 0.3s;
 }
 
-.nav {
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	margin-right: 250px;
+#header_wrap {
+    z-index: 9999;
+    position: sticky;
+    top: 0;
 }
-
-.nav li {
-	width: 150px;
-	height: 100px;
-	line-height: 120px;
-	text-align: center;
-	font-size: 35px;
-	margin-left: 100px;
-	border-bottom: 7px solid white;
+/* pc버전 */
+@media all and (min-width:1025px){
+	.sub_package{   /*로그인 회원가입은 모바일에서 사라짐*/
+        display: inline-block;
+    }
+    #top{
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        position: relative;      
+    }
+    .mobile_tap{
+        display: none;
+        
+    }
+    .logo2{
+    	position:absolute;
+    	left: 40px;
+    	top: 5px;
+		width: 120px;
+		height: 120px;
+    }
+    .logo2>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    }
+    .logo2>a>img{
+    	width: 100%;
+    height: 100%;
+    }
+    .sub_package{
+    position:absolute;
+    	right: 50px;
+    }
+   
 }
-
-.nav li:hover {
-	border-bottom: 7px solid  rgb(253, 232, 175);
-}
-
-#mobilenavbox {
-	display: none;
-}
-
-#mobilelogo {
-	display: none;
-}
-
-/*모바일화면*/
-@media ( min-width : 0px) and (max-width: 1024px) {
-	#pcheader {
-		display: none;
+/* 모바일버전 */
+@media all and (max-width:1024px){
+    .sub_package{   /*로그인 회원가입은 모바일에서 사라짐*/
+        display: none;
+    }
+    
+    #middle{    /*메뉴들 모바일에서 사라짐*/
+        display: none;
+    }
+    #top{
+        width: 100%;
+        height: 100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(253, 232, 175);
+         
+    }
+    .logo2{
+        width: 130px;
+		height: 100px;
+    }
+    .logo2>a{
+	    display: inline-block;
+	    width: 100%;
+	    height: 100%;
+    }
+    .logo2>a>img{
+    	width: 100%;
+   		height: 100%;
+    }
+    input[id="menuicon"]{
+        display: none;
+    }
+    input[id="menuicon"] + label {
+        display: block;
+        margin: 30px;
+        width: 35px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+    }
+    input[id="menuicon"] + label span{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background-color: #F9AC3A;
+        transition: all .35s;
+    }
+    input[id="menuicon"] + label span:nth-child(1) {
+        top:0;
+    }
+    input[id="menuicon"] + label span:nth-child(2) {    /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+        top:50%;transform:translateY(-50%);
+    }
+    input[id="menuicon"] + label span:nth-child(3) {
+        bottom:0;
+    }
+    input[id="menuicon"]:checked + label {
+        z-index:4;
+    }
+    input[id="menuicon"]:checked + label span {
+        background:#F9AC3A;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(1) {
+        top:50%;
+        transform:translateY(-50%) rotate(45deg);
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2) {
+        opacity:0;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3) {
+        bottom:50%;
+        transform:translateY(50%) rotate(-45deg);
+    }
+    div[class="sidebar"] {
+        width:300px;
+        height:100%;
+        background:rgb(253, 232, 175);
+        position:fixed;
+        top:0;
+        right:-310px;
+        z-index:3;
+        transition:all .35s;
+        border: 5px solid #F9AC3A;
+        }
+    input[id="menuicon"]:checked + label + div {
+        right: 0;
+    }
+    .sidebar{
+        padding-top: 100px;
+        text-align: center;
+    }
+    .mobile_login{
+    	font-size: 1.5rem;
+        line-height: 2;
+        padding-bottom:20px;
+        border-bottom: 5px solid #F9AC3A;
+    }
+    .mobile_menu{
+        margin-top: 20px;
+        line-height: 2;
+        font-size: 2rem;
+    }
+    .mobile_menu>ul>li>a:visited{
+        color: white;
+    }
+    .mobile_login>ul>li>a:visited{
+        color: white;
+    }
+	#header_wrap {
+	   
+	  	border: none;
+	  
 	}
-	#mobilelogo {
-		display: flex;
-		width: 100%;
-		height: 150px;
-		margin: auto;
-		background-color: rgb(253, 232, 175);
-		align-items: center;
-		overflow: hidden;
-	}
-	#mobilelogobox {
-		display: flex;
-		height : 180px;
-		width: 200px;
-		margin: auto;
-	}
-	#mobilelogo img {
-		width: 100%;
-		height: 110%;
-	}
-	#mobilenavbtn {
-		margin-right: 5%;
-		margin-left: -80px;
-	}
-	#mobilenavbtn button {
-		height: 50px;
-		width: 50px;
-		background-color: white;
-		border: white;
-	}	
-	#mobilenavbtn button:hover {
-		cursor : pointer;
-	}
-	#mobilenavbtn button img {
-		height: 100%;
-		width: 100%;
-	}
-	
-	/*모바일네비게이션*/
-	#mobilenavbox {
-		width: 100%;
-		height: 1000px;
-		background-color: rgba(156, 156, 156, 0.3);
-		position: fixed;
-		z-index: 3;
-	}
-	#mobilenavbox button {
-		width: 50px;
-		height: 50px;
-		margin-top: 40px;
-		margin-right: 30px;
-		float: right;
-		font-size: 30px;
-		background-color: #F9AC3A;
-		border: none;
-		color: white;
-		
-	}	
-	#mobilenavbox button {
-		cursor : pointer;
-	}
-	
-	#mobileheadernav {
-		
-		font-size: 40px;
-	}
-	.mobilenav {
-		height: 340px;			
-		background-color: rgb(253, 232, 175, 0.9);
-		width : 50%;
-		float : right ;
-				
-		
-	}
-	#mobileheadernav li {
-		height: 50px;
-		margin-right: 20px;
-		text-align: right;
-		font-size: 30px;
-	}
-	#mobileheadernav li a{
-		letter-spacing: 3px;
-		color: #828282;
-	}
-	#offbuttonbox {
-	width : 50%;
-	height : 140px;
-	float : right;
-	margin-left : 5px;
-	background-color : rgb(253, 232, 175, 0.9);
-	}
-	
-	#mobileheadernav .loginjoin {
-		margin-bottom : 10px;
-		height : 25px;		
-	}
-	.loginjoin a {
-		font-size : 25px;
-	}
-	
 }
