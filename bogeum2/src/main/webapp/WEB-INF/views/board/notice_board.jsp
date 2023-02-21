@@ -31,7 +31,7 @@
         <br>
         <div class="menuList"><a href="/auth/free"><i class="fa-regular fa-pen-to-square"></i> 자유게시판</a></div>
         <br>
-        <div class="menuList"><a href="#"><i class="fa-solid fa-cat"></i> 입양안내</a></div>
+        <div class="menuList"><a href="/auth/shelter"><i class="fa-solid fa-cat"></i> 입양안내</a></div>
         <br>
         <div class="menuList"><a href="/auth/findboard"><i class="fa-solid fa-person-circle-question"></i> 분실/습득</a></div>
         <br>

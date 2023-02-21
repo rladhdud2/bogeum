@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="/css/shelter2.css">
+<link rel="icon" href="/img/pavicon1.png">
 </head>
 <body>
-
 	<%@ include file="layout/header.jsp"%>
 	
 	<!-- 배너  -->
